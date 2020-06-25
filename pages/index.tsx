@@ -1,18 +1,19 @@
-import styled from '@emotion/styled';
-
-const HomeStyled = styled.div`
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 5rem;
-`;
+import Intro from '../components/Intro';
+import Nav from '../components/Nav';
+import Projects from '../components/Projects';
+import ScrollProgress from '../components/ScrollProgress';
+import Skills from '../components/Skills';
 
 const Home: React.FC = () => {
-    return <HomeStyled>Hello World</HomeStyled>;
+    return (
+        <>
+            <ScrollProgress />
+            <Nav />
+            <Intro />
+            <Skills />
+            <Projects />
+        </>
+    );
 };
 
 export default Home;

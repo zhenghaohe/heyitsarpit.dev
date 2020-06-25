@@ -7,26 +7,26 @@ body,
 
 @media screen and (max-width: 1690px) {
     html {
-        font-size: 16px;
+        font-size: 20px;
     }
 }
 @media screen and (max-width: 1280px) {
     html {
-        font-size: 14px;
+        font-size: 18px;
     }
 }
 @media screen and (max-width: 980px) {
     html {
-        font-size: 12px;
+        font-size: 16px;
     }
 }
 @media screen and (max-width: 736px) {
     html {
-        font-size: 10px;
+        font-size: 16px;
     }
 }
 @media screen and (max-width: 480px) {
     html {
-        font-size: 8px;
+        font-size: 14px;
     }
 }
