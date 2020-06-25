@@ -1,0 +1,68 @@
+{
+  "name": "next-js-template",
+  "version": "0.0.1",
+  "description": "A template for next-js apps",
+  "main": "index.js",
+  "author": "Your Name<email@example.com>",
+  "license": "MIT",
+  "keywords": [
+    "next",
+    "react",
+    "redux",
+    "typescript",
+    "emotion"
+  ],
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development next",
+    "build": "cross-env NODE_ENV=production next build",
+    "start": "next start",
+    "export": "next export",
+    "lint": "eslint --fix . --ignore-path ./.gitignore",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc --ignore-path ./.gitignore"
+  },
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "next": "^9.4.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "13.13.12",
+    "@types/react": "16.9.39",
+    "@types/react-dom": "16.9.8",
+    "@types/react-redux": "7.1.9",
+    "@types/redux-logger": "3.0.8",
+    "@typescript-eslint/eslint-plugin": "3.4.0",
+    "@typescript-eslint/parser": "3.4.0",
+    "babel-plugin-emotion": "10.0.33",
+    "cross-env": "7.0.2",
+    "eslint": "7.3.1",
+    "eslint-config-prettier": "6.11.0",
+    "eslint-plugin-jsx-a11y": "6.3.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "eslint-plugin-react": "7.20.0",
+    "eslint-plugin-react-hooks": "4.0.4",
+    "eslint-plugin-simple-import-sort": "5.0.3",
+    "husky": "4.2.5",
+    "lint-staged": "10.2.11",
+    "prettier": "2.0.5",
+    "typescript": "3.9.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix .",
+      "prettier --write"
+    ]
+  }
+}

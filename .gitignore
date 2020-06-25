@@ -1,0 +1,17 @@
+# Project Dependencies
+node_modules/
+
+log
+
+# Next build files 
+.next
+
+# VSCode config files
+.vscode
+
+# Secret environement variables
+.env
+
+# Deployemt related
+.now
+out

@@ -1,0 +1,32 @@
+html,
+body,
+#__next {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1690px) {
+    html {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 1280px) {
+    html {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 980px) {
+    html {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 736px) {
+    html {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 8px;
+    }
+}
