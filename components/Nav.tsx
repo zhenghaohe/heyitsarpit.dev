@@ -42,7 +42,9 @@ const Nav: React.FC = () => {
                 <Link href="/">
                     <StyledLink>Arpit Bharti</StyledLink>
                 </Link>
-                <Link href="#resume">Resume</Link>
+                <Link href="#resume">
+                    <a>Resume</a>
+                </Link>
             </Container>
         </NavStyled>
     );

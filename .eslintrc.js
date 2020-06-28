@@ -18,8 +18,7 @@ module.exports = {
         amd: true,
         node: true
     },
-
-    plugins: ['simple-import-sort'],
+    plugins: ['simple-import-sort', 'emotion'],
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/eslint-recommended',
@@ -31,10 +30,11 @@ module.exports = {
     ],
     rules: {
         'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-        'react/prop-types': 'off',
         'react/react-in-jsx-scope': 'off',
+        'react/prop-types': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
         'simple-import-sort/sort': 'error',
+        'emotion/jsx-import': 'error',
         'jsx-a11y/anchor-is-valid': [
             'error',
             {

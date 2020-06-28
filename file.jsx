@@ -1,6 +1,4 @@
-import Image from './Image';
-
-const Intro: React.FC = () => {
+const Intro = () => {
     return (
         <div id="intro">
             <div>
@@ -9,10 +7,7 @@ const Intro: React.FC = () => {
                     👋
                 </span>
             </div>
-            <span>
-                <div> Software Developer</div>
-                <Image />
-            </span>
+            <div> Software Developer</div>
         </div>
     );
 };
