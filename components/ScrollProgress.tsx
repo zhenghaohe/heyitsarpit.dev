@@ -27,7 +27,6 @@ const ScrollProgress: React.FC = () => {
             const ratio = scrollTop / scrollTopMax;
             setLength(Math.round(ratio * 100));
         };
-
         window.addEventListener('scroll', getLength);
         return () => {
             window.removeEventListener('scroll', getLength);

@@ -1,7 +1,5 @@
 import styled from '@emotion/styled';
-import { MouseEvent, useEffect, useLayoutEffect, useRef, useState } from 'react';
-
-import useStateWithPromise from '../utils/useStateWithPromise';
+import { MouseEvent, useEffect, useRef, useState } from 'react';
 
 const ImageStyled = styled('img')<{ rotation: { x: number; y: number } }>`
     width: 15rem;
@@ -30,35 +28,8 @@ const Image: React.FC = () => {
     }, [imageRef.current, imageCenter]);
 
     const getCoefficients = (mx: number, my: number) => {
-        // // 1st quadrant
-        // if (mx > 0 && my > 0) return { cx: 1, cy: 1 };
-        // // 2nd quadrant
-        // else if (mx < 0 && my > 0) return { cx: 1, cy: -1 };
-        // // 3rd quadrant
-        // else if (mx < 0 && my < 0) return { cx: -1, cy: -1 };
-        // // 4th quadrant
-        // else if (mx > 0 && my < 0) return { cx: -1, cy: 1 };
-        // // default
-        // else return { cx: 1, cy: 1 };
-
         return { cx: Math.sign(my), cy: Math.sign(mx) };
     };
-
-    // const logQuadrant = (mx: number, my: number) => {
-    //     if (mx > 0 && my > 0) {
-    //         console.log('first');
-    //     } // 1st quadrant
-    //     else if (mx < 0 && my > 0) {
-    //         console.log('second');
-    //     } // 2nd quadrant
-    //     else if (mx < 0 && my < 0) {
-    //         console.log('third');
-    //     } // 3rd quadrant
-    //     else if (mx > 0 && my < 0) {
-    //         console.log('fourth');
-    //     } // 4th quadrant
-    //     else console.log('none');
-    // };
 
     const handleMouseMove = async (e: MouseEvent<HTMLImageElement>) => {
         const mouseX = (e.clientX - imageCenter.x) / ((rect?.right - rect?.left) / 2);
