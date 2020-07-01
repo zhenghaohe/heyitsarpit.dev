@@ -9,12 +9,12 @@ type IconProps = {
 
 const SocialLinks = [
     {
-        src: '/images/icon_linkedin.png',
+        src: '/images/icon_linkedin.svg',
         href: 'https://www.linkedin.com/in/arpitbharti/',
         alt: 'linkedin'
     },
     {
-        src: '/images/icon_github.png',
+        src: '/images/icon_github.svg',
         href: 'https://github.com/arpit73',
         alt: 'github'
     },
@@ -24,17 +24,17 @@ const SocialLinks = [
     //     alt: 'twitter'
     // },
     {
-        src: '/images/icon_instagram.png',
+        src: '/images/icon_instagram.svg',
         href: 'https://www.instagram.com/arpitb_/',
         alt: 'instagram'
     },
     {
-        src: '/images/icon_dev.png',
+        src: '/images/icon_dev.svg',
         href: 'https://dev.to/arpit73',
         alt: 'dev.to'
     },
     {
-        src: '/images/icon_gmail.png',
+        src: '/images/icon_mail.svg',
         href: 'mailto:arpitbharti73@gmail.com',
         alt: 'mail'
     }
