@@ -4,6 +4,9 @@ import Nav from './Nav';
 import ScrollProgress from './ScrollProgress';
 
 const MediaQueries = styled.div`
+    @media screen {
+        max-width: 50%;
+    }
     @media screen and (max-width: 1690px) {
         max-width: 50%;
     }

@@ -29,22 +29,24 @@ const SocialLinks = [
         alt: 'instagram'
     },
     {
+        src: '/images/icon_google.svg',
+        href: 'mailto:arpitbharti73@gmail.com',
+        alt: 'mail'
+    },
+    {
         src: '/images/icon_dev.svg',
         href: 'https://dev.to/arpit73',
         alt: 'dev.to'
-    },
-    {
-        src: '/images/icon_mail.svg',
-        href: 'mailto:arpitbharti73@gmail.com',
-        alt: 'mail'
     }
 ];
 
 const StyledImg = styled.img`
-    width: 20px;
-    transition: width 0.5s;
+    width: 1.3rem;
+    transition: all 0.5s;
+    padding-left: 1rem;
     &:hover {
-        width: 25px;
+        transform: translateY(-5px);
+        opacity: 0.8;
     }
 `;
 
@@ -59,9 +61,12 @@ const Icon: React.FC<IconProps> = ({ src, href, alt }) => {
 };
 
 const StyledSocial = styled.ul`
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    padding: 0.2rem;
 `;
 
 const Social: React.FC = () => {

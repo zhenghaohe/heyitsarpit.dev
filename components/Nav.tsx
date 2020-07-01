@@ -6,7 +6,6 @@ const NavStyled = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 1rem;
 `;
 
 const StyledLink = styled.span`

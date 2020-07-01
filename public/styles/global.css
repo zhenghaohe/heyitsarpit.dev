@@ -5,6 +5,17 @@ body,
     height: 100%;
 }
 
+:root {
+    --color-text: #21262f;
+    color: var(--color-text);
+}
+
+@media screen {
+    html {
+        font-size: 22px;
+    }
+}
+
 @media screen and (max-width: 1690px) {
     html {
         font-size: 20px;
