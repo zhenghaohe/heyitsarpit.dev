@@ -1,4 +1,5 @@
 import Image from './Image';
+import Social from './Social';
 
 const Intro: React.FC = () => {
     return (
@@ -11,6 +12,7 @@ const Intro: React.FC = () => {
             </div>
             <span>
                 <div> Software Developer</div>
+                <Social />
                 <Image />
             </span>
         </div>

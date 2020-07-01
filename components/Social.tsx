@@ -1,15 +1,78 @@
-// linkedin
-// email
-// github
-// instagram
-// twitter
-// Devto?
+import styled from '@emotion/styled';
+import Link from 'next/link';
+
+type IconProps = {
+    src: string;
+    href: string;
+    alt: string;
+};
+
+const SocialLinks = [
+    {
+        src: '/images/icon_linkedin.png',
+        href: 'https://www.linkedin.com/in/arpitbharti/',
+        alt: 'linkedin'
+    },
+    {
+        src: '/images/icon_github.png',
+        href: 'https://github.com/arpit73',
+        alt: 'github'
+    },
+    // {
+    //     src: '/public/images/icon_twitter.png',
+    //     href: 'https://twitter.com/arpitbharti73',
+    //     alt: 'twitter'
+    // },
+    {
+        src: '/images/icon_instagram.png',
+        href: 'https://www.instagram.com/arpitb_/',
+        alt: 'instagram'
+    },
+    {
+        src: '/images/icon_dev.png',
+        href: 'https://dev.to/arpit73',
+        alt: 'dev.to'
+    },
+    {
+        src: '/images/icon_gmail.png',
+        href: 'mailto:arpitbharti73@gmail.com',
+        alt: 'mail'
+    }
+];
+
+const StyledImg = styled.img`
+    width: 20px;
+    transition: width 0.5s;
+    &:hover {
+        width: 25px;
+    }
+`;
+
+const Icon: React.FC<IconProps> = ({ src, href, alt }) => {
+    return (
+        <Link href={href} prefetch={false}>
+            <a target="_blank" rel="noopener noreferrer">
+                <StyledImg src={src} alt={alt} />
+            </a>
+        </Link>
+    );
+};
+
+const StyledSocial = styled.ul`
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+`;
 
 const Social: React.FC = () => {
     return (
-        <ul>
-            <li>a</li>
-        </ul>
+        <StyledSocial>
+            {SocialLinks.map((social) => (
+                <li key={social.src}>
+                    <Icon {...social} />
+                </li>
+            ))}
+        </StyledSocial>
     );
 };
 
