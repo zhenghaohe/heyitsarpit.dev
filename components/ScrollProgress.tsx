@@ -1,9 +1,7 @@
 import styled from '@emotion/styled';
 import { useEffect, useState } from 'react';
 
-const ProgressBar = styled('div')<{ length: number }>`
-    width: ${(props) => props.length}%;
-
+const ProgressBar = styled('div')`
     position: fixed;
     left: 0%;
     top: 0%;
@@ -33,7 +31,7 @@ const ScrollProgress: React.FC = () => {
         };
     }, []);
 
-    return <ProgressBar length={length} />;
+    return <ProgressBar style={{ width: `${length}%` }} />;
 };
 
 export default ScrollProgress;

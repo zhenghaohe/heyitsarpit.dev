@@ -16,10 +16,10 @@ const useDebounce = (value: Coordinate, timeout: number) => {
 };
 
 const ImageContainer = styled.div`
-    position: absolute;
-    width: 15rem;
-    /* transform-style: preserve-3d; */
+    grid-area: Image;
+    width: 13rem;
     perspective: 1000px;
+    justify-self: end;
     #pc,
     #wave {
         position: absolute;
@@ -33,19 +33,15 @@ const ImageContainer = styled.div`
         top: -10%;
         right: -35%;
     }
-    #my_image {
-        position: absolute;
-        z-index: 0;
-    }
 `;
 
-const ImageStyled = styled('img')<{ rotation: { x: number; y: number } }>`
-    width: 15rem;
+const ImageStyled = styled('img')`
+    z-index: 0;
+    width: 13rem;
+    position: absolute;
+    will-change: transform;
     transition: transform 0.5s;
-    transform: rotateX(${({ rotation }) => rotation.x}deg)
-        rotateY(${({ rotation }) => rotation.y}deg);
     transform-style: preserve-3d;
-    margin-left: 40px;
 `;
 
 const Image: React.FC = () => {
@@ -97,7 +93,9 @@ const Image: React.FC = () => {
             <img id="pc" src="/images/pc_icon.png" alt="pc icon" />
             <img id="wave" src="/images/pngwave.png" alt="windows icon" />
             <ImageStyled
-                rotation={rotation}
+                style={{
+                    transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`
+                }}
                 ref={imageRef}
                 id="my_image"
                 src="/images/me-cutout_bent_test.png"
