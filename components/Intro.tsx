@@ -24,7 +24,7 @@ const IntroStyled = styled.div`
 
 const Greeting = styled.div`
     grid-area: Greeting;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
 `;
 
 const Description = styled.div`
@@ -32,9 +32,12 @@ const Description = styled.div`
 `;
 
 const Intro: React.FC = () => {
+    const emojis = [0x1f91f, 0x1f44b, 0x1f44a, 0x2728, 0x1f525, 0x26a1, 0x1f64c, 0x1f64c];
+    const selectedEmoji = String.fromCodePoint(emojis[Math.floor(Math.random() * emojis.length)]);
+
     return (
         <IntroStyled id="intro">
-            <Greeting>Hello, I&apos;m Arpit</Greeting>
+            <Greeting>Hello, I&apos;m Arpit {selectedEmoji}</Greeting>
             <Description>Software Developer</Description>
             <SayHello />
             <Social />
