@@ -32,7 +32,8 @@ const IntroStyled = styled.div`
     gap: 1px 1px;
     grid-template-areas: 'Greeting Greeting Image' 'Description Description Image' 'SayHello Social Image';
 
-    padding-top: 5rem;
+    padding: 5rem 0;
+
     color: var(--color-text);
 
     @media screen and (max-width: 480px) {
@@ -46,6 +47,8 @@ const IntroStyled = styled.div`
 const Greeting = styled.div`
     grid-area: Greeting;
     font-size: 2.4rem;
+    font-weight: 900;
+    font-family: 'Muli', sans-serif;
 `;
 
 const Description = styled.div`
@@ -63,7 +66,7 @@ const Intro: React.FC = () => {
     return (
         <IntroStyled id="intro">
             <Greeting>Hello, I&apos;m Arpit {emoji}</Greeting>
-            <Description>Software Developer</Description>
+            <Description>Young and bright eyed software developer from India</Description>
             <SayHello />
             <Social />
             <Image />

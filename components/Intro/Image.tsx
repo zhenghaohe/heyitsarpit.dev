@@ -36,7 +36,6 @@ const ImageContainer = styled.div`
 `;
 
 const ImageStyled = styled('img')`
-    z-index: 0;
     width: 13rem;
     position: absolute;
     will-change: transform;
@@ -85,6 +84,7 @@ const Image: React.FC = () => {
     };
 
     const handleMouseLeave = () => {
+        setMouse([0, 0]);
         setRotation({ x: 0, y: 0 });
     };
 
