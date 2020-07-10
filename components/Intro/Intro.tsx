@@ -1,8 +1,29 @@
 import styled from '@emotion/styled';
+import { useEffect, useRef, useState } from 'react';
 
 import Image from './Image';
 import SayHello from './SayHello';
 import Social from './Social';
+
+type IntervalFunction = () => unknown | void;
+
+function useInterval(callback: IntervalFunction, delay: number) {
+    const savedCallback = useRef<IntervalFunction | null>(null);
+
+    useEffect(() => {
+        savedCallback.current = callback;
+    });
+
+    useEffect(() => {
+        const tick = () => {
+            if (savedCallback.current !== null) {
+                savedCallback.current();
+            }
+        };
+        const id = setInterval(tick, delay);
+        return () => clearInterval(id);
+    }, [delay]);
+}
 
 const IntroStyled = styled.div`
     display: grid;
@@ -33,11 +54,15 @@ const Description = styled.div`
 
 const Intro: React.FC = () => {
     const emojis = [0x1f91f, 0x1f44b, 0x1f44a, 0x2728, 0x1f525, 0x26a1, 0x1f64c, 0x1f64c];
-    const selectedEmoji = String.fromCodePoint(emojis[Math.floor(Math.random() * emojis.length)]);
+    const [emoji, setEmoji] = useState(String.fromCodePoint(0x1f91f));
+
+    useInterval(() => {
+        setEmoji(String.fromCodePoint(emojis[Math.floor(Math.random() * emojis.length)]));
+    }, 3000);
 
     return (
         <IntroStyled id="intro">
-            <Greeting>Hello, I&apos;m Arpit {selectedEmoji}</Greeting>
+            <Greeting>Hello, I&apos;m Arpit {emoji}</Greeting>
             <Description>Software Developer</Description>
             <SayHello />
             <Social />

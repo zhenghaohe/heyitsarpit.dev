@@ -1,4 +1,4 @@
-import Intro from '../components/Intro';
+import Intro from '../components/Intro/Intro';
 import Projects from '../components/Projects';
 import Skills from '../components/Skills';
 
