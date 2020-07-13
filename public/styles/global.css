@@ -5,6 +5,10 @@ body,
     height: 100%;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --color-text: #21262f;
     color: var(--color-text);

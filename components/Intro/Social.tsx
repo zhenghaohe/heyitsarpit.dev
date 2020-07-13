@@ -43,7 +43,6 @@ const SocialLinks = [
 const StyledImg = styled.img`
     width: 1.3rem;
     transition: all 0.5s;
-    padding-left: 1rem;
     &:hover {
         transform: translateY(-5px);
         opacity: 0.8;
@@ -67,6 +66,7 @@ const StyledSocial = styled.ul`
     justify-content: space-between;
     list-style-type: none;
     padding: 0.2rem;
+    padding-left: 1rem;
 `;
 
 const Social: React.FC = () => {

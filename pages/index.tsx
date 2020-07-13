@@ -20,11 +20,8 @@ const Home: React.FC = () => {
     return (
         <>
             <Intro />
-            <Space />
             <AboutMe />
-            <Space />
             <Skills />
-            <Projects />
         </>
     );
 };

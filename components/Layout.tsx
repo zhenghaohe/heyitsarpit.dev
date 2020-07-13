@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+import Footer from './Footer';
 import Nav from './Nav';
 import ScrollProgress from './ScrollProgress';
 
@@ -26,7 +27,6 @@ const MediaQueries = styled.div`
 
 const Container = styled(MediaQueries)`
     margin: 0 auto;
-    height: 100%;
     display: flex;
     flex-direction: column;
 `;
@@ -49,6 +49,7 @@ const Layout: React.FC = ({ children }) => {
                 </ContainerNav>
             </NavBox>
             <Container>{children}</Container>
+            <Footer />
         </>
     );
 };
