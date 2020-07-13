@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 
 import AboutMe from '../components/AboutMe/AboutMe';
 import Intro from '../components/Intro/Intro';
-import Projects from '../components/Projects';
+import Projects from '../components/Projects/Projects';
 import Skills from '../components/Skills/Skills';
 
 const Space = styled.div`
@@ -22,6 +22,7 @@ const Home: React.FC = () => {
             <Intro />
             <AboutMe />
             <Skills />
+            <Projects />
         </>
     );
 };
