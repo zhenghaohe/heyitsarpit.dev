@@ -9,22 +9,58 @@ const Heading = styled.div`
     font-size: 2.4rem;
 `;
 
-const Content = styled.div``;
+const Content = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+`;
+
+const List = styled.ul`
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+`;
+
+const ListItem = styled.li`
+    padding: 0.5em 0;
+    transition: all 0.5s;
+    position: relative;
+
+    &:hover {
+        font-size: 1.05rem;
+    }
+`;
 
 const Skills: React.FC = () => {
     return (
         <SkillsStyled id="skills">
             <Heading>Skills</Heading>
             <Content>
-                For more than 5 years now, design has been the central piece of my world. On this
-                fast and mind-blowing journey, I have moved over the years from being a visual
-                designer to a full-time UX/UI thinker and designer. At the moment, this journey has
-                brought me to US Mobile where I am a full-time Senior Product Designer. In this
-                position, as with freelance, I am working remotely and I have been for approximately
-                two years. With the constant goal of pushing design boundaries and maintaining a
-                high standard for usability & user experience, I have consistently worked with
-                various startups and clients from all around the world and helped them create
-                amazing and engaging digital products.
+                <List>
+                    <ListItem>JavaScript</ListItem>
+                    <ListItem>TypeScript</ListItem>
+                    <ListItem>Python</ListItem>
+                    <ListItem>C++</ListItem>
+                    <ListItem>HTML</ListItem>
+                    <ListItem>CSS</ListItem>
+                </List>
+                <List>
+                    <ListItem>ReactJS</ListItem>
+                    <ListItem>Redux</ListItem>
+                    <ListItem>NextJS</ListItem>
+                    <ListItem>GraphQL</ListItem>
+                    <ListItem>Styled-Components</ListItem>
+                </List>
+                <List>
+                    <ListItem>NodeJS</ListItem>
+                    <ListItem>Express</ListItem>
+                    <ListItem>MongoDB</ListItem>
+                    <ListItem>PostgreSQL</ListItem>
+                    <ListItem>TypeORM</ListItem>
+                </List>
             </Content>
         </SkillsStyled>
     );
