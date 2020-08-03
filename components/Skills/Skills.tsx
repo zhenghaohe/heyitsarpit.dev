@@ -29,9 +29,9 @@ const ListItem = styled.li`
     transition: all 0.5s;
     position: relative;
 
-    &:hover {
-        font-size: 1.05rem;
-    }
+    /* &:hover {
+        padding-bottom: 0.05rem;
+    } */
 `;
 
 const Skills: React.FC = () => {
