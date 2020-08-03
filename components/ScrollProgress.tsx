@@ -19,10 +19,9 @@ const ScrollProgress: React.FC = () => {
 
     useEffect(() => {
         const getLength = () => {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            //@ts-ignore
-            const { scrollTop, scrollTopMax } = document.documentElement; // TODO: File a bug for this.
-            const ratio = scrollTop / scrollTopMax;
+            const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
+            // scrollHeight - clientHeight === scrollTopMax
+            const ratio = scrollTop / (scrollHeight - clientHeight);
             setLength(Math.round(ratio * 100));
         };
         window.addEventListener('scroll', getLength);
