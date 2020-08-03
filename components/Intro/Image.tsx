@@ -68,7 +68,10 @@ const Image: React.FC = () => {
         const mouseY_L = (-1 * (mouseY_G - imageCenter.y)) / ((rect?.bottom - rect?.top) / 2);
 
         const getCoefficients = (mx: number, my: number) => {
-            return { cx: Math.sign(my), cy: Math.sign(mx) };
+            return {
+                cx: Math.abs(my) < 1 ? Math.sign(my) : 0,
+                cy: Math.abs(mx) < 1 ? Math.sign(mx) : 0
+            };
         };
 
         const { cx, cy } = getCoefficients(mouseX_L, mouseY_L);
