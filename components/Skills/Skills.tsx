@@ -34,33 +34,25 @@ const ListItem = styled.li`
     } */
 `;
 
+const Data = [
+    ['JavaScript', 'TypeScript', 'HTML', 'CSS', 'Python', 'C++'],
+    ['ReactJS', 'Redux', 'React Router', 'NextJS', 'SASS', 'Styled Components'],
+    ['NodeJS', 'Express', 'MongoDB', 'AWS', 'PostgreSQL', 'TypeORM'],
+    ['Git', 'Mercurial', 'Bash']
+];
+
 const Skills: React.FC = () => {
     return (
         <SkillsStyled id="skills">
             <Heading>Skills</Heading>
             <Content>
-                <List>
-                    <ListItem>JavaScript</ListItem>
-                    <ListItem>TypeScript</ListItem>
-                    <ListItem>Python</ListItem>
-                    <ListItem>C++</ListItem>
-                    <ListItem>HTML</ListItem>
-                    <ListItem>CSS</ListItem>
-                </List>
-                <List>
-                    <ListItem>ReactJS</ListItem>
-                    <ListItem>Redux</ListItem>
-                    <ListItem>NextJS</ListItem>
-                    <ListItem>GraphQL</ListItem>
-                    <ListItem>Styled-Components</ListItem>
-                </List>
-                <List>
-                    <ListItem>NodeJS</ListItem>
-                    <ListItem>Express</ListItem>
-                    <ListItem>MongoDB</ListItem>
-                    <ListItem>PostgreSQL</ListItem>
-                    <ListItem>TypeORM</ListItem>
-                </List>
+                {Data.map((list) => (
+                    <List key={list[0]}>
+                        {list.map((item) => (
+                            <ListItem key="item">{item}</ListItem>
+                        ))}
+                    </List>
+                ))}
             </Content>
         </SkillsStyled>
     );
