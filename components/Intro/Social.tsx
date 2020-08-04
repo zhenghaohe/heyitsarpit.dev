@@ -51,11 +51,9 @@ const StyledImg = styled.img`
 
 const Icon: React.FC<IconProps> = ({ src, href, alt }) => {
     return (
-        <Link href={href} prefetch={false}>
-            <a target="_blank" rel="noopener noreferrer">
-                <StyledImg src={src} alt={alt} />
-            </a>
-        </Link>
+        <a href={href} target="_blank" rel="noopener noreferrer">
+            <StyledImg src={src} alt={alt} />
+        </a>
     );
 };
 

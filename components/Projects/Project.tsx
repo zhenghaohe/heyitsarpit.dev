@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
 
 const Title = styled.div``;
 const Description = styled.div``;
@@ -18,19 +17,15 @@ const Project: React.FC<ProjectProps> = ({ title, description, codeLink, liveLin
             <Title>{title}</Title>
             <Description>{description}</Description>
             <Sources>
-                <Link href={codeLink} prefetch={false}>
-                    <a target="_blank" rel="noopener noreferrer">
-                        Code
-                    </a>
-                </Link>
-                {liveLink && (
+                <a href={codeLink} target="_blank" rel="noopener noreferrer">
+                    Code
+                </a>
+                {liveLink ? (
                     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-                    <Link href={liveLink!} prefetch={false}>
-                        <a target="_blank" rel="noopener noreferrer">
-                            Live
-                        </a>
-                    </Link>
-                )}
+                    <a href={liveLink!} target="_blank" rel="noopener noreferrer">
+                        Live
+                    </a>
+                ) : null}
             </Sources>
         </>
     );
