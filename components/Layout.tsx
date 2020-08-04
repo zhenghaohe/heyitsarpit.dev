@@ -33,7 +33,9 @@ const Container = styled(MediaQueries)`
 
 const ContainerNav = styled(Container)`
     justify-content: center;
+    height: 100%;
 `;
+
 const NavBox = styled.div`
     border-bottom: 1px solid #dddddd;
     height: 3rem;
