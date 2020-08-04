@@ -48,7 +48,6 @@ const Greeting = styled.div`
     grid-area: Greeting;
     font-size: 2.4rem;
     font-weight: 900;
-    font-family: 'Muli', sans-serif;
 `;
 
 const Description = styled.div`

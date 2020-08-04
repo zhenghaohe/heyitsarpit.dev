@@ -10,10 +10,7 @@ const Meta: React.FC = () => {
             <link rel="shortcut icon" href="/favicon.ico" />
             <link rel="stylesheet" type="text/css" href="/styles/normalize.css" />
             <link rel="stylesheet" type="text/css" href="/styles/global.css" />
-            <link
-                href="https://fonts.googleapis.com/css?family=Inter|Fira+Mono|Muli:wght@900&display=swap"
-                rel="stylesheet"
-            />
+            <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet" />
         </Head>
     );
 };
