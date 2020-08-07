@@ -8,7 +8,7 @@ const ProjectsStyled = styled.div`
 
 const Heading = styled.div`
     font-weight: bold;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
 `;
 
 const List = styled.ul`
@@ -25,31 +25,37 @@ const ListItem = styled.li`
     cursor: pointer;
     border-radius: 8px;
     transition: transform 0.2s ease 0.1s;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 8px 30px 0px;
+    /* box-shadow: rgba(0, 0, 0, 0.07) 0px 8px 30px 0px; */
 
     &:hover {
         box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 30px 0px;
-        transform: translateY(-3px);
+        /* transform: translateY(-3px); */
     }
 `;
 
 const Data: ProjectProps[] = [
     {
-        title: 'some title',
-        description: 'some description',
-        codeLink: 'lol',
-        liveLink: 'string'
+        title: 'Ship the Public Suffix List (PSL) over Remote Settings',
+        description: `Funded via GSoC to work for Mozilla and deliver improvements to the Firefox browser.
+        Worked in collaboration with Firefox core developers and community members.
+        New Feature shipped in Firefox 70 to millions of users.`,
+        codeLink: 'https://arpit73.netlify.app/posts/Arpit-Bharti-GSoC-2019-Report/',
+        liveLink: 'https://www.mozilla.org/en-US/firefox/'
     },
     {
-        title: 'some title',
-        description: 'some description',
-        codeLink: 'lol',
-        liveLink: 'string'
+        title: 'Expense Tracking App',
+        description: `ReactJS application with typescript/redux/styled-components for tracking expenses fetched from an API, ability to comment and upload image receipts.
+        Internationalization support(english, french and german) and dark mode support.`,
+        codeLink: 'https://github.com/arpit73/expense_app',
+        liveLink: 'https://expense-app.now.sh/'
     },
     {
-        title: 'some title',
-        description: 'some description',
-        codeLink: 'lol'
+        title: 'Ad Recommendation on YouTube Videos',
+        description: `Full stack app using Next JS and Flask.
+        Analysis of YouTube captions to generate product recommendations. Also, an analysis of string similarity measurement algorithms.
+        Research paper to be published in Springer.
+        `,
+        codeLink: 'https://github.com/arpit73/ad-recommendation'
     }
 ];
 
