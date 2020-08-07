@@ -6,7 +6,7 @@ const SkillsStyled = styled.div`
 
 const Heading = styled.div`
     font-weight: bold;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
 `;
 
 const Content = styled.div`
@@ -28,6 +28,7 @@ const ListItem = styled.li`
     padding: 0.5em 0;
     transition: all 0.5s;
     position: relative;
+    font-size: 0.8rem;
 
     /* &:hover {
         padding-bottom: 0.05rem;

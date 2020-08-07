@@ -6,7 +6,7 @@ const AboutMeStyled = styled.div`
 
 const Heading = styled.div`
     font-weight: bold;
-    font-size: 2.4rem;
+    font-size: 2.2rem;
 `;
 
 const Content = styled.div``;
