@@ -29,11 +29,9 @@ const StyledLink = styled.a`
 
 const SayHello: React.FC = () => {
     return (
-        <Link href="mailto:arpitbharti73@gmail.com" prefetch={false}>
-            <StyledLink target="_blank" rel="noopener noreferrer">
-                Say Hello!
-            </StyledLink>
-        </Link>
+        <StyledLink href="mailto:arpitbharti73@gmail.com" target="_blank" rel="noopener noreferrer">
+            Say Hello!
+        </StyledLink>
     );
 };
 
