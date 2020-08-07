@@ -1,5 +1,4 @@
 import styled from '@emotion/styled';
-import Link from 'next/link';
 
 const StyledLink = styled.a`
     grid-area: SayHello;

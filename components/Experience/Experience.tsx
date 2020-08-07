@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+import Title from '../Common/Heading';
 import ExperienceItem, { ExperienceProps } from './ExperienceItem';
 
 const ExperienceStyled = styled.div`
@@ -15,11 +16,6 @@ const Heading = styled.div`
     padding-bottom: 0.9rem;
     margin-bottom: 0.9rem;
     border-bottom: 1px solid rgba(33, 38, 47, 0.2);
-`;
-
-const Title = styled.span`
-    font-weight: bold;
-    font-size: 2.2rem;
 `;
 
 const LinkedIn = styled.a`
@@ -72,7 +68,7 @@ const Experience: React.FC = () => {
     return (
         <ExperienceStyled id="experience">
             <Heading>
-                <Title>Experience</Title>
+                <Title href="#experience">Experience</Title>
                 <LinkedIn
                     href="https://www.linkedin.com/in/arpitbharti/"
                     target="_blank"
