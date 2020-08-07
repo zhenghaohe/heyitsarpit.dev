@@ -10,7 +10,7 @@ const Heading = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
 
     padding-bottom: 0.9rem;
     margin-bottom: 0.9rem;
@@ -40,6 +40,8 @@ const List = styled.ul`
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
+    /* display: grid;
+    grid-template-columns: repeat(3 , 1fr) */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -47,10 +49,10 @@ const List = styled.ul`
 
 const Data: ExperienceProps[] = [
     {
-        start: 2019,
+        start: 2020,
         end: 'Present',
-        company: 'Mozilla',
-        role: 'Junior Developer'
+        company: 'QuillHash Technologies',
+        role: 'Fullstack Developer (Formerly Intern)'
     },
     {
         start: 2019,
@@ -59,10 +61,10 @@ const Data: ExperienceProps[] = [
         role: 'Junior Developer'
     },
     {
-        start: 2019,
-        end: 'Present',
-        company: 'Mozilla',
-        role: 'Junior Developer'
+        start: 2018,
+        end: '',
+        company: 'Splisys IT Consulting',
+        role: 'Research Intern'
     }
 ];
 

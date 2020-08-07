@@ -13,7 +13,9 @@ const Role = styled.div``;
 const Wrapper = styled.li`
     display: flex;
     flex-direction: column;
+    padding: 0.5rem 0;
     color: rgba(33, 38, 47, 1);
+    font-size: 0.8rem;
 `;
 
 export type ExperienceProps = {
@@ -23,12 +25,10 @@ export type ExperienceProps = {
     company: string;
 };
 
-const ExperienceItem: React.FC<ExperienceProps> = ({ start, end, role, company }) => {
+const ExperienceItem: React.FC<ExperienceProps> = ({ start, role, company }) => {
     return (
         <Wrapper>
-            <Duration>
-                {start}-{end}
-            </Duration>
+            <Duration>{start}</Duration>
             <Company>{company}</Company>
             <Role>{role}</Role>
         </Wrapper>
