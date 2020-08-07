@@ -25,6 +25,10 @@ const StyledLink = styled.a`
     &:hover {
         box-shadow: 0 8px 16px 0 rgba(39, 17, 45, 0.1);
     }
+
+    @media screen and (max-width: 480px) {
+        width: 70%;
+    }
 `;
 
 const SayHello: React.FC = () => {

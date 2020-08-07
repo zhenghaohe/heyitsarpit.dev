@@ -11,6 +11,7 @@ const ProgressBar = styled('div')`
     display: block;
     height: 6px;
     background-color: #ffc71b;
+    will-change: width;
     transform-origin: 0% 50%;
 `;
 
@@ -22,7 +23,7 @@ const ScrollProgress: React.FC = () => {
             const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
             // scrollHeight - clientHeight === scrollTopMax
             const ratio = scrollTop / (scrollHeight - clientHeight);
-            setLength(Math.round(ratio * 100));
+            setLength(ratio);
         };
         window.addEventListener('scroll', getLength);
         return () => {
