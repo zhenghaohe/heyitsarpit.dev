@@ -46,6 +46,9 @@ const StyledImg = styled.img`
         transform: translateY(-5px);
         opacity: 0.8;
     }
+    @media screen and (max-width: 480px) {
+        width: 1.7rem;
+    }
 `;
 
 const Icon: React.FC<IconProps> = ({ src, href, alt }) => {

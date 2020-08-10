@@ -52,6 +52,9 @@ const Greeting = styled.div`
 
 const Description = styled.div`
     grid-area: Description;
+    @media screen and (max-width: 480px) {
+        padding: 1rem 0;
+    }
 `;
 
 const Intro: React.FC = () => {

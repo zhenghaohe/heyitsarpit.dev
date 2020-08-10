@@ -1,12 +1,9 @@
 import styled from '@emotion/styled';
 
+import Heading from '../Common/Heading';
+
 const SkillsStyled = styled.div`
     margin-top: 60px;
-`;
-
-const Heading = styled.div`
-    font-weight: bold;
-    font-size: 2.2rem;
 `;
 
 const Content = styled.div`
@@ -45,7 +42,7 @@ const Data = [
 const Skills: React.FC = () => {
     return (
         <SkillsStyled id="skills">
-            <Heading>Skills</Heading>
+            <Heading href="#skills">Skills</Heading>
             <Content>
                 {Data.map((list) => (
                     <List key={list[0]}>

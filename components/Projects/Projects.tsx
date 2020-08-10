@@ -1,14 +1,10 @@
 import styled from '@emotion/styled';
 
+import Heading from '../Common/Heading';
 import Project, { ProjectProps } from './Project';
 
 const ProjectsStyled = styled.div`
     margin-top: 60px;
-`;
-
-const Heading = styled.div`
-    font-weight: bold;
-    font-size: 2.2rem;
 `;
 
 const List = styled.ul`
@@ -61,8 +57,8 @@ const Data: ProjectProps[] = [
 
 const Projects: React.FC = () => {
     return (
-        <ProjectsStyled id="skills">
-            <Heading>Projects</Heading>
+        <ProjectsStyled id="projects">
+            <Heading href="#projects">Projects</Heading>
             <List>
                 {Data.map(({ title, description, codeLink, liveLink }) => (
                     <ListItem key={title}>

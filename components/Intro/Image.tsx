@@ -15,32 +15,48 @@ const useDebounce = (value: Coordinate, timeout: number) => {
     return state;
 };
 
+const Floats = styled.img`
+    position: absolute;
+    z-index: 1;
+    width: 5rem;
+
+    @media screen and (max-width: 480px) {
+        display: none;
+    }
+`;
+
+const PC = styled(Floats)`
+    padding-top: 110%;
+`;
+
+const Wave = styled(Floats)`
+    top: -10%;
+    right: -35%;
+`;
+
 const ImageContainer = styled.div`
+    --image-width: 13rem;
+
     grid-area: Image;
-    width: 13rem;
+    width: var(--image-width);
     perspective: 1000px;
     justify-self: end;
-    #pc,
-    #wave {
-        position: absolute;
-        z-index: 1;
-        width: 5rem;
-    }
-    #pc {
-        padding-top: 110%;
-    }
-    #wave {
-        top: -10%;
-        right: -35%;
+
+    @media screen and (max-width: 480px) {
+        --image-width: 21rem;
     }
 `;
 
 const ImageStyled = styled('img')`
-    width: 13rem;
+    width: var(--image-width);
     position: absolute;
     will-change: transform;
     transition: transform 0.5s;
     transform-style: preserve-3d;
+
+    @media screen and (max-width: 480px) {
+        position: static;
+    }
 `;
 
 const Image: React.FC = () => {
@@ -93,8 +109,8 @@ const Image: React.FC = () => {
 
     return (
         <ImageContainer onMouseMove={(e) => handleMouseMove(e)} onMouseLeave={handleMouseLeave}>
-            <img id="pc" src="/images/pc_icon.png" alt="pc icon" />
-            <img id="wave" src="/images/pngwave.png" alt="windows icon" />
+            <PC id="pc" src="/images/pc_icon.png" alt="pc icon" />
+            <Wave id="wave" src="/images/pngwave.png" alt="windows icon" />
             <ImageStyled
                 style={{
                     transform: `rotateX(${rotation.x}deg) rotateY(${rotation.y}deg)`

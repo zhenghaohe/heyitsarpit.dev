@@ -1,12 +1,9 @@
 import styled from '@emotion/styled';
 
+import Heading from '../Common/Heading';
+
 const AboutMeStyled = styled.div`
     margin-top: 60px;
-`;
-
-const Heading = styled.div`
-    font-weight: bold;
-    font-size: 2.2rem;
 `;
 
 const Content = styled.div``;
@@ -14,7 +11,7 @@ const Content = styled.div``;
 const AboutMe: React.FC = () => {
     return (
         <AboutMeStyled id="about_me">
-            <Heading>About Me</Heading>
+            <Heading href="#about_me">About Me</Heading>
             <Content>
                 Hey! I am Arpit, a fullstack software engineer destined for greatness. I focus
                 primarily on using Javascript on the frontend and backend. I am currently working
