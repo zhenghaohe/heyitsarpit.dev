@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                 href={Links[Math.floor(Math.random() * Links.length)]}
                 target="_blank"
                 rel="noopener noreferrer">
-                Built by me!
+                Click Me!
             </a>
         </FooterStyled>
     );
