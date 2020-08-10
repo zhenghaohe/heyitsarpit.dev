@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { useState } from 'react';
 
 const FooterStyled = styled.div`
     width: 100%;
@@ -21,6 +22,8 @@ const FooterStyled = styled.div`
 `;
 
 const Footer: React.FC = () => {
+    const [clicked, setClicked] = useState(false);
+
     const Links = [
         'https://www.youtube.com/watch?v=3bNITQR4Uso', // Plastic Love
         'https://www.youtube.com/watch?v=-ed6UeDp1ek', // Let it happen
@@ -33,13 +36,20 @@ const Footer: React.FC = () => {
         'https://www.youtube.com/watch?v=c_-cUdmdWgU' // Chicago
     ];
 
+    // let randomIndex = Links[Math.floor(Math.random() * Links.length)];
+    // const onClick = () => {
+    //     setClicked(true);
+
+    // }
+
     return (
         <FooterStyled id="footer">
             <a
                 href={Links[Math.floor(Math.random() * Links.length)]}
                 target="_blank"
+                onClick={() => setClicked(true)}
                 rel="noopener noreferrer">
-                Click Me!
+                {!clicked ? 'Click Me!' : 'Click Me Again!!'}
             </a>
         </FooterStyled>
     );
