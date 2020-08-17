@@ -5,7 +5,7 @@ const Duration = styled.div`
 `;
 
 const Company = styled.div`
-    font-weight: 900;
+    font-weight: bold;
 `;
 
 const Role = styled.div``;

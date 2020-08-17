@@ -48,7 +48,7 @@ const Data: ExperienceProps[] = [
         start: 2020,
         end: 'Present',
         company: 'QuillHash Technologies',
-        role: 'Fullstack Developer (Formerly Intern)'
+        role: 'Fullstack Developer Intern'
     },
     {
         start: 2019,

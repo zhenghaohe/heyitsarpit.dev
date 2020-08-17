@@ -4,7 +4,7 @@ import Link from 'next/link';
 type HeadingProps = React.ComponentProps<typeof Link>;
 
 const HeadingLink = styled.a`
-    font-weight: bold;
+    font-weight: 900;
     font-size: 2.2rem;
     cursor: pointer;
 `;
