@@ -11,18 +11,24 @@ const Description = styled.div`
     color: #666;
     font-size: 0.8rem;
     line-height: 1.2rem;
-    text-justify: inter-word;
+
+    flex-grow: 1;
 `;
 
 const Sources = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+    border-top: 1px solid rgba(33, 38, 47, 0.2);
+    padding-top: 5px;
 `;
 
 const StyledLink = styled.a`
     text-decoration: none;
     color: blue;
+    font-size: 0.9rem;
+    font-weight: 900;
 `;
 
 export type ProjectProps = {
