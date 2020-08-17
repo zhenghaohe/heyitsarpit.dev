@@ -10,7 +10,7 @@ const useDebounce = (value: Coordinate, timeout: number) => {
         const handler = setTimeout(() => setState(value), timeout);
 
         return () => clearTimeout(handler);
-    }, [...value, timeout]);
+    }, [JSON.stringify(value), value, timeout]);
 
     return state;
 };
@@ -67,19 +67,15 @@ const Image: React.FC = () => {
 
     const imageRef = useRef<HTMLImageElement>(null);
 
-    let rect: DOMRect;
-    let imageCenter = { x: 0, y: 0 };
-
-    useEffect(() => {
-        rect = imageRef?.current?.getBoundingClientRect() as DOMRect;
-        imageCenter = {
-            x: rect?.left + (rect?.right - rect?.left) / 2,
-            y: rect?.top + (rect?.bottom - rect?.top) / 2
-        };
-    }, [imageRef.current, imageCenter]);
+    const rect = imageRef?.current?.getBoundingClientRect() as DOMRect;
+    const imageCenter = {
+        x: rect?.left + (rect?.right - rect?.left) / 2,
+        y: rect?.top + (rect?.bottom - rect?.top) / 2
+    };
 
     useEffect(() => {
         const [mouseX_G, mouseY_G] = debouncedMouse;
+
         const mouseX_L = (mouseX_G - imageCenter.x) / ((rect?.right - rect?.left) / 2);
         const mouseY_L = (-1 * (mouseY_G - imageCenter.y)) / ((rect?.bottom - rect?.top) / 2);
 
@@ -96,7 +92,7 @@ const Image: React.FC = () => {
             x: 20 * cx * Math.abs(mouseY_L),
             y: 15 * cy * Math.abs(mouseX_L)
         });
-    }, [...debouncedMouse]);
+    }, [debouncedMouse]);
 
     const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
         setMouse([e.clientX, e.clientY]);
