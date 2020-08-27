@@ -27,7 +27,9 @@
     "mdx-prism": "^0.3.1",
     "next": "^9.4.1",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "rehype-autolink-headings": "^4.0.0",
+    "rehype-slug": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "13.13.12",

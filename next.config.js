@@ -2,14 +2,17 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 const withMdxEnhanced = require('next-mdx-enhanced');
-const rehypePrism = require('@mapbox/rehype-prism');
 
 module.exports = withMdxEnhanced({
     layoutPath: 'layouts',
     defaultLayout: true,
     fileExtensions: ['mdx'],
     remarkPlugins: [],
-    rehypePlugins: [rehypePrism],
+    rehypePlugins: [
+        require('rehype-slug'),
+        require('rehype-autolink-headings'),
+        require('@mapbox/rehype-prism')
+    ],
     extendFrontMatter: {
         process: (mdxContent, frontMatter) => {},
         phase: 'prebuild|loader|both'
