@@ -15,3 +15,6 @@ log
 # Deployemt related
 .now
 out
+
+# Ignore next-mdx-enhanced cache directory
+.mdx-data

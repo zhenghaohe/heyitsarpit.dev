@@ -1,0 +1,323 @@
+---
+layout: 'blog-page'
+title: ESlint and Prettier for React apps (Bonus - Next.js and TypeScript)
+published: false
+description: A guide for improving your code quality and catch bugs early.
+tags: eslint,prettier,react,nextjs
+cover_image: https://img.youtube.com/vi/GedOLszVOo4/maxresdefault.jpg
+---
+
+What if you could catch and fix your bugs before you even run your program. What if you could write code that has the same syntax and follows the same guidelines throughout the entire project. What if all of this could be enforced for your entire team of developers without any headaches. Seems amazing right? This is achieved by the amazing tools called ESlint and Prettier. Read about how you can add these tools to your JavaScript or TypeScript projects to improve your code quality and consistency.
+
+This article will focus on ReactJS and also delve into NextJS with TypeScript, but these tools work for a JavaScript or TypeScript codebase in general and can be configured to work on any JavaScript project, with Prettier you can even target auto formatting for other languages like HTML, CSS, SCSS/SASS, Markdown, JSON, YAML, GraphQL, styled-components and [many more!!!](https://prettier.io/docs/en/plugins.html)
+
+---
+**NOTE**
+
+Eslint and Prettier are two separate tools, they can be run independently of each other, but we will leverage some very helpful ESlint plugins to combine them for maximum effect with minimal configuration.
+
+---
+
+## ESlint
+
+First I'll talk about ESlint. It is a static code analyzer, that means it tells you errors and mistakes that you may make _while_ you are developing.
+
+These errors can be stuff like -
+
+- Simple syntax errors eg. not closing a function declaration with `}`.
+- Dead code detection eg. unused variables, code written after a `return` statement.
+- Violating code guidelines, these are rules defined by yourself or a combination of predefined standards like the Airbnb styled guide or Google's style guide etc.
+
+## Prettier
+
+Prettier is a code formatter, it's only concerned with how your code looks, do you want ensure consistent indentation in the entire project?
+Do you want to ensure there're no semicolons in the project? Make your promise chains look perfectly consistent and readable? Prettier can be enabled for the entire project and instead of your team disagreeing about formatting styles, you can just leave it all to Prettier to figure out.
+
+## Getting started
+
+Make sure you have `npm` and `Node.js` installed.
+
+Let's install the devDependencies for ESlint -
+
+```shell
+npm i -D eslint \                       # Eslint itself
+         prettier \                     # Prettier itself
+         eslint-plugin-react \          # Eslint plugin for react
+         eslint-plugin-react-hooks \    # Eslint plugin for react hooks, helps you write modern functional react components
+         eslint-config-prettier \       # Eslint config for prettier, it will extend the style guide to match prettier
+         eslint-plugin-prettier \       # Eslint plugin for prettier, it will raise eslint errors about formatting
+         eslint-plugin-jsx-a11y         # Eslint plugin to raise accessibility violation errors
+```
+
+---
+**NOTE**
+
+If you are using create-react-app then you already have Eslint baked in, you only need install the other plugins etc.
+
+---
+
+Making the config files -
+
+```shell
+touch .eslintrc.js .prettierrc
+```
+
+## .eslintignore and .prettierignore
+
+These are the files we need for telling eslint and prettier not to target certain files and folder
+
+```shell
+touch .eslintignore .prettierignore
+```
+
+Just add the following to both files  
+
+```
+node_modules
+```
+
+Alternatively if you just wish to use your `.gitignore` file as ignore path you can pass it with a flag when running ESlint
+eg.
+
+```shell
+eslint --fix . --ignore-path ./.gitignore
+```
+
+**Let's populate our configs now -**
+
+### .prettierrc
+
+This is the config that I use for prettier -
+
+```json
+{
+    "semi": true,
+    "tabWidth": 4,
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "none",
+    "jsxBracketSameLine": true
+}
+```
+
+### .eslintrc.js
+
+This is a base config for eslint, we can extend it further with cool plugins.
+
+```js
+module.exports = {
+    root: true,                 // Make sure eslint picks up the config at the root of the directory
+    parserOptions: {
+        ecmaVersion: 2020,      // Use the latest ecmascript standard
+        sourceType: 'module',   // Allows using import/export statements
+        ecmaFeatures: {
+            jsx: true           // Enable JSX since we're using React
+        }
+    },
+    settings: {
+        react: {
+            version: 'detect'   // Automatically detect the react version
+        }
+    },
+    env: {
+        browser: true,          // Enables browser globals like window and document
+        amd: true,              // Enables require() and define() as global variables as per the amd spec.
+        node: true              // Enables Node.js global variables and Node.js scoping.
+    },
+    extends: [
+        'eslint:recommended',
+        'plugin:react/recommended',
+        'plugin:jsx-a11y/recommended',
+        'plugin:prettier/recommended' // Make this the last element so prettier config overrides other formatting rules
+    ],
+    rules: {
+        'prettier/prettier': ['error', {}, { usePrettierrc: true }]  // Use our .prettierrc file as source
+    }
+};
+```
+
+## Running ESlint
+
+You need to add the script to your `package.json` file.
+
+```json
+  "scripts": {
+    "lint": "eslint --fix .",
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+  },
+```
+
+Now simply run
+
+```shell
+npm run lint
+```
+
+## Targeting Next.js
+
+![next.js logo](https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/640px-Nextjs-logo.svg.png)
+
+For using Eslint with Next.js not a lot of changes are needed, we'll add two rules -
+
+For handling the need for having react in context while writing `JSX` code since Next.js doesn't require that.
+For handling accessibility related errors raised by the `jsx-a11y` plugin.
+ In Next.js we use the `Link` component for wrapping the `<a></a>` tag. Instead of passing `href` attribute to `<a></a>` we pass it as prop to `Link` instead. This raises a very common accessibility issue of an anchor tag with no `href`, and we don't want any eslint errors so we need to figure out a way to handle this situation.
+
+Simply go to your `.eslint.js` and add our custom rules for it.
+
+```js
+{
+    rules: {
+        'react/react-in-jsx-scope': 'off',
+        'jsx-a11y/anchor-is-valid': [
+            'error',
+            {
+                components: ['Link'],
+                specialLink: ['hrefLeft', 'hrefRight'],
+                aspects: ['invalidHref', 'preferButton']
+            }
+        ]
+    }
+}
+```
+
+## Targeting TypeScript
+
+![typescript logo](https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/TypeScript_Logo_%28Blue%29.svg/640px-TypeScript_Logo_%28Blue%29.svg.png)
+
+For TypeScript, we need to make some additions to our devDependencies.
+
+```shell
+npm i -D @typescript-eslint/eslint-plugin \     # For extending our rules to work with prettier
+         @typescript-eslint/parser              # To enable eslint to parse typescript code
+```
+
+Now we need to modify the `.eslintrc.js` file -
+
+Add a top level property to our config to handle typescript code parsing
+
+```shell
+module.exports = {
+    parser: '@typescript-eslint/parser'
+};
+```
+
+Add the following new items to the `extends` array.
+
+```js
+{
+    extends: [
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'prettier/@typescript-eslint',
+    ]
+}
+```
+
+## Finally
+
+This is what your `.eslintrc.js` should look like after Typescript and Next.js additions.
+
+```js
+module.exports = {
+    root: true,
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaVersion: 2020,
+        sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true
+        }
+    },
+    settings: {
+        react: {
+            version: 'detect'
+        }
+    },
+    env: {
+        browser: true,
+        amd: true,
+        node: true
+    },
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/eslint-recommended',
+        'plugin:@typescript-eslint/recommended',
+        'plugin:react/recommended',
+        'plugin:jsx-a11y/recommended',
+        'prettier/@typescript-eslint',
+        'plugin:prettier/recommended'   // Make sure this is always the last element in the array.
+    ],
+    rules: {
+        'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+        'react/react-in-jsx-scope': 'off',
+        'react/prop-types': 'off',
+        '@typescript-eslint/explicit-function-return-type': 'off',
+        'simple-import-sort/sort': 'error',
+        'jsx-a11y/anchor-is-valid': [
+            'error',
+            {
+                components: ['Link'],
+                specialLink: ['hrefLeft', 'hrefRight'],
+                aspects: ['invalidHref', 'preferButton']
+            }
+        ]
+    }
+};
+```
+
+## Bonus Content
+
+### eslint-plugin-simple-import-sort
+
+Do you find yourself worrying about the order of your import statements. Here's a solution to let eslint worry about all that.
+
+```shell
+npm i -D eslint-plugin-simple-import-sort
+```
+
+Before -  ![Before sorting](https://dev-to-uploads.s3.amazonaws.com/i/ou9u7j0p7yibstakrf9e.png)
+After -
+![After sorting](https://dev-to-uploads.s3.amazonaws.com/i/zipk8w7iq13wsjumiplq.png)
+
+Update your `.eslintrc.js` file to make use of this plugin. Add a top level property `plugins`.
+
+```js
+module.exports = {
+    plugins: ['simple-import-sort']
+};
+```
+
+### husky + lint-staged
+
+To make sure you're code is formatted and has no linting errors you'll have to run `npm run lint` every time. We should be able to automate this somehow.
+
+Let's go -
+
+```shell
+npm i -D husky \        # A tool for adding a pre-commit hook to git, It will run a certain command every time you commit
+         lint-staged    # A tool for running a certain list of commands over files that staged for committing in git
+```
+
+Now in your `package.json` add the following at the top level.
+
+```json
+{
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+    ]
+  }
+}
+```
+
+## Conclusion
+
+Hope you learned something new. Eslint is endlessly customizable and you should explore more to find some plugins and configs that best benefit your project.
+
+All the code snippets can be found here as a [Gist on GitHub](https://gist.github.com/arpit73/1cec8848f73654bfc4be056a2a15cc13)

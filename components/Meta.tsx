@@ -14,8 +14,9 @@ const Meta: React.FC = () => {
             <link rel="shortcut icon" href="/favicon.ico" />
             <link rel="stylesheet" type="text/css" href="/styles/normalize.css" />
             <link rel="stylesheet" type="text/css" href="/styles/global.css" />
+            <link rel="stylesheet" type="text/css" href="/styles/prism.css" />
             <link
-                href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700;900&display=swap"
+                href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700;900&family=Fira+Code&display=swap"
                 rel="stylesheet"
             />
         </Head>
