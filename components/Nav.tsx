@@ -18,9 +18,9 @@ const Nav: React.FC = () => {
             <Link href="/">
                 <StyledLink>Arpit Bharti</StyledLink>
             </Link>
-            {/* <Link href="#resume">
-                <a>Resume</a>
-            </Link> */}
+            <Link href="/blogs">
+                <a>Blogs</a>
+            </Link>
         </NavStyled>
     );
 };

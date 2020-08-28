@@ -10,7 +10,7 @@ const ProgressBar = styled('div')`
     z-index: 800;
     display: block;
     height: 6px;
-    background-color: #ffc71b;
+    background-color: #25b5ff;
     will-change: width;
     transform-origin: 0% 50%;
 `;

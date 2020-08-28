@@ -2,6 +2,7 @@
 layout: 'blog-page'
 title: How to add "Signin With Apple" to your website
 published: false
+date: "date string"
 description: Use an apple account to autheticate your users.
 tags: apple, javascript, node, singin
 cover_image: https://s3.amazonaws.com/media.mediapost.com/dam/cropped/2019/06/05/apple-signinbutton-560.JPEG
@@ -157,13 +158,13 @@ For now we'll use a library tailor made for apple sign in called `apple-signin-a
 
 Install simply with -
 
-```sh
+```shell
 npm i apple-signin-auth
 ```
 
 or
 
-```sh
+```shell
 yarn add apple-signin-auth
 ```
 
@@ -189,7 +190,7 @@ try {
 }
 ```
 
-The decoded message here `userAppleId` it is unique identifier for a single user and and persists on multiple logins.
+The decoded message here is `userAppleId` it is unique identifier for a single user and and persists on multiple logins.
 
 You can use your login workflow now.
 
