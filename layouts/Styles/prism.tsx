@@ -3,11 +3,9 @@ import styled from '@emotion/styled';
 export default styled.article`
     code[class*='language-'],
     pre[class*='language-'] {
-        color: #403f53;
-        font-family: 'Fira Code', monospace;
-
-        font-size: 0.95em;
-        border-radius: 0.4em;
+        color: #abb2bf;
+        background: none;
+        font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
         text-align: left;
         white-space: pre;
         word-spacing: normal;
@@ -22,109 +20,156 @@ export default styled.article`
         -ms-hyphens: none;
         hyphens: none;
     }
-    code[class*='language-'] ::-moz-selection,
-    code[class*='language-']::-moz-selection,
+
+    pre[class*='language-']::-moz-selection,
     pre[class*='language-'] ::-moz-selection,
-    pre[class*='language-']::-moz-selection {
+    code[class*='language-']::-moz-selection,
+    code[class*='language-'] ::-moz-selection {
         text-shadow: none;
-        background: #fbfbfb;
+        background: #383e49;
     }
-    code[class*='language-'] ::selection,
-    code[class*='language-']::selection,
+
+    pre[class*='language-']::selection,
     pre[class*='language-'] ::selection,
-    pre[class*='language-']::selection {
+    code[class*='language-']::selection,
+    code[class*='language-'] ::selection {
         text-shadow: none;
-        background: #fbfbfb;
+        background: #9aa2b1;
     }
+
     @media print {
         code[class*='language-'],
         pre[class*='language-'] {
             text-shadow: none;
         }
     }
+    /* Code blocks */
     pre[class*='language-'] {
         padding: 1em;
         margin: 0.5em 0;
         overflow: auto;
     }
+
     :not(pre) > code[class*='language-'],
     pre[class*='language-'] {
-        color: #fff;
-        background: #fbfbfb;
+        background: #282c34;
     }
+
+    /* Inline code */
     :not(pre) > code[class*='language-'] {
         padding: 0.1em;
         border-radius: 0.3em;
         white-space: normal;
     }
-    .token.cdata,
+
     .token.comment,
-    .token.prolog {
-        color: #989fb1;
-        font-style: italic;
-    }
-    .token.punctuation {
-        color: #994cc3;
-    }
-    .namespace {
-        color: #0c969b;
-    }
-    .token.deleted {
-        color: rgba(239, 83, 80, 0.56);
-        font-style: italic;
-    }
-    .token.keyword,
-    .token.operator,
-    .token.property,
-    .token.symbol {
-        color: #0c969b;
-    }
-    .token.tag {
-        color: #994cc3;
-    }
-    .token.boolean {
-        color: #bc5454;
-    }
-    .token.number {
-        color: #aa0982;
-    }
-    .language-css .token.string,
-    .style .token.string,
-    .token.builtin,
-    .token.char,
-    .token.constant,
-    .token.entity,
-    .token.string,
-    .token.url {
-        color: #4876d6;
-    }
+    .token.prolog,
     .token.doctype,
-    .token.function,
-    .token.selector {
-        color: #994cc3;
-        font-style: italic;
+    .token.cdata {
+        color: #5c6370;
     }
+
+    .token.punctuation {
+        color: #abb2bf;
+    }
+
+    .token.selector,
+    .token.tag {
+        color: #e06c75;
+    }
+
+    .token.property,
+    .token.boolean,
+    .token.number,
+    .token.constant,
+    .token.symbol,
     .token.attr-name,
-    .token.inserted {
-        color: #4876d6;
-        font-style: italic;
+    .token.deleted {
+        color: #d19a66;
     }
-    .token.atrule,
+
+    .token.string,
+    .token.char,
     .token.attr-value,
-    .token.class-name {
-        color: #111;
+    .token.builtin,
+    .token.inserted {
+        color: #98c379;
     }
-    .token.important,
+
+    .token.operator,
+    .token.entity,
+    .token.url,
+    .language-css .token.string,
+    .style .token.string {
+        color: #56b6c2;
+    }
+
+    .token.atrule,
+    .token.keyword {
+        color: #c678dd;
+    }
+
+    .token.function {
+        color: #61afef;
+    }
+
     .token.regex,
+    .token.important,
     .token.variable {
-        color: #c96765;
+        color: #c678dd;
     }
-    .token.bold,
-    .token.important {
-        font-weight: 700;
+
+    .token.important,
+    .token.bold {
+        font-weight: bold;
     }
+
     .token.italic {
         font-style: italic;
+    }
+
+    .token.entity {
+        cursor: help;
+    }
+
+    pre.line-numbers {
+        position: relative;
+        padding-left: 3.8em;
+        counter-reset: linenumber;
+    }
+
+    pre.line-numbers > code {
+        position: relative;
+    }
+
+    .line-numbers .line-numbers-rows {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        font-size: 100%;
+        left: -3.8em;
+        width: 3em; /* works for line-numbers below 1000 lines */
+        letter-spacing: -1px;
+        border-right: 0;
+
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .line-numbers-rows > span {
+        pointer-events: none;
+        display: block;
+        counter-increment: linenumber;
+    }
+
+    .line-numbers-rows > span:before {
+        content: counter(linenumber);
+        color: #5c6370;
+        display: block;
+        padding-right: 0.8em;
+        text-align: right;
     }
 
     img {
