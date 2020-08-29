@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 
 import { frontMatter as blogPosts } from './blogs/**/*.mdx';
+import formatDate from '../utils/formatDate';
 
 const formatPath = (p: string) => p.replace(/\.mdx$/, '');
 
@@ -34,7 +35,7 @@ const Title = styled.a`
     display: block;
 `;
 
-const Date = styled.div`
+const PostingDate = styled.div`
     color: #525252;
     font-weight: 700;
     font-size: 0.8rem;
@@ -59,7 +60,6 @@ const ReadMore = styled(Title)`
 `;
 
 const Blogs: React.FC = () => {
-    console.log(blogPosts);
     return (
         <>
             <h1>Blogs</h1>
@@ -69,7 +69,7 @@ const Blogs: React.FC = () => {
                         <Link href={formatPath(__resourcePath)} passHref>
                             <Title>{title}</Title>
                         </Link>
-                        <Date>{date}</Date>
+                        <PostingDate>{formatDate(date)}</PostingDate>
                         <Description>{description}</Description>
                         <ReadMore>Read More</ReadMore>
                     </ListItem>

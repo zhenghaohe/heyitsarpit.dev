@@ -24,6 +24,7 @@
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@mapbox/rehype-prism": "^0.5.0",
+    "light-date": "^1.1.2",
     "mdx-prism": "^0.3.1",
     "next": "^9.4.1",
     "react": "^16.13.1",
