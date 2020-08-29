@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Prism from './Styles/prism'
 
 const Title = styled.h1`
     line-height: 1.3em;
@@ -16,10 +17,12 @@ const Date = styled.div`
     margin-top: 0.4rem;
 `;
 
-const Article = styled.article`
+const Article = styled(Prism)`
     /* @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Merriweather:wght@400;700&display=swap'); */
     @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Libre+Caslon+Text:wght@400;700&family=Merriweather:wght@400;700&display=swap');
-    font-family: 'Crimson Text', serif;
+    /* font-family: 'Crimson Text', serif; */
+    font-family: 'Merriweather', serif;
+    /* font-family: 'Libre Caslon Text', serif; */
 
     max-width: 42em;
     margin: 0 auto;
@@ -27,33 +30,29 @@ const Article = styled.article`
     font-size: 22px;
 
     @media screen {
-        font-size: 24px;
+        font-size: 20px;
     }
     @media screen and (max-width: 1690px) {
-        font-size: 22px;
+        font-size: 20px;
     }
     @media screen and (max-width: 1280px) {
-        font-size: 22px;
+        font-size: 18px;
     }
     @media screen and (max-width: 980px) {
-        font-size: 20px;
+        font-size: 18px;
     }
     @media screen and (max-width: 736px) {
-        font-size: 20px;
+        font-size: 16px;
     }
     @media screen and (max-width: 480px) {
         padding: 0.5rem;
-        font-size: 18px;
+        font-size: 16px;
     }
 
     text-align: justify;
     text-justify: inter-word;
     hyphens: auto;
-    /* font-family: 'Crimson Text', serif;
 
-    font-family: 'Libre Caslon Text', serif;
-
-    font-family: 'Merriweather', serif; */
     h1,
     h2,
     h3,
@@ -82,8 +81,7 @@ const Article = styled.article`
 `;
 
 export default function Layout(frontMatter: FrontMatter) {
-    return function Content({ children: content }): JSX.Element {
-        // React hooks, for example `useState` or `useEffect`, go here.
+    return function Content({ children: content }: { children: JSX.Element }): JSX.Element {
         return (
             <Article>
                 <Title>{frontMatter.title}</Title>
