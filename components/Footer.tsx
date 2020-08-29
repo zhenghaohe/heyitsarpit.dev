@@ -1,16 +1,23 @@
 import styled from '@emotion/styled';
 import { useState } from 'react';
 
-const FooterStyled = styled.div`
-    width: 100%;
-    height: 2rem;
-    font-size: 0.8rem;
+import AppWrapper from './Common/AppWrapper';
+
+const Wrapper = styled.footer`
+    flex-shrink: 0;
+    height: 40px;
+    margin-top: 2rem;
+
+    background: #21262f;
+
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 3rem;
-    color: #fff;
-    background: #21262f;
+`;
+
+const Content = styled(AppWrapper)`
+    text-align: center;
 
     & a {
         text-decoration: none;
@@ -43,15 +50,17 @@ const Footer: React.FC = () => {
     };
 
     return (
-        <FooterStyled id="footer">
-            <a
-                href={Links[randomIndex]}
-                target="_blank"
-                onClick={onClick}
-                rel="noopener noreferrer">
-                {!clicked ? 'Click Me!' : 'Click Me Again!!'}
-            </a>
-        </FooterStyled>
+        <Wrapper id="footer">
+            <Content>
+                <a
+                    href={Links[randomIndex]}
+                    target="_blank"
+                    onClick={onClick}
+                    rel="noopener noreferrer">
+                    {!clicked ? 'Click Me!' : 'Click Me Again!!'}
+                </a>
+            </Content>
+        </Wrapper>
     );
 };
 
