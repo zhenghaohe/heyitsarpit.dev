@@ -6,7 +6,7 @@ export default styled.article`
         color: #403f53;
         font-family: 'Fira Code', monospace;
 
-        font-size: 0.88em;
+        font-size: 0.95em;
         border-radius: 0.4em;
         text-align: left;
         white-space: pre;
@@ -125,15 +125,6 @@ export default styled.article`
     }
     .token.italic {
         font-style: italic;
-    }
-
-    :not(pre) > code {
-        background: #c1d8e42b;
-
-        font-family: 'Fira Code', monospace;
-        font-size: 0.75em;
-        padding: 0 0.1em 0.05em;
-        border-radius: 0.2em;
     }
 
     img {

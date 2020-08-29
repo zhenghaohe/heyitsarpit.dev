@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import Prism from './Styles/prism'
+
+import Prism from './Styles/prism';
 
 const Title = styled.h1`
     line-height: 1.3em;
@@ -19,41 +20,22 @@ const Date = styled.div`
 
 const Article = styled(Prism)`
     /* @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Merriweather:wght@400;700&display=swap'); */
-    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Libre+Caslon+Text:wght@400;700&family=Merriweather:wght@400;700&display=swap');
+    /* @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Libre+Caslon+Text:wght@400;700&family=Merriweather:wght@400;700&display=swap'); */
     /* font-family: 'Crimson Text', serif; */
-    font-family: 'Merriweather', serif;
+    /* font-family: 'Merriweather', serif; */
     /* font-family: 'Libre Caslon Text', serif; */
 
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+    font-family: 'Fira Sans', sans-serif;
     max-width: 42em;
     margin: 0 auto;
     line-height: 1.5em;
-    font-size: 22px;
+    font-size: 16px;
 
-    @media screen {
-        font-size: 20px;
-    }
-    @media screen and (max-width: 1690px) {
-        font-size: 20px;
-    }
-    @media screen and (max-width: 1280px) {
-        font-size: 18px;
-    }
-    @media screen and (max-width: 980px) {
-        font-size: 18px;
-    }
-    @media screen and (max-width: 736px) {
-        font-size: 16px;
-    }
-    @media screen and (max-width: 480px) {
-        padding: 0.5rem;
-        font-size: 16px;
-    }
-
-    text-align: justify;
-    text-justify: inter-word;
     hyphens: auto;
+    font-kerning: normal;
+    font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 
-    h1,
     h2,
     h3,
     h4,

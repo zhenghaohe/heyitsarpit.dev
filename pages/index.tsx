@@ -1,5 +1,4 @@
 import AboutMe from '../components/AboutMe/AboutMe';
-import Blogs from '../components/Blogs/Blogs';
 import Experience from '../components/Experience/Experience';
 import Intro from '../components/Intro/Intro';
 import Projects from '../components/Projects/Projects';
@@ -13,7 +12,6 @@ const Home: React.FC = () => {
             <Experience />
             <Skills />
             <Projects />
-            <Blogs />
         </>
     );
 };

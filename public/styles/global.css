@@ -48,6 +48,14 @@ body,
     }
 }
 
+:not(pre) > code {
+    background: #1496db2e;
+
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+    padding: 0 0.1em 0.05em;
+    border-radius: 0.2em;
+}
 
 /* :root {
 	--theme-secondary-color: #505159;

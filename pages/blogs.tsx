@@ -71,7 +71,7 @@ const Blogs: React.FC = () => {
                         </Link>
                         <Date>{date}</Date>
                         <Description>{description}</Description>
-                        <ReadMore>Read More --></ReadMore>
+                        <ReadMore>Read More</ReadMore>
                     </ListItem>
                 ))}
             </List>
