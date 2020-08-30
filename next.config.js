@@ -4,7 +4,7 @@
 const withMdxEnhanced = require('next-mdx-enhanced');
 
 const autoLinkHeadingsOptions = {
-    behaviour: 'prepend',
+    behaviour: 'append',
     properties: {
         className: ['anchor']
     },
@@ -33,6 +33,7 @@ const autoLinkHeadingsOptions = {
         ]
     }
 };
+
 module.exports = withMdxEnhanced({
     layoutPath: 'layouts',
     defaultLayout: true,

@@ -1,8 +1,8 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 
-import { frontMatter as blogPosts } from './blogs/**/*.mdx';
 import formatDate from '../utils/formatDate';
+import { frontMatter as blogPosts } from './blogs/**/*.mdx';
 
 const formatPath = (p: string) => p.replace(/\.mdx$/, '');
 
@@ -59,12 +59,16 @@ const ReadMore = styled(Title)`
     }
 `;
 
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+//@ts-ignore
+const sortedBlogs = blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+
 const Blogs: React.FC = () => {
     return (
         <>
             <h1>Blogs</h1>
             <List>
-                {blogPosts.map(({ __resourcePath, title, date, description }) => (
+                {sortedBlogs.map(({ __resourcePath, title, date, description }) => (
                     <ListItem key={__resourcePath}>
                         <Link href={formatPath(__resourcePath)} passHref>
                             <Title>{title}</Title>

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+import formatDate from '../utils/formatDate';
 import Prism from './Styles/prism';
 
 const Title = styled.h1`
@@ -20,13 +21,13 @@ const Date = styled.div`
 
 const Article = styled(Prism)`
     /* @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Merriweather:wght@400;700&display=swap'); */
-    /* @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;700&family=Libre+Caslon+Text:wght@400;700&family=Merriweather:wght@400;700&display=swap'); */
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+    font-family: 'Merriweather', serif;
     /* font-family: 'Crimson Text', serif; */
-    /* font-family: 'Merriweather', serif; */
     /* font-family: 'Libre Caslon Text', serif; */
 
-    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
-    font-family: 'Fira Sans', sans-serif;
+    /* @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
+    font-family: 'Fira Sans', sans-serif; */
     max-width: 42em;
     margin: 0 auto;
     line-height: 1.5em;
@@ -41,6 +42,11 @@ const Article = styled(Prism)`
         padding: 2px;
     }
 
+    hr {
+        color: #25b5ff52;
+        width: 30%;
+    }
+
     h2,
     h3,
     h4,
@@ -51,10 +57,7 @@ const Article = styled(Prism)`
 
     .anchor {
         visibility: hidden;
-
-        float: left;
-        padding-right: 4px;
-        margin-left: -20px;
+        padding-left: 4px;
     }
 
     h1:hover .anchor,
@@ -65,6 +68,23 @@ const Article = styled(Prism)`
     h6:hover .anchor {
         visibility: visible;
     }
+
+    ul,
+    ol {
+        margin: 0;
+        padding: 0 0 0 1em;
+        list-style-position: outside;
+        list-style-image: none;
+        list-style: disc;
+    }
+
+    ul ul,
+    ul ol,
+    ol ul,
+    ol ul {
+        padding-left: 1em;
+        list-style: circle;
+    }
 `;
 
 export default function Layout(frontMatter: FrontMatter) {
@@ -72,7 +92,7 @@ export default function Layout(frontMatter: FrontMatter) {
         return (
             <Article>
                 <Title>{frontMatter.title}</Title>
-                <Date>{frontMatter.date}</Date>
+                <Date>{formatDate(frontMatter.date)}</Date>
                 {/* <img src={frontMatter.cover_image} alt="cover" /> */}
                 {content}
             </Article>
