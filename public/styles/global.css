@@ -49,12 +49,20 @@ body,
 }
 
 :not(pre) > code {
-    background: #1496db2e;
+    background: #25b5ff4f;
 
     font-family: 'Fira Code', monospace;
     font-size: 0.9em;
-    padding: 0 0.1em 0.05em;
+    padding: 0.07em 0.15em;
     border-radius: 0.2em;
+}
+
+a {
+    color: #1e94d0;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 /* :root {

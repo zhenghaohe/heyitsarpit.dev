@@ -36,6 +36,11 @@ const Article = styled(Prism)`
     font-kerning: normal;
     font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 
+    img {
+        max-width: 100%;
+        padding: 2px;
+    }
+
     h2,
     h3,
     h4,

@@ -15,7 +15,7 @@ const Meta: React.FC = () => {
             <link rel="stylesheet" type="text/css" href="/styles/normalize.css" />
             <link rel="stylesheet" type="text/css" href="/styles/global.css" />
             <link
-                href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700;900&family=Fira+Code&display=swap"
+                href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;700;900&family=Fira+Code:wght@400;700&display=swap"
                 rel="stylesheet"
             />
         </Head>
