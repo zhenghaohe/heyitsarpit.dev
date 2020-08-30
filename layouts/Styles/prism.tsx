@@ -8,6 +8,7 @@ const Prism = styled.article`
 
         background: none;
         font-family: 'Fira Code', monospace;
+        border-radius: 8px;
 
         text-align: left;
         white-space: pre;
@@ -74,6 +75,7 @@ const Prism = styled.article`
 
     .token.punctuation {
         color: #abb2bf;
+        font-weight: 500;
     }
 
     .token.plain-text {
@@ -121,9 +123,14 @@ const Prism = styled.article`
         color: #56b6c2;
     }
 
+    .token.operator {
+        font-weight: 500;
+    }
+
     .token.atrule,
     .token.keyword {
         color: #c678dd;
+        font-weight: 500;
     }
 
     .token.function {
