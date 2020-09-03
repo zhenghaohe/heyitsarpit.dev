@@ -26,7 +26,7 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-    padding: 0.5em;
+    padding: 0.5em 0;
     font-size: 0.8rem;
 
     width: 100%;

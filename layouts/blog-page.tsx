@@ -14,7 +14,7 @@ const Title = styled.h1`
 
 const DateAndReadTime = styled.div`
     color: #525252;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 0.9rem;
     margin-top: 0.4rem;
     text-transform: capitalize;
@@ -22,6 +22,11 @@ const DateAndReadTime = styled.div`
 
 const Separator = styled.span`
     padding: 0 0.2rem;
+`;
+
+const Description = styled.div`
+    padding: 2.2rem 0 0;
+    font-style: italic;
 `;
 
 const Article = styled(Prism)`
@@ -97,6 +102,7 @@ export default function Layout(frontMatter: FrontMatter) {
                     {frontMatter.readingTime.text}
                 </DateAndReadTime>
                 {/* <img src={frontMatter.cover_image} alt="cover" /> */}
+                <Description>{frontMatter.description}</Description>
                 {content}
             </Article>
         );

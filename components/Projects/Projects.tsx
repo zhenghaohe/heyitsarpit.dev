@@ -8,27 +8,17 @@ const ProjectsStyled = styled.div`
 `;
 
 const List = styled.ul`
-    /* display: flex;
-    /* flex-direction: column; */
+    display: flex;
+    flex-direction: column;
     list-style: none;
     margin: 0;
-    padding: 0rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 5px 0 0 0;
 `;
 
 const ListItem = styled.li`
-    padding: 20px;
-    border-radius: 8px;
-    transition: transform 0.2s ease 0.1s;
     display: flex;
     flex-direction: column;
-    /* box-shadow: rgba(0, 0, 0, 0.07) 0px 8px 30px 0px; */
-
-    &:hover {
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 30px 0px;
-        /* transform: translateY(-3px); */
-    }
+    padding: 0.5rem 0;
 `;
 
 const Data: ProjectProps[] = [

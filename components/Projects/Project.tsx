@@ -1,16 +1,18 @@
 import styled from '@emotion/styled';
 
-const Title = styled.div`
+const Title = styled.h3`
     font-size: 1.1rem;
     font-weight: bold;
     text-transform: capitalize;
+    margin: 0;
 `;
 
-const Description = styled.div`
+const Description = styled.p`
     padding: 0.7rem 0;
     color: #666;
     font-size: 0.8rem;
     line-height: 1.2rem;
+    margin: 0;
 
     flex-grow: 1;
 `;
@@ -20,8 +22,8 @@ const Sources = styled.div`
     flex-direction: row;
     justify-content: space-between;
 
-    border-top: 1px solid rgba(33, 38, 47, 0.2);
-    padding-top: 5px;
+    /* border-top: 1px solid rgba(33, 38, 47, 0.2);
+    padding-top: 5px; */
 `;
 
 const StyledLink = styled.a`
