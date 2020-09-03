@@ -8,6 +8,12 @@ interface FrontMatter {
     tags: string;
     cover_image: string;
     date: string;
+    readingTime: {
+        text: string;
+        time: number;
+        words: number;
+        minutes: number;
+    };
 }
 
 declare module '*.mdx' {

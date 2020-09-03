@@ -12,22 +12,21 @@ const Title = styled.h1`
     text-align: unset;
 `;
 
-const Date = styled.div`
+const DateAndReadTime = styled.div`
     color: #525252;
-    font-weight: 700;
-    font-size: 1rem;
+    font-weight: 400;
+    font-size: 0.9rem;
     margin-top: 0.4rem;
+    text-transform: capitalize;
+`;
+
+const Separator = styled.span`
+    padding: 0 0.2rem;
 `;
 
 const Article = styled(Prism)`
-    /* @import url('https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:wght@400;700&family=Merriweather:wght@400;700&display=swap'); */
-    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
     font-family: 'Merriweather', serif;
-    /* font-family: 'Crimson Text', serif; */
-    /* font-family: 'Libre Caslon Text', serif; */
 
-    /* @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
-    font-family: 'Fira Sans', sans-serif; */
     max-width: 42em;
     margin: 0 auto;
     line-height: 1.5em;
@@ -92,7 +91,11 @@ export default function Layout(frontMatter: FrontMatter) {
         return (
             <Article>
                 <Title>{frontMatter.title}</Title>
-                <Date>{formatDate(frontMatter.date)}</Date>
+                <DateAndReadTime>
+                    {formatDate(frontMatter.date)}
+                    <Separator>•</Separator>
+                    {frontMatter.readingTime.text}
+                </DateAndReadTime>
                 {/* <img src={frontMatter.cover_image} alt="cover" /> */}
                 {content}
             </Article>

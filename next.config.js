@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 const withMdxEnhanced = require('next-mdx-enhanced');
+const readingTime = require('reading-time');
 
 const autoLinkHeadingsOptions = {
     behaviour: 'append',
@@ -45,7 +46,8 @@ module.exports = withMdxEnhanced({
         require('@mapbox/rehype-prism')
     ],
     extendFrontMatter: {
-        process: (mdxContent, frontMatter) => {},
-        phase: 'prebuild|loader|both'
+        process: (mdxContent) => ({
+            readingTime: readingTime(mdxContent)
+        })
     }
 })({ pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx', 'md'] });

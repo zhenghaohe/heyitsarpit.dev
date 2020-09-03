@@ -17,12 +17,9 @@ const List = styled.ul`
 const ListItem = styled.li`
     padding: 20px;
     border-radius: 8px;
-    /* transition: all 0.2s ease 0.1s; */
-    /* box-shadow: rgba(0, 0, 0, 0.07) 0px 8px 30px 0px; */
 
     &:hover {
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 8px 30px 0px;
-        /* transform: translateY(-3px); */
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 4px 0px;
     }
 `;
 
@@ -33,27 +30,34 @@ const Title = styled.a`
     text-decoration: none;
 
     display: block;
+    color: var(--color-text);
 `;
 
-const PostingDate = styled.div`
+const DateAndReadTime = styled.div`
     color: #525252;
     font-weight: 700;
     font-size: 0.8rem;
     margin-top: 0.4rem;
+    font-family: 'Merriweather', serif;
+    text-transform: capitalize;
+`;
+
+const Separator = styled.span`
+    padding: 0 0.2rem;
 `;
 
 const Description = styled.div`
     padding: 0.7rem 0;
     color: #666;
     font-size: 0.9rem;
-    font-family: 'Crimson Text', serif;
+    font-family: 'Merriweather', serif;
+    font-style: italic;
 `;
 
 const ReadMore = styled(Title)`
     color: #12afff;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
-    font-family: 'Crimson Text', serif;
     &:hover {
         color: #25b5ff;
     }
@@ -64,18 +68,24 @@ const ReadMore = styled(Title)`
 const sortedBlogs = blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
 
 const Blogs: React.FC = () => {
+    console.log(sortedBlogs);
+
     return (
         <>
             <h1>Blogs</h1>
             <List>
-                {sortedBlogs.map(({ __resourcePath, title, date, description }) => (
+                {sortedBlogs.map(({ __resourcePath, title, date, description, readingTime }) => (
                     <ListItem key={__resourcePath}>
                         <Link href={formatPath(__resourcePath)} passHref>
                             <Title>{title}</Title>
                         </Link>
-                        <PostingDate>{formatDate(date)}</PostingDate>
+                        <DateAndReadTime>
+                            {formatDate(date)}
+                            <Separator>•</Separator>
+                            {readingTime.text}
+                        </DateAndReadTime>
                         <Description>{description}</Description>
-                        <ReadMore>Read More</ReadMore>
+                        <ReadMore href={formatPath(__resourcePath)}>Read More</ReadMore>
                     </ListItem>
                 ))}
             </List>
