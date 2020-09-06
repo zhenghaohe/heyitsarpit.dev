@@ -34,7 +34,7 @@ const Article = styled(Prism)`
 
     max-width: 42em;
     margin: 0 auto;
-    line-height: 1.5em;
+    line-height: 1.7;
     font-size: 16px;
 
     hyphens: auto;
