@@ -4,8 +4,6 @@ import Link from 'next/link';
 import formatDate from '../utils/formatDate';
 import { frontMatter as blogPosts } from './blogs/**/*.mdx';
 
-const formatPath = (p: string) => p.replace(/\.mdx$/, '');
-
 const List = styled.ul`
     display: flex;
     flex-direction: column;
@@ -55,6 +53,8 @@ const ReadMore = styled(Title)`
         color: #25b5ff;
     }
 `;
+
+const formatPath = (p: string) => p.replace(/\.mdx$/, '');
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
