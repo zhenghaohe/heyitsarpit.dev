@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 
+import TagList from '../components/Tags';
 import formatDate from '../utils/formatDate';
 import Prism from './Styles/prism';
 
@@ -104,6 +105,7 @@ export default function Layout(frontMatter: FrontMatter) {
                 {/* <img src={frontMatter.cover_image} alt="cover" /> */}
                 <Description>{frontMatter.description}</Description>
                 {content}
+                <TagList tags={frontMatter.tags} />
             </Article>
         );
     };

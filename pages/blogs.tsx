@@ -1,12 +1,10 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { memo } from 'react';
 
+import TagList from '../components/Tags';
 import formatDate from '../utils/formatDate';
 import { frontMatter as blogPosts } from './blogs/**/*.mdx';
-
-const formatPath = (p: string) => p.replace(/\.mdx$/, '');
 
 const List = styled.ul`
     display: flex;
@@ -58,34 +56,7 @@ const ReadMore = styled(Title)`
     }
 `;
 
-const Tags = styled.ul`
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin: 0;
-    padding: 0rem;
-`;
-
-const Tag = styled.li`
-    padding-right: 0.7rem;
-`;
-
-const TagList: React.FC<{ tags: string }> = memo(({ tags }) => {
-    const parseTags = (t: string): string[] => t.replace(/ /g, '').split(',');
-    const { pathname } = useRouter();
-
-    return (
-        <Tags>
-            {parseTags(tags).map((tag) => (
-                <Tag key={tag}>
-                    <Link href={{ pathname, query: { tag } }}>
-                        <a>{tag}</a>
-                    </Link>
-                </Tag>
-            ))}
-        </Tags>
-    );
-});
+const formatPath = (p: string) => p.replace(/\.mdx$/, '');
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
