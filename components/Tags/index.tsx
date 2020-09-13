@@ -19,7 +19,6 @@ const TagList: React.FC<{ tags: string }> = memo(({ tags }) => {
     const parseTags = (t: string): string[] => t.replace(/ /g, '').split(',');
     const { pathname } = useRouter();
 
-    console.log(useRouter());
     return (
         <Tags>
             {parseTags(tags).map((tag) => (
