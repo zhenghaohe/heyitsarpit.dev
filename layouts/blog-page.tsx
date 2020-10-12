@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import Head from 'next/head';
 
 import formatDate from '../utils/formatDate';
 import Prism from './Styles/prism';
@@ -94,17 +95,22 @@ const Article = styled(Prism)`
 export default function Layout(frontMatter: FrontMatter) {
     return function Content({ children: content }: { children: JSX.Element }): JSX.Element {
         return (
-            <Article>
-                <Title>{frontMatter.title}</Title>
-                <DateAndReadTime>
-                    {formatDate(frontMatter.date)}
-                    <Separator>•</Separator>
-                    {frontMatter.readingTime.text}
-                </DateAndReadTime>
-                {/* <img src={frontMatter.cover_image} alt="cover" /> */}
-                <Description>{frontMatter.description}</Description>
-                {content}
-            </Article>
+            <>
+                <Head>
+                    <title>{frontMatter.title}</title>
+                </Head>
+                <Article>
+                    <Title>{frontMatter.title}</Title>
+                    <DateAndReadTime>
+                        {formatDate(frontMatter.date)}
+                        <Separator>•</Separator>
+                        {frontMatter.readingTime.text}
+                    </DateAndReadTime>
+                    {/* <img src={frontMatter.cover_image} alt="cover" /> */}
+                    <Description>{frontMatter.description}</Description>
+                    {content}
+                </Article>
+            </>
         );
     };
 }

@@ -2,7 +2,7 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 
 import formatDate from '../utils/formatDate';
-import { frontMatter as blogPosts } from './blogs/**/*.mdx';
+import { frontMatter as blogPosts } from './posts/**/*.mdx';
 
 const List = styled.ul`
     display: flex;

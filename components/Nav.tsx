@@ -27,8 +27,8 @@ const Nav: React.FC = () => {
                 <Link href="/">
                     <StyledLink>Arpit Bharti</StyledLink>
                 </Link>
-                <Link href="/blogs">
-                    <a>Blogs</a>
+                <Link href="/posts">
+                    <a>Posts</a>
                 </Link>
             </Content>
         </Wrapper>
