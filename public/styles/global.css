@@ -49,8 +49,7 @@ body,
 }
 
 :not(pre) > code {
-	/* background: #25b5ff4f; */
-	background: #25ffc22e;
+	background: #25b5ff26;
 
     font-family: 'Fira Code', monospace;
     font-size: 0.9em;

@@ -31,7 +31,8 @@ export const Description = styled.div`
 export const Article = styled(Prism)`
     font-family: 'Merriweather', serif;
 
-    max-width: 42em;
+    max-width: 70ch;
+    padding: 0 1.2rem;
     margin: 0 auto;
     line-height: 1.7;
     font-size: 16px;

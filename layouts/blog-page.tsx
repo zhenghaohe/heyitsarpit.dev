@@ -19,7 +19,7 @@ export default function Layout(frontMatter: FrontMatter) {
                     {/* <img src={frontMatter.cover_image} alt="cover" /> */}
                     <Description>{frontMatter.description}</Description>
                     {content}
-                    <TagList tags={frontMatter.tags} />
+                    {/* <TagList tags={frontMatter.tags} /> */}
                 </Article>
             </>
         );
