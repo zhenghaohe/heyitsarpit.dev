@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 
+import AppWrapper from '../Common/AppWrapper';
 import Title from '../Common/Heading';
 import ExperienceItem, { ExperienceProps } from './ExperienceItem';
 
-const ExperienceStyled = styled.div`
+const ExperienceStyled = styled(AppWrapper)`
     margin-top: 60px;
 `;
 

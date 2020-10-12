@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
 
+import AppWrapper from '../Common/AppWrapper';
 import Heading from '../Common/Heading';
 import Project, { ProjectProps } from './Project';
 
-const ProjectsStyled = styled.div`
+const ProjectsStyled = styled(AppWrapper)`
     margin-top: 60px;
 `;
 

@@ -36,7 +36,7 @@ module.exports = {
         'simple-import-sort/sort': 'error',
         'emotion/jsx-import': 'error',
         'react-hooks/rules-of-hooks': 'error',
-        'react-hooks/exhaustive-deps': 'warn',
+        // 'react-hooks/exhaustive-deps': 'warn',
         'jsx-a11y/anchor-is-valid': [
             'error',
             {

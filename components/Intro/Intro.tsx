@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
 import { memo, useEffect, useRef, useState } from 'react';
 
+import AppWrapper from '../Common/AppWrapper';
 import Image from './Image';
 import SayHello from './SayHello';
 import Social from './Social';
@@ -25,7 +26,7 @@ function useInterval(callback: IntervalFunction, delay: number) {
     }, [delay]);
 }
 
-const IntroStyled = styled.div`
+const IntroStyled = styled(AppWrapper)`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;

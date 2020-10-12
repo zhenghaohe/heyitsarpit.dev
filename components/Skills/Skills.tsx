@@ -1,10 +1,16 @@
 import styled from '@emotion/styled';
 
+import AppWrapper from '../Common/AppWrapper';
 import Heading from '../Common/Heading';
 
-const SkillsStyled = styled.div`
+const Wrapper = styled.div`
     margin-top: 60px;
+    width: 100%;
+    padding: 5rem 0;
+    background: #fbfafa;
 `;
+
+const SkillsStyled = styled(AppWrapper)``;
 
 const Content = styled.div`
     display: flex;
@@ -51,20 +57,22 @@ const Data = [
 
 const Skills: React.FC = () => {
     return (
-        <SkillsStyled id="skills">
-            <Heading href="#skills">Skills</Heading>
-            <Content>
-                <List>
-                    {Data.map((list) => (
-                        <ListItem key={list[0]}>
-                            {list.map((item) => (
-                                <Item key={item}>{item}</Item>
-                            ))}
-                        </ListItem>
-                    ))}
-                </List>
-            </Content>
-        </SkillsStyled>
+        <Wrapper>
+            <SkillsStyled id="skills">
+                <Heading href="#skills">Skills</Heading>
+                <Content>
+                    <List>
+                        {Data.map((list) => (
+                            <ListItem key={list[0]}>
+                                {list.map((item) => (
+                                    <Item key={item}>{item}</Item>
+                                ))}
+                            </ListItem>
+                        ))}
+                    </List>
+                </Content>
+            </SkillsStyled>
+        </Wrapper>
     );
 };
 

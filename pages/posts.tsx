@@ -2,9 +2,12 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+import AppWrapper from '../components/Common/AppWrapper';
 import TagList from '../components/Tags';
 import formatDate from '../utils/formatDate';
 import { frontMatter as blogPosts } from './posts/**/*.mdx';
+
+const Wrapper = styled(AppWrapper)``;
 
 const List = styled.ul`
     display: flex;
@@ -72,7 +75,7 @@ const Blogs: React.FC = () => {
         : sortedBlogs;
 
     return (
-        <>
+        <Wrapper>
             <h1>
                 <Link href={{ pathname }}>
                     <a>Blogs</a>
@@ -98,7 +101,7 @@ const Blogs: React.FC = () => {
                     </ListItem>
                 ))}
             </List>
-        </>
+        </Wrapper>
     );
 };
 
