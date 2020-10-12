@@ -18,11 +18,11 @@ const AppWrapper = styled.div`
     }
     @media screen and (max-width: 736px) {
         max-width: 100%;
-        padding: 0 0.9rem;
+        padding: 0 1.2rem;
     }
     @media screen and (max-width: 480px) {
         max-width: 100%;
-        padding: 0 0.9rem;
+        padding: 0 1.2rem;
     }
 `;
 

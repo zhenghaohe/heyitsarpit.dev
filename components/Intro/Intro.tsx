@@ -12,7 +12,7 @@ function useInterval(callback: IntervalFunction, delay: number) {
 
     useEffect(() => {
         savedCallback.current = callback;
-    });
+    }, [callback]);
 
     useEffect(() => {
         const tick = () => {

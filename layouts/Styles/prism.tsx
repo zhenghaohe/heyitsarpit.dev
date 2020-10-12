@@ -8,7 +8,7 @@ const Prism = styled.article`
 
         background: none;
         font-family: 'Fira Code', monospace;
-        font-size: 0.88em;
+        font-size: 0.93em;
 
         text-align: left;
         white-space: pre;
@@ -53,6 +53,11 @@ const Prism = styled.article`
         overflow: auto;
         margin: 0.5em -1.5em;
         border-radius: 6px;
+
+        @media screen and (max-width: 480px) {
+            margin: 0.5em -1.5em;
+            border-radius: 0;
+        }
     }
 
     :not(pre) > code[class*='language-'],

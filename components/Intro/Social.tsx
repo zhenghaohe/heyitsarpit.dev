@@ -14,7 +14,7 @@ const SocialLinks = [
     },
     {
         src: '/images/icon_github.svg',
-        href: 'https://github.com/arpit73',
+        href: 'https://github.com/onygami',
         alt: 'github'
     },
     // {
@@ -34,7 +34,7 @@ const SocialLinks = [
     },
     {
         src: '/images/icon_dev.svg',
-        href: 'https://dev.to/arpit73',
+        href: 'https://dev.to/onygami',
         alt: 'dev.to'
     }
 ];
