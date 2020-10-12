@@ -61,11 +61,9 @@ const ReadMore = styled(Title)`
 
 const formatPath = (p: string) => p.replace(/\.mdx$/, '');
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-//@ts-ignore
 const sortedBlogs = blogPosts
     .filter(({ published }) => published)
-    .sort((a, b) => new Date(b.date) - new Date(a.date));
+    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
 
 const Blogs: React.FC = () => {
     const { query, pathname } = useRouter();
