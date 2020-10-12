@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
+import TagList from '../components/Tags';
 import formatDate from '../utils/formatDate';
 import { frontMatter as blogPosts } from './posts/**/*.mdx';
 
@@ -58,14 +60,26 @@ const formatPath = (p: string) => p.replace(/\.mdx$/, '');
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 //@ts-ignore
-const sortedBlogs = blogPosts.sort((a, b) => new Date(b.date) - new Date(a.date));
+const sortedBlogs = blogPosts
+    .filter(({ published }) => published)
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
 const Blogs: React.FC = () => {
+    const { query, pathname } = useRouter();
+
+    const blogs = query.tag
+        ? sortedBlogs.filter(({ tags }) => tags.includes(query.tag as string))
+        : sortedBlogs;
+
     return (
         <>
-            <h1>Blogs</h1>
+            <h1>
+                <Link href={{ pathname }}>
+                    <a>Blogs</a>
+                </Link>
+            </h1>
             <List>
-                {sortedBlogs.map(({ __resourcePath, title, date, description, readingTime }) => (
+                {blogs.map(({ __resourcePath, title, date, description, readingTime, tags }) => (
                     <ListItem key={__resourcePath}>
                         <h2>
                             <Link href={formatPath(__resourcePath)} passHref>
@@ -78,6 +92,7 @@ const Blogs: React.FC = () => {
                             <Separator>•</Separator>
                             {readingTime.text}
                         </DateAndReadTime>
+                        <TagList tags={tags} />
                         <Description>{description}</Description>
                         <ReadMore href={formatPath(__resourcePath)}>Read More</ReadMore>
                     </ListItem>
