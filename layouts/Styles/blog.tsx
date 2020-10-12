@@ -41,7 +41,7 @@ export const Article = styled(Prism)`
     font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 
     a {
-        text-decoration-style: wavy;
+        text-decoration: none;
     }
 
     img {

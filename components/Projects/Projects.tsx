@@ -28,7 +28,7 @@ const Data: ProjectProps[] = [
         description: `Funded via GSoC to work for Mozilla and deliver improvements to the Firefox browser.
         Worked in collaboration with Firefox core developers and community members.
         New Feature shipped in Firefox 70 to millions of users.`,
-        codeLink: 'https://arpit73.netlify.app/posts/Arpit-Bharti-GSoC-2019-Report/',
+        codeLink: '/posts/gsoc-2019',
         liveLink: 'https://www.mozilla.org/en-US/firefox/'
     },
     {
