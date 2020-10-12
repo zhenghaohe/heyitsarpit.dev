@@ -51,7 +51,7 @@ const ImageStyled = styled('img')`
     width: var(--image-width);
     position: absolute;
     will-change: transform;
-    transition: transform 0.5s;
+    transition: transform 0.4s;
     transform-style: preserve-3d;
 
     @media screen and (max-width: 480px) {
@@ -89,8 +89,8 @@ const Image: React.FC = () => {
         const { cx, cy } = getCoefficients(mouseX_L, mouseY_L);
 
         setRotation({
-            x: 20 * cx * Math.abs(mouseY_L),
-            y: 15 * cy * Math.abs(mouseX_L)
+            x: 18 * cx * Math.abs(mouseY_L),
+            y: 14 * cy * Math.abs(mouseX_L)
         });
     }, [debouncedMouse]);
 
