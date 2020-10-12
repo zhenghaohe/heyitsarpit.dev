@@ -4,14 +4,15 @@ import { useRouter } from 'next/router';
 import { memo } from 'react';
 
 const Tags = styled.ul`
-    display: flex;
-    flex-direction: row;
+    display: inline;
     list-style: none;
     margin: 0;
-    padding: 0rem;
+    padding: 0;
+    text-transform: lowercase;
 `;
 
 const Tag = styled.li`
+    display: inline;
     padding-right: 0.7rem;
 `;
 
