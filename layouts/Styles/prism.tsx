@@ -36,12 +36,10 @@ const Prism = styled.article`
   /* Code blocks */
   pre[class*='language-'] {
     padding: 1em;
-    overflow: hidden;
+    overflow: auto;
     margin: 0.5em -1.5em;
     border-radius: 6px;
-    :hover {
-      overflow: auto;
-    }
+
     @media screen and (max-width: 480px) {
       margin: 0.5em -1.5em;
       border-radius: 0;
