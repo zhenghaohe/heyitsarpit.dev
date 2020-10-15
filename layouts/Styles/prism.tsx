@@ -3,8 +3,7 @@ import styled from '@emotion/styled';
 const Prism = styled.article`
   code[class*='language-'],
   pre[class*='language-'] {
-    /* color: #abb2bf; */
-    color: #e06c75;
+    color: var(--syntax-pink);
 
     background: none;
     font-family: 'Fira Code', monospace;
@@ -16,21 +15,8 @@ const Prism = styled.article`
     word-break: normal;
     word-wrap: normal;
     line-height: 1.5;
-    -moz-tab-size: 4;
-    -o-tab-size: 4;
     tab-size: 4;
-    -webkit-hyphens: none;
-    -moz-hyphens: none;
-    -ms-hyphens: none;
     hyphens: none;
-  }
-
-  pre[class*='language-']::-moz-selection,
-  pre[class*='language-'] ::-moz-selection,
-  code[class*='language-']::-moz-selection,
-  code[class*='language-'] ::-moz-selection {
-    text-shadow: none;
-    background: #383e49;
   }
 
   pre[class*='language-']::selection,
@@ -38,7 +24,7 @@ const Prism = styled.article`
   code[class*='language-']::selection,
   code[class*='language-'] ::selection {
     text-shadow: none;
-    background: #9aa2b1;
+    background: var(--syntax-background);
   }
 
   @media print {
@@ -50,10 +36,12 @@ const Prism = styled.article`
   /* Code blocks */
   pre[class*='language-'] {
     padding: 1em;
-    overflow: auto;
+    overflow: hidden;
     margin: 0.5em -1.5em;
     border-radius: 6px;
-
+    :hover {
+      overflow: auto;
+    }
     @media screen and (max-width: 480px) {
       margin: 0.5em -1.5em;
       border-radius: 0;
@@ -62,7 +50,7 @@ const Prism = styled.article`
 
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
-    background: #282c34;
+    background: var(--syntax-background);
   }
 
   /* Inline code */
@@ -76,40 +64,40 @@ const Prism = styled.article`
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: #616977;
+    color: var(--syntax-muted);
   }
 
   .token.punctuation {
-    color: #abb2bf;
+    color: var(--syntax-purple);
     font-weight: 500;
   }
 
   .token.plain-text {
-    color: #abb2bf;
+    color: var(--syntax-white);
   }
 
   .token.selector,
   .token.tag {
-    color: #e06c75;
+    color: var(--syntax-red);
   }
 
   .token.property {
-    color: #61afef;
+    color: var(--syntax-cyan);
   }
 
   .token.number {
-    color: #d19a66;
+    color: var(--syntax-orange);
   }
 
   .token.boolean {
-    color: #dbb97a;
+    color: var(--syntax-yellow);
   }
 
   .token.constant,
   .token.symbol,
   .token.attr-name,
   .token.deleted {
-    color: #d19a66;
+    color: var(--syntax-orange);
     font-style: italic;
   }
 
@@ -118,7 +106,7 @@ const Prism = styled.article`
   .token.attr-value,
   .token.builtin,
   .token.inserted {
-    color: #98c379;
+    color: var(--syntax-green);
   }
 
   .token.operator,
@@ -126,7 +114,7 @@ const Prism = styled.article`
   .token.url,
   .language-css .token.string,
   .style .token.string {
-    color: #56b6c2;
+    color: var(--syntax-cyan);
   }
 
   .token.operator {
@@ -135,19 +123,19 @@ const Prism = styled.article`
 
   .token.atrule,
   .token.keyword {
-    color: #c678dd;
+    color: var(--syntax-purple);
     font-weight: 500;
   }
 
   .token.function {
-    color: #61afef;
+    color: var(--syntax-cyan);
     font-weight: bold;
   }
 
   .token.regex,
   .token.important,
   .token.variable {
-    color: #c678dd;
+    color: var(--syntax-purple);
   }
 
   .token.important,
@@ -183,9 +171,6 @@ const Prism = styled.article`
     letter-spacing: -1px;
     border-right: 0;
 
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
     user-select: none;
   }
 
@@ -197,7 +182,7 @@ const Prism = styled.article`
 
   .line-numbers-rows > span:before {
     content: counter(linenumber);
-    color: #5c6370;
+    color: var(--syntax-muted);
     display: block;
     padding-right: 0.8em;
     text-align: right;

@@ -31,14 +31,17 @@ const Title = styled.h2`
   text-decoration: none;
   margin-bottom: 0.5rem;
   display: block;
-  color: var(--color-text);
+  a {
+    color: var(--color-heading-primary);
+  }
 `;
 
 const DateAndReadTime = styled.div`
-  color: #666;
+  color: var(--color-highlight-2);
   font-weight: 400;
   font-size: 0.75rem;
   text-transform: capitalize;
+  font-style: italic;
 `;
 
 const Separator = styled.span`
@@ -47,7 +50,7 @@ const Separator = styled.span`
 
 const Description = styled.div`
   padding: 0.7rem 0;
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.8rem;
   font-style: italic;
 `;
@@ -103,13 +106,8 @@ const Blogs: React.FC = () => {
               <Emoji role="img" aria-label="time to read">
                 ⌛
               </Emoji>
-              {readingTime.text}
-              <Separator>•</Separator>
-              <Emoji role="img" aria-label="labels">
-                🏷️
-              </Emoji>
 
-              <TagList tags={tags} />
+              {readingTime.text}
             </DateAndReadTime>
             <Description>{description}</Description>
             {/* <ReadMore href={formatPath(__resourcePath)}>Read More</ReadMore> */}

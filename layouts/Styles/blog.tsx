@@ -12,11 +12,12 @@ export const Title = styled.h1`
 `;
 
 export const DateAndReadTime = styled.div`
-  color: #525252;
-  font-weight: 700;
+  color: var(--color-highlight-2);
+  font-weight: 400;
   font-size: 0.9rem;
   margin-top: 0.4rem;
   text-transform: capitalize;
+  font-style: italic;
 `;
 
 export const Separator = styled.span`
@@ -39,13 +40,25 @@ export const Article = styled(Prism)`
   font-kerning: normal;
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 
+  h1 {
+    color: var(--color-heading-primary);
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-family: 'Emilys Candy', cursive;
+    font-family: 'Lemonada', cursive;
+  }
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 2.5em;
+    color: var(--color-heading-secondary);
   }
 
   a {
@@ -58,16 +71,8 @@ export const Article = styled(Prism)`
   }
 
   hr {
-    color: #25b5ff52;
+    color: var(--color-heading-secondary);
     width: 30%;
-  }
-
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    margin-top: 2.5em;
   }
 
   .anchor {
