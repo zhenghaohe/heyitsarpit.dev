@@ -58,6 +58,7 @@ const GreetingStyled = styled.h1`
   font-weight: 900;
   padding: 0;
   margin: 0;
+  color: var(--color-heading-primary);
 `;
 
 const Greeting: React.FC = memo(({ children }) => {

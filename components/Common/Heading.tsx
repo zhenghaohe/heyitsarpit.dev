@@ -7,7 +7,7 @@ const HeadingLink = styled.a`
   font-weight: 900;
   font-size: 2.2rem;
   cursor: pointer;
-  color: var(--color-text);
+  color: var(--color-heading-secondary);
 `;
 
 const Heading: React.FC<HeadingProps> = ({ href, children }) => {

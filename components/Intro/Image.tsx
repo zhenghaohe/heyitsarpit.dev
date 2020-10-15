@@ -51,7 +51,7 @@ const ImageStyled = styled('img')`
   width: var(--image-width);
   position: absolute;
   will-change: transform;
-  transition: transform 0.4s;
+  transition: transform 400ms ease-out;
   transform-style: preserve-3d;
 
   @media screen and (max-width: 480px) {
@@ -63,7 +63,7 @@ const Image: React.FC = () => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
 
   const [mouse, setMouse] = useState<Coordinate>([0, 0]);
-  const debouncedMouse = useDebounce(mouse, 15);
+  const debouncedMouse = useDebounce(mouse, 30);
 
   const imageRef = useRef<HTMLImageElement>(null);
 

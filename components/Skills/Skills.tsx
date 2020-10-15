@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   margin-top: 60px;
   width: 100%;
   padding: 5rem 0;
-  background: #fbfafa;
+  background: var(--syntax-background);
 `;
 
 const SkillsStyled = styled(AppWrapper)``;

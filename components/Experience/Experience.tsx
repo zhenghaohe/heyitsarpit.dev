@@ -20,13 +20,16 @@ const Heading = styled.div`
 `;
 
 const LinkedIn = styled.a`
-  font-weight: bold;
-  font-size: 0.9rem;
+  font-weight: 400;
+  font-size: 0.8rem;
   text-decoration: none;
-  color: rgba(33, 38, 47, 0.8);
+  color: var(--color-link);
+  opacity: 0.8;
+
+  transition: opacity 200ms ease-in-out;
 
   &:hover {
-    color: rgba(33, 38, 47, 0.7);
+    opacity: 0.6;
   }
 `;
 
@@ -49,7 +52,7 @@ const Data: ExperienceProps[] = [
     start: 2020,
     end: 'Present',
     company: 'QuillHash Technologies',
-    role: 'Fullstack Developer Intern'
+    role: 'Fullstack Developer'
   },
   {
     start: 2019,

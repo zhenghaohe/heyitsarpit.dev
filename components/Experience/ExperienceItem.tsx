@@ -6,15 +6,18 @@ const Duration = styled.div`
 
 const Company = styled.div`
   font-weight: bold;
+  color: var(--color-highlight-2);
 `;
 
-const Role = styled.div``;
+const Role = styled.div`
+  color: var(--color-text-secondary);
+`;
 
 const Wrapper = styled.li`
   display: flex;
   flex-direction: column;
   padding: 0.5rem 0;
-  color: rgba(33, 38, 47, 1);
+  color: var(--color-text);
   font-size: 0.8rem;
 `;
 

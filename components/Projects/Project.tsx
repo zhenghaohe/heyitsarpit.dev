@@ -5,11 +5,12 @@ const Title = styled.h3`
   font-weight: bold;
   text-transform: capitalize;
   margin: 0;
+  color: var(--color-highlight-2);
 `;
 
 const Description = styled.p`
   padding: 0.7rem 0;
-  color: #666;
+  color: var(--color-text-secondary);
   font-size: 0.8rem;
   line-height: 1.2rem;
   margin: 0;
@@ -31,6 +32,7 @@ const StyledLink = styled.a`
   color: blue;
   font-size: 0.9rem;
   font-weight: 900;
+  color: var(--color-link);
 `;
 
 export type ProjectProps = {

@@ -11,7 +11,7 @@ export const Title = styled.h1`
   text-align: unset;
 `;
 
-export const DateAndReadTime = styled.div`
+export const DateAndReadTime = styled.em`
   color: var(--color-highlight-2);
   font-weight: 400;
   font-size: 0.9rem;
@@ -24,7 +24,7 @@ export const Separator = styled.span`
   padding: 0 0.2rem;
 `;
 
-export const Description = styled.div`
+export const Description = styled.p`
   padding: 2.2rem 0 0;
   font-style: italic;
 `;
