@@ -33,6 +33,7 @@ export const Article = styled(Prism)`
   max-width: 85ch;
   padding: 0 1.2rem;
   margin: 0 auto;
+  margin-top: 3rem;
   line-height: 1.7;
   font-size: 16px;
 
@@ -77,16 +78,20 @@ export const Article = styled(Prism)`
 
   .anchor {
     visibility: hidden;
+    opacity: 0;
     padding-left: 4px;
+    transition: opacity 240ms ease-in-out;
   }
   @media screen and (max-width: 736px) {
     .anchor {
       visibility: visible;
+      opacity: 1;
     }
   }
   @media screen and (max-width: 480px) {
     .anchor {
       visibility: visible;
+      opacity: 1;
     }
   }
   h1:hover .anchor,
@@ -96,6 +101,7 @@ export const Article = styled(Prism)`
   h5:hover .anchor,
   h6:hover .anchor {
     visibility: visible;
+    opacity: 1;
   }
 
   ul,

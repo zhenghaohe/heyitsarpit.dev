@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 const Duration = styled.div`
-  color: rgba(33, 38, 47, 0.5);
+  color: var(--color-text-secondary);
 `;
 
 const Company = styled.div`
