@@ -2,7 +2,7 @@
 layout: 'blog-page'
 title: ESlint and Prettier for React apps (Bonus - Next.js and TypeScript)
 published: true
-date: "July 5 2020"
+date: 'July 5 2020'
 description: A guide for improving your code quality and catch bugs early.
 tags: eslint,prettier,react,nextjs
 cover_image: https://img.youtube.com/vi/GedOLszVOo4/maxresdefault.jpg
@@ -13,6 +13,7 @@ What if you could catch and fix your bugs before you even run your program. What
 This article will focus on ReactJS and also delve into NextJS with TypeScript, but these tools work for a JavaScript or TypeScript codebase in general and can be configured to work on any JavaScript project, with Prettier you can even target auto formatting for other languages like HTML, CSS, SCSS/SASS, Markdown, JSON, YAML, GraphQL, styled-components and [many more!!!](https://prettier.io/docs/en/plugins.html)
 
 ---
+
 **NOTE**
 
 Eslint and Prettier are two separate tools, they can be run independently of each other, but we will leverage some very helpful ESlint plugins to combine them for maximum effect with minimal configuration.
@@ -51,6 +52,7 @@ npm i -D eslint \                       # Eslint itself
 ```
 
 ---
+
 **NOTE**
 
 If you are using create-react-app then you already have Eslint baked in, you only need install the other plugins etc.
@@ -71,7 +73,7 @@ These are the files we need for telling eslint and prettier not to target certai
 touch .eslintignore .prettierignore
 ```
 
-Just add the following to both files  
+Just add the following to both files
 
 ```shell
 node_modules
@@ -92,12 +94,12 @@ This is the config that I use for prettier -
 
 ```json
 {
-    "semi": true,
-    "tabWidth": 4,
-    "printWidth": 100,
-    "singleQuote": true,
-    "trailingComma": "none",
-    "jsxBracketSameLine": true
+  "semi": true,
+  "tabWidth": 4,
+  "printWidth": 100,
+  "singleQuote": true,
+  "trailingComma": "none",
+  "jsxBracketSameLine": true
 }
 ```
 
@@ -107,33 +109,33 @@ This is a base config for eslint, we can extend it further with cool plugins.
 
 ```js
 module.exports = {
-    root: true,                 // Make sure eslint picks up the config at the root of the directory
-    parserOptions: {
-        ecmaVersion: 2020,      // Use the latest ecmascript standard
-        sourceType: 'module',   // Allows using import/export statements
-        ecmaFeatures: {
-            jsx: true           // Enable JSX since we're using React
-        }
-    },
-    settings: {
-        react: {
-            version: 'detect'   // Automatically detect the react version
-        }
-    },
-    env: {
-        browser: true,          // Enables browser globals like window and document
-        amd: true,              // Enables require() and define() as global variables as per the amd spec.
-        node: true              // Enables Node.js global variables and Node.js scoping.
-    },
-    extends: [
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:jsx-a11y/recommended',
-        'plugin:prettier/recommended' // Make this the last element so prettier config overrides other formatting rules
-    ],
-    rules: {
-        'prettier/prettier': ['error', {}, { usePrettierrc: true }]  // Use our .prettierrc file as source
+  root: true, // Make sure eslint picks up the config at the root of the directory
+  parserOptions: {
+    ecmaVersion: 2020, // Use the latest ecmascript standard
+    sourceType: 'module', // Allows using import/export statements
+    ecmaFeatures: {
+      jsx: true // Enable JSX since we're using React
     }
+  },
+  settings: {
+    react: {
+      version: 'detect' // Automatically detect the react version
+    }
+  },
+  env: {
+    browser: true, // Enables browser globals like window and document
+    amd: true, // Enables require() and define() as global variables as per the amd spec.
+    node: true // Enables Node.js global variables and Node.js scoping.
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
+    'plugin:prettier/recommended' // Make this the last element so prettier config overrides other formatting rules
+  ],
+  rules: {
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }] // Use our .prettierrc file as source
+  }
 };
 ```
 
@@ -162,23 +164,23 @@ For using Eslint with Next.js not a lot of changes are needed, we'll add two rul
 
 For handling the need for having react in context while writing `JSX` code since Next.js doesn't require that.
 For handling accessibility related errors raised by the `jsx-a11y` plugin.
- In Next.js we use the `Link` component for wrapping the `<a></a>` tag. Instead of passing `href` attribute to `<a></a>` we pass it as prop to `Link` instead. This raises a very common accessibility issue of an anchor tag with no `href`, and we don't want any eslint errors so we need to figure out a way to handle this situation.
+In Next.js we use the `Link` component for wrapping the `<a></a>` tag. Instead of passing `href` attribute to `<a></a>` we pass it as prop to `Link` instead. This raises a very common accessibility issue of an anchor tag with no `href`, and we don't want any eslint errors so we need to figure out a way to handle this situation.
 
 Simply go to your `.eslint.js` and add our custom rules for it.
 
 ```js
 {
-    rules: {
-        'react/react-in-jsx-scope': 'off',
-        'jsx-a11y/anchor-is-valid': [
-            'error',
-            {
-                components: ['Link'],
-                specialLink: ['hrefLeft', 'hrefRight'],
-                aspects: ['invalidHref', 'preferButton']
-            }
-        ]
-    }
+  rules: {
+    'react/react-in-jsx-scope': 'off',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton']
+      }
+    ]
+  }
 }
 ```
 
@@ -207,11 +209,11 @@ Add the following new items to the `extends` array.
 
 ```js
 {
-    extends: [
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'prettier/@typescript-eslint',
-    ]
+  extends: [
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier/@typescript-eslint',
+  ]
 }
 ```
 
@@ -221,49 +223,49 @@ This is what your `.eslintrc.js` should look like after Typescript and Next.js a
 
 ```js
 module.exports = {
-    root: true,
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        ecmaVersion: 2020,
-        sourceType: 'module',
-        ecmaFeatures: {
-            jsx: true
-        }
-    },
-    settings: {
-        react: {
-            version: 'detect'
-        }
-    },
-    env: {
-        browser: true,
-        amd: true,
-        node: true
-    },
-    extends: [
-        'eslint:recommended',
-        'plugin:@typescript-eslint/eslint-recommended',
-        'plugin:@typescript-eslint/recommended',
-        'plugin:react/recommended',
-        'plugin:jsx-a11y/recommended',
-        'prettier/@typescript-eslint',
-        'plugin:prettier/recommended'   // Make sure this is always the last element in the array.
-    ],
-    rules: {
-        'prettier/prettier': ['error', {}, { usePrettierrc: true }],
-        'react/react-in-jsx-scope': 'off',
-        'react/prop-types': 'off',
-        '@typescript-eslint/explicit-function-return-type': 'off',
-        'simple-import-sort/sort': 'error',
-        'jsx-a11y/anchor-is-valid': [
-            'error',
-            {
-                components: ['Link'],
-                specialLink: ['hrefLeft', 'hrefRight'],
-                aspects: ['invalidHref', 'preferButton']
-            }
-        ]
+  root: true,
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true
     }
+  },
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
+  env: {
+    browser: true,
+    amd: true,
+    node: true
+  },
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:react/recommended',
+    'plugin:jsx-a11y/recommended',
+    'prettier/@typescript-eslint',
+    'plugin:prettier/recommended' // Make sure this is always the last element in the array.
+  ],
+  rules: {
+    'prettier/prettier': ['error', {}, { usePrettierrc: true }],
+    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'simple-import-sort/sort': 'error',
+    'jsx-a11y/anchor-is-valid': [
+      'error',
+      {
+        components: ['Link'],
+        specialLink: ['hrefLeft', 'hrefRight'],
+        aspects: ['invalidHref', 'preferButton']
+      }
+    ]
+  }
 };
 ```
 
@@ -277,7 +279,7 @@ Do you find yourself worrying about the order of your import statements. Here's 
 npm i -D eslint-plugin-simple-import-sort
 ```
 
-Before -  ![Before sorting](https://dev-to-uploads.s3.amazonaws.com/i/ou9u7j0p7yibstakrf9e.png)
+Before - ![Before sorting](https://dev-to-uploads.s3.amazonaws.com/i/ou9u7j0p7yibstakrf9e.png)
 After -
 ![After sorting](https://dev-to-uploads.s3.amazonaws.com/i/zipk8w7iq13wsjumiplq.png)
 
@@ -285,7 +287,7 @@ Update your `.eslintrc.js` file to make use of this plugin. Add a top level prop
 
 ```js
 module.exports = {
-    plugins: ['simple-import-sort']
+  plugins: ['simple-import-sort']
 };
 ```
 
@@ -310,9 +312,7 @@ Now in your `package.json` add the following at the top level.
     }
   },
   "lint-staged": {
-    "./**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-    ]
+    "./**/*.{js,jsx,ts,tsx}": ["eslint --fix"]
   }
 }
 ```

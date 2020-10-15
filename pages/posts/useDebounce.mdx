@@ -29,53 +29,53 @@ In the following code examples we'll build a simple application for using the lo
 
 ```jsx
 const App = () => {
-    const [quadrant, setQuadrant] = useState(''); // The quadrant name - 1st | 2nd | 3rd | 4th
+  const [quadrant, setQuadrant] = useState(''); // The quadrant name - 1st | 2nd | 3rd | 4th
 
-    const boxRef = useRef(null); // A ref to target our div
+  const boxRef = useRef(null); // A ref to target our div
 
-    let rect;
-    let boxCenter = { x: 0, y: 0 };
+  let rect;
+  let boxCenter = { x: 0, y: 0 };
 
-    /**
-     * This effect if for updating data about our div itself.
-     * `getBoundingClientRect()` is a browser provided utility that gives you coordinates of the bounding rectangle.
-     * We are interested in the `top`, `bottom`, `left`,`right` position of our div,
-     * so we can calculate its center and use it as the origin of our div going forward.
-     */
-    useEffect(() => {
-        rect = boxRef?.current?.getBoundingClientRect();
-        boxCenter = {
-            x: rect?.left + (rect?.right - rect?.left) / 2,
-            y: rect?.top + (rect?.bottom - rect?.top) / 2
-        };
-    }, [boxRef.current, boxCenter]);
-
-    const handleMouseMove = (e) => {
-        /**
-         * This code snippet is for calculating the local coordinate of the mouse pointer,
-         * ie. coordinate with respect to the origin( center of the div)
-         * Understanding the logic is not imperative to understanding the useDebounce() hook.
-         * You can just think of it a computationally expensive
-         * function that runs every time we move the mouse.
-         */
-        // G - global, with respect to page
-        // L - local, with respect to origin i.e, center of div
-        const [mouseX_G, mouseY_G] = [e.clientX, e.clientY];
-        const mouseX_L = (mouseX_G - boxCenter.x) / ((rect?.right - rect?.left) / 2);
-        const mouseY_L = (-1 * (mouseY_G - boxCenter.y)) / ((rect?.bottom - rect?.top) / 2);
-
-        if (mouseX_L > 0 && mouseY_L > 0) setQuadrant('1st');
-        else if (mouseX_L < 0 && mouseY_L > 0) setQuadrant('2nd');
-        else if (mouseX_L < 0 && mouseY_L < 0) setQuadrant('3rd');
-        else if (mouseX_L > 0 && mouseY_L < 0) setQuadrant('4th');
-        else setQuadrant('');
+  /**
+   * This effect if for updating data about our div itself.
+   * `getBoundingClientRect()` is a browser provided utility that gives you coordinates of the bounding rectangle.
+   * We are interested in the `top`, `bottom`, `left`,`right` position of our div,
+   * so we can calculate its center and use it as the origin of our div going forward.
+   */
+  useEffect(() => {
+    rect = boxRef?.current?.getBoundingClientRect();
+    boxCenter = {
+      x: rect?.left + (rect?.right - rect?.left) / 2,
+      y: rect?.top + (rect?.bottom - rect?.top) / 2
     };
+  }, [boxRef.current, boxCenter]);
 
-    return (
-        <div onMouseMove={(e) => handleMouseMove(e)} ref={boxRef} id="mouse_example">
-            {quadrant} quadrant
-        </div>
-    );
+  const handleMouseMove = (e) => {
+    /**
+     * This code snippet is for calculating the local coordinate of the mouse pointer,
+     * ie. coordinate with respect to the origin( center of the div)
+     * Understanding the logic is not imperative to understanding the useDebounce() hook.
+     * You can just think of it a computationally expensive
+     * function that runs every time we move the mouse.
+     */
+    // G - global, with respect to page
+    // L - local, with respect to origin i.e, center of div
+    const [mouseX_G, mouseY_G] = [e.clientX, e.clientY];
+    const mouseX_L = (mouseX_G - boxCenter.x) / ((rect?.right - rect?.left) / 2);
+    const mouseY_L = (-1 * (mouseY_G - boxCenter.y)) / ((rect?.bottom - rect?.top) / 2);
+
+    if (mouseX_L > 0 && mouseY_L > 0) setQuadrant('1st');
+    else if (mouseX_L < 0 && mouseY_L > 0) setQuadrant('2nd');
+    else if (mouseX_L < 0 && mouseY_L < 0) setQuadrant('3rd');
+    else if (mouseX_L > 0 && mouseY_L < 0) setQuadrant('4th');
+    else setQuadrant('');
+  };
+
+  return (
+    <div onMouseMove={(e) => handleMouseMove(e)} ref={boxRef} id="mouse_example">
+      {quadrant} quadrant
+    </div>
+  );
 };
 
 export default App;
@@ -90,18 +90,18 @@ The above code is actually quite performant and you probably won't notice many i
 
 ```jsx
 const useDebounce = (value, timeout) => {
-    // Save a local copy of `value` in this state which is local to our hook
-    const [state, setState] = useState(value);
+  // Save a local copy of `value` in this state which is local to our hook
+  const [state, setState] = useState(value);
 
-    useEffect(() => {
-        // Set timeout to run after delay
-        const handler = setTimeout(() => setState(value), timeout);
+  useEffect(() => {
+    // Set timeout to run after delay
+    const handler = setTimeout(() => setState(value), timeout);
 
-        // clear the setTimeout listener on unMount
-        return () => clearTimeout(handler);
-    }, [value, timeout]);
+    // clear the setTimeout listener on unMount
+    return () => clearTimeout(handler);
+  }, [value, timeout]);
 
-    return state;
+  return state;
 };
 ```
 
@@ -109,63 +109,63 @@ Here's how we'll use it in our application. We'll of course have to make some ma
 
 ```jsx
 const App = () => {
-    const [quadrant, setQuadrant] = useState('');
+  const [quadrant, setQuadrant] = useState('');
 
-    /**
-     * In addition to quadrant we also need to have state for mouse position.
-     * We wont' use it directly in UI instead,
-     * we need to calculate a debounced version of this position state.
-     */
-    const [mouse, setMouse] = useState([0, 0]);
-    const delay = 15; // milliseconds
-    const debouncedMouse = useDebounce(mouse, delay); // Our debounced mouse coordinates for
+  /**
+   * In addition to quadrant we also need to have state for mouse position.
+   * We wont' use it directly in UI instead,
+   * we need to calculate a debounced version of this position state.
+   */
+  const [mouse, setMouse] = useState([0, 0]);
+  const delay = 15; // milliseconds
+  const debouncedMouse = useDebounce(mouse, delay); // Our debounced mouse coordinates for
 
-    const boxRef = useRef(null);
+  const boxRef = useRef(null);
 
-    let rect;
-    let boxCenter = { x: 0, y: 0 };
+  let rect;
+  let boxCenter = { x: 0, y: 0 };
 
-    useEffect(() => {
-        rect = boxRef?.current?.getBoundingClientRect();
-        boxCenter = {
-            x: rect?.left + (rect?.right - rect?.left) / 2,
-            y: rect?.top + (rect?.bottom - rect?.top) / 2
-        };
-    }, [boxRef.current, boxCenter]);
-
-    useEffect(() => {
-        /**
-         * Instead of calculating the quadrant every time the mouse moves,
-         * we instead calculate every time the values in debounced array changes.
-         * Since debounced array is calculated at some delay, this useEffect callback function
-         * runs with a delay as well.
-         */
-        const [mouseX_G, mouseY_G] = debouncedMouse;
-        const mouseX_L = (mouseX_G - boxCenter.x) / ((rect?.right - rect?.left) / 2);
-        const mouseY_L = (-1 * (mouseY_G - boxCenter.y)) / ((rect?.bottom - rect?.top) / 2);
-
-        if (mouseX_L > 0 && mouseY_L > 0) setQuadrant('1st');
-        else if (mouseX_L < 0 && mouseY_L > 0) setQuadrant('2nd');
-        else if (mouseX_L < 0 && mouseY_L < 0) setQuadrant('3rd');
-        else if (mouseX_L > 0 && mouseY_L < 0) setQuadrant('4th');
-        else setQuadrant('');
-    }, [...debouncedMouse]);
-
-    const handleMouseMove = (e) => {
-        /** Instead of calculating the quadrant at every mouse movement,
-         * we set our mouse state instead, which in turn will trigger the useDebounce() hook.
-         */
-        setMouse([e.clientX, e.clientY]);
+  useEffect(() => {
+    rect = boxRef?.current?.getBoundingClientRect();
+    boxCenter = {
+      x: rect?.left + (rect?.right - rect?.left) / 2,
+      y: rect?.top + (rect?.bottom - rect?.top) / 2
     };
+  }, [boxRef.current, boxCenter]);
 
-    return (
-        <div>
-            <div onMouseMove={(e) => handleMouseMove(e)} ref={boxRef} id="mouse_example">
-                {quadrant} quadrant
-            </div>
-            <div id="delay">Delay - {delay} milliseconds</div>
-        </div>
-    );
+  useEffect(() => {
+    /**
+     * Instead of calculating the quadrant every time the mouse moves,
+     * we instead calculate every time the values in debounced array changes.
+     * Since debounced array is calculated at some delay, this useEffect callback function
+     * runs with a delay as well.
+     */
+    const [mouseX_G, mouseY_G] = debouncedMouse;
+    const mouseX_L = (mouseX_G - boxCenter.x) / ((rect?.right - rect?.left) / 2);
+    const mouseY_L = (-1 * (mouseY_G - boxCenter.y)) / ((rect?.bottom - rect?.top) / 2);
+
+    if (mouseX_L > 0 && mouseY_L > 0) setQuadrant('1st');
+    else if (mouseX_L < 0 && mouseY_L > 0) setQuadrant('2nd');
+    else if (mouseX_L < 0 && mouseY_L < 0) setQuadrant('3rd');
+    else if (mouseX_L > 0 && mouseY_L < 0) setQuadrant('4th');
+    else setQuadrant('');
+  }, [...debouncedMouse]);
+
+  const handleMouseMove = (e) => {
+    /** Instead of calculating the quadrant at every mouse movement,
+     * we set our mouse state instead, which in turn will trigger the useDebounce() hook.
+     */
+    setMouse([e.clientX, e.clientY]);
+  };
+
+  return (
+    <div>
+      <div onMouseMove={(e) => handleMouseMove(e)} ref={boxRef} id="mouse_example">
+        {quadrant} quadrant
+      </div>
+      <div id="delay">Delay - {delay} milliseconds</div>
+    </div>
+  );
 };
 
 export default App;

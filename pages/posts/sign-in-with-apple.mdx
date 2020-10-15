@@ -2,7 +2,7 @@
 layout: 'blog-page'
 title: How to add How to add “Signin With Apple” to your website
 published: true
-date: "August 17 2020"
+date: 'August 17 2020'
 description: Use an apple account to autheticate your users.
 tags: apple, javascript, node, singin
 cover_image: https://s3.amazonaws.com/media.mediapost.com/dam/cropped/2019/06/05/apple-signinbutton-560.JPEG
@@ -89,11 +89,11 @@ This will make a global `AppleID` object available to you for use. Here's how we
  */
 const initApple = () => {
   window.AppleID.auth.init({
-    clientId: "com.example.signin", // This is the service ID we created.
-    scope: "name email", // To tell apple we want the user name and emails fields in the response it sends us.
-    redirectURI: "http://example.com", // As registered along with our service ID
-    state: "origin:web", // Any string of your choice that you may use for some logic. It's optional and you may omit it.
-    usePopup: true, // Important if we want to capture the data apple sends on the client side.
+    clientId: 'com.example.signin', // This is the service ID we created.
+    scope: 'name email', // To tell apple we want the user name and emails fields in the response it sends us.
+    redirectURI: 'http://example.com', // As registered along with our service ID
+    state: 'origin:web', // Any string of your choice that you may use for some logic. It's optional and you may omit it.
+    usePopup: true // Important if we want to capture the data apple sends on the client side.
   });
 };
 ```
@@ -171,8 +171,7 @@ yarn add apple-signin-auth
 Now inside your controller, receive the token and decode it.
 
 ```js
-const appleSignin = require("apple-signin-auth");
-
+const appleSignin = require('apple-signin-auth');
 
 const { authorization, user } = req.body;
 
@@ -180,8 +179,8 @@ try {
   const { sub: userAppleId } = await appleSignin.verifyIdToken(
     authorization.id_token, // We need to pass the token that we wish to decode.
     {
-      audience: "com.example.signin", // client id - The same one we used  on the frontend, this is the secret key used for encoding and decoding the token.
-      ignoreExpiration: true, // Token will not expire unless you manually do so.
+      audience: 'com.example.signin', // client id - The same one we used  on the frontend, this is the secret key used for encoding and decoding the token.
+      ignoreExpiration: true // Token will not expire unless you manually do so.
     }
   );
 } catch (err) {

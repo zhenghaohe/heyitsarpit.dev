@@ -5,15 +5,15 @@ import Projects from '../components/Projects/Projects';
 import Skills from '../components/Skills/Skills';
 
 const Home: React.FC = () => {
-    return (
-        <>
-            <Intro />
-            {/* <AboutMe /> */}
-            <Experience />
-            <Skills />
-            <Projects />
-        </>
-    );
+  return (
+    <>
+      <Intro />
+      {/* <AboutMe /> */}
+      <Experience />
+      <Skills />
+      <Projects />
+    </>
+  );
 };
 
 export default Home;
