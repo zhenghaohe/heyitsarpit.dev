@@ -7,7 +7,7 @@ export const Title = styled.h1`
   font-weight: 900;
   text-transform: capitalize;
   text-decoration: none;
-  font-family: 'Mulish', sans-serif;
+  font-family: sans-serif;
   text-align: unset;
 `;
 
@@ -29,9 +29,7 @@ export const Description = styled.div`
 `;
 
 export const Article = styled(Prism)`
-  font-family: 'Merriweather', serif;
-
-  max-width: 70ch;
+  max-width: 85ch;
   padding: 0 1.2rem;
   margin: 0 auto;
   line-height: 1.7;
@@ -40,6 +38,15 @@ export const Article = styled(Prism)`
   hyphens: auto;
   font-kerning: normal;
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Emilys Candy', cursive;
+  }
 
   a {
     text-decoration: none;
@@ -91,8 +98,8 @@ export const Article = styled(Prism)`
     margin: 0;
     padding: 0 0 0 1em;
     list-style-position: outside;
-    list-style-image: none;
-    list-style: disc;
+    list-style-image: url('/images/diya.svg');
+    /* list-style: disc; */
   }
 
   ul ul,

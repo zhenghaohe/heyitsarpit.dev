@@ -22,10 +22,12 @@ const ListItem = styled.li`
   padding: 1rem 0;
 `;
 
-const Title = styled.a`
+const Title = styled.h2`
   font-size: 1.1rem;
   font-weight: 900;
   text-transform: capitalize;
+  font-family: 'Emilys Candy', cursive;
+
   text-decoration: none;
   margin-bottom: 0.5rem;
   display: block;
@@ -34,9 +36,8 @@ const Title = styled.a`
 
 const DateAndReadTime = styled.div`
   color: #666;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 0.75rem;
-  font-family: 'Merriweather', serif;
   text-transform: capitalize;
 `;
 
@@ -48,7 +49,6 @@ const Description = styled.div`
   padding: 0.7rem 0;
   color: #666;
   font-size: 0.8rem;
-  font-family: 'Merriweather', serif;
   font-style: italic;
 `;
 
@@ -90,7 +90,7 @@ const Blogs: React.FC = () => {
           <ListItem key={__resourcePath}>
             <Title>
               <Link href={formatPath(__resourcePath)} passHref>
-                <Title>{title}</Title>
+                <a>{title}</a>
               </Link>
             </Title>
 

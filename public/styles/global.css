@@ -1,226 +1,74 @@
+:root {
+  --color-text: #f8f8f2;
+  --color-background: #282a36;
+  --color-heading-primary: #ff79c6;
+  --color-heading-secondary: #50fa7b;
+  --color-highlight-1: #ff79c6;
+  --color-highlight-2: #bd93f9;
+  --color-link: #8be9fd;
+
+  --syntax-background: #393f4a;
+  --syntax-pink: #ff70c2;
+}
+
 html,
 body,
 #__next {
-    width: 100%;
-    height: 100%;
-    font-family: 'Mulish', sans-serif;
-    scroll-behavior: smooth;
+  width: 100%;
+  height: 100%;
+  font-family: 'Fira Sans', sans-serif;
+  scroll-behavior: smooth;
+  color: var(--color-text);
 }
 
 * {
-    box-sizing: border-box;
-}
-
-:root {
-    --color-text: #21262f;
-    color: var(--color-text);
+  box-sizing: border-box;
 }
 
 @media screen {
-    html {
-        font-size: 22px;
-    }
+  html {
+    font-size: 22px;
+  }
 }
 
 @media screen and (max-width: 1690px) {
-    html {
-        font-size: 20px;
-    }
+  html {
+    font-size: 20px;
+  }
 }
 @media screen and (max-width: 1280px) {
-    html {
-        font-size: 18px;
-    }
+  html {
+    font-size: 18px;
+  }
 }
 @media screen and (max-width: 980px) {
-    html {
-        font-size: 16px;
-    }
+  html {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 736px) {
-    html {
-        font-size: 16px;
-    }
+  html {
+    font-size: 16px;
+  }
 }
 @media screen and (max-width: 480px) {
-    html {
-        font-size: 14px;
-    }
+  html {
+    font-size: 14px;
+  }
 }
 
 :not(pre) > code {
-    background: #25b5ff26;
+  background: var(--syntax-background);
+  color: var(--syntax-pink);
 
-    font-family: 'Fira Code', monospace;
-    font-size: 0.9em;
-    padding: 0.07em 0.5em;
-    margin: 0 0.1em;
-    border-radius: 3px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9em;
+  padding: 0.07em 0.5em;
+  margin: 0 0.1em;
+  border-radius: 3px;
 }
 
 a {
-    color: #25b5ff;
-    text-decoration: none;
+  color: var(--color-link);
+  text-decoration: none;
 }
-
-/* :root {
-	--theme-secondary-color: #505159;
-	--theme-container-background: #ffffff;
-	--theme-container-accent-background: #f4f5f7;
-	--theme-container-background-hover: #efefef;
-	--theme-container-box-shadow: none;
-	--theme-container-border: 1px solid #e3e3e5;
-	--base: #0a0a0a;
-	--base-a90: rgba(10, 10, 10, 0.9);
-	--base-a80: rgba(10, 10, 10, 0.8);
-	--base-a70: rgba(10, 10, 10, 0.7);
-	--base-a60: rgba(10, 10, 10, 0.6);
-	--base-a50: rgba(10, 10, 10, 0.5);
-	--base-a40: rgba(10, 10, 10, 0.4);
-	--base-a30: rgba(10, 10, 10, 0.3);
-	--base-a20: rgba(10, 10, 10, 0.2);
-	--base-a10: rgba(10, 10, 10, 0.1);
-	--base-a5: rgba(10, 10, 10, 0.05);
-	--base-100: var(--base);
-	--base-90: #202020;
-	--base-80: #353535;
-	--base-70: #4b4b4b;
-	--base-60: #626262;
-	--base-50: #7a7a7a;
-	--base-40: #939393;
-	--base-30: #adadad;
-	--base-20: #c8c8c8;
-	--base-10: #e3e3e3;
-	--base-0: #ffffff;
-	--base-inverted: #ffffff;
-	--accent-brand: #3b49df;
-	--accent-brand-darker: #1827ce;
-	--accent-brand-lighter: #8d95f2;
-	--accent-brand-a10: rgba(59, 73, 223, 0.1);
-	--accent-success: #26d9ca;
-	--accent-success-darker: #1ab3a6;
-	--accent-success-lighter: #79ece2;
-	--accent-success-a10: rgba(38, 217, 202, 0.1);
-	--accent-warning: #ffcf4c;
-	--accent-warning-darker: #f5b400;
-	--accent-warning-lighter: #ffe499;
-	--accent-warning-a10: rgba(255, 207, 76, 0.1);
-	--accent-danger: #dc1818;
-	--accent-danger-darker: #c20a0a;
-	--accent-danger-lighter: #ec5050;
-	--accent-danger-a10: rgba(220, 24, 24, 0.1);
-	--body-bg: #fcfcfc;
-	--body-color: #0a0a0a;
-	--body-color-inverted: var(--base-inverted);
-	--card-bg: var(--base-inverted);
-	--card-color: var(--base-100);
-	--card-color-secondary: var(--base-70);
-	--card-color-tertiary: var(--base-50);
-	--card-secondary-bg: var(--base-0);
-	--card-secondary-color: var(--base-90);
-	--card-headline-color: var(--base-100);
-	--card-border: var(--base-a5);
-	--card-secondary-border: var(--base-a5);
-	--header-bg: var(--base-0);
-	--header-bg-hover: var(--base-10);
-	--header-bg-current: var(--base-20);
-	--header-shadow: rgba(0, 0, 0, 0.1);
-	--header-icons-color: #0a0a0a;
-	--header-icons-color-hover: #000;
-	--logo-bg: #e3e5ed;
-	--logo-color: #232426;
-	--footer-bg: var(--base-inverted);
-	--footer-copy-color: var(--base-80);
-	--footer-copy-secondary-color: var(--base-60);
-	--footer-link-color: var(--base-80);
-	--footer-link-color-hover: var(--base-100);
-	--link-color: var(--base-90);
-	--link-color-hover: var(--accent-brand-darker);
-	--link-color-current: var(--base-100);
-	--link-color-secondary: var(--base-70);
-	--link-color-secondary-hover: var(--base-80);
-	--link-brand-color: var(--accent-brand);
-	--link-bg-hover: var(--base-a5);
-	--link-bg-hover-alt: var(--base-10);
-	--link-bg-current: var(--base-inverted);
-	--button-primary-bg: var(--base-90);
-	--button-primary-bg-hover: var(--base-100);
-	--button-primary-color: var(--base-10);
-	--button-primary-color-hover: var(--base-0);
-	--button-primary-inverted-bg: var(--base-10);
-	--button-primary-inverted-bg-hover: var(--base-0);
-	--button-primary-inverted-color: var(--base-90);
-	--button-primary-inverted-color-hover: var(--base-100);
-	--button-secondary-bg: var(--base-20);
-	--button-secondary-bg-hover: var(--base-30);
-	--button-secondary-color: var(--base-80);
-	--button-secondary-color-hover: var(--base-100);
-	--button-secondary-inverted-bg: var(--base-70);
-	--button-secondary-inverted-bg-hover: var(--base-60);
-	--button-secondary-inverted-color: var(--base-10);
-	--button-secondary-inverted-color-hover: var(--base-0);
-	--button-outlined-bg: transparent;
-	--button-outlined-bg-hover: rgba(0, 0, 0, 0.035);
-	--button-outlined-border: var(--base-20);
-	--button-outlined-border-hover: var(--base-40);
-	--button-outlined-color: var(--base-80);
-	--button-outlined-color-hover: var(--base-100);
-	--button-outlined-inverted-bg: transparent;
-	--button-outlined-inverted-bg-hover: rgba(255, 255, 255, 0.15);
-	--button-outlined-inverted-border: var(--base-60);
-	--button-outlined-inverted-border-hover: var(--base-40);
-	--button-outlined-inverted-color: var(--base-30);
-	--button-outlined-inverted-color-hover: var(--base-10);
-	--button-ghost-bg: transparent;
-	--button-ghost-bg-hover: rgba(0, 0, 0, 0.035);
-	--button-ghost-color: var(--base-80);
-	--button-ghost-color-hover: var(--base-100);
-	--button-ghost-dimmed-color: var(--base-60);
-	--button-ghost-dimmed-color-hover: var(--base-100);
-	--button-ghost-inverted-bg: transparent;
-	--button-ghost-inverted-bg-hover: rgba(255, 255, 255, 0.15);
-	--button-ghost-inverted-color: var(--base-30);
-	--button-ghost-inverted-color-hover: var(--base-10);
-	--button-ghost-dimmed-inverted-color: var(--base-50);
-	--button-ghost-dimmed-inverted-color-hover: var(--base-100);
-	--form-bg: #f4f5f7;
-	--form-bg-focus: var(--base-0);
-	--form-border: #f4f5f7;
-	--form-border-hover: var(--base-40);
-	--form-border-focus: var(--accent-brand);
-	--form-placeholder-color: var(--base-60);
-	--label-primary: var(--base-90);
-	--label-secondary: var(--base-60);
-	--box: var(--base-90);
-	--box-darker: var(--base-100);
-	--snackbar-bg: var(--base-90);
-	--snackbar-border: var(--base-100);
-	--snackbar-color: var(--body-color-inverted);
-	--indicator-accent-bg: var(--accent-brand);
-	--indicator-accent-color: var(--body-color-inverted);
-	--indicator-critical-bg: var(--accent-danger);
-	--indicator-critical-color: var(--body-color-inverted);
-	--indicator-default-bg: var(--button-secondary-bg);
-	--indicator-default-color: var(--button-secondary-color);
-	--tab-color: var(--base-80);
-	--tab-color-hover: var(--accent-brand);
-	--tab-color-current: var(--base-100);
-	--tab-bg-hover: var(--accent-brand-a10);
-	--tab-bg-current: var(--accent-brand);
-	--tab-muted-color: var(--base-80);
-	--tab-muted-color-hover: var(--base-90);
-	--tab-muted-color-current: var(--base-100);
-	--tab-muted-bg-hover: var(--base-a10);
-	--tab-muted-bg-current: var(--base-20);
-	--tab-pill-color-current: var(--base-inverted);
-	--tag-color: var(--base-70);
-	--tag-color-hover: var(--base-100);
-	--story-comments-bg: #fafafa;
-	--select-icon: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDYgMTBIMThMMTIgMTZaIiBmaWxsPSIjN2E3YTdhIi8+Cjwvc3ZnPg==);
-	--reaction-like-color: var(--accent-danger);
-	--reaction-like-bg: var(--accent-danger-a10);
-	--reaction-custom-color: var(--accent-success);
-	--reaction-custom-bg: var(--accent-success-a10);
-	--reaction-save-color: var(--accent-brand);
-	--reaction-save-bg: var(--accent-brand-a10);
-} */
