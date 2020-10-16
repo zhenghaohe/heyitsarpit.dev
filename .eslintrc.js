@@ -24,6 +24,7 @@ module.exports = {
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
     'prettier/@typescript-eslint',
     'plugin:prettier/recommended'
@@ -36,7 +37,7 @@ module.exports = {
     'simple-import-sort/sort': 'error',
     'emotion/jsx-import': 'error',
     'react-hooks/rules-of-hooks': 'error',
-    // 'react-hooks/exhaustive-deps': 'warn',
+    'react-hooks/exhaustive-deps': 'warn',
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
