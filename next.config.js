@@ -50,7 +50,7 @@ module.exports = withMdxEnhanced({
   rehypePlugins: [
     require('rehype-slug'),
     [require('rehype-autolink-headings'), autoLinkHeadingsOptions],
-    require('@mapbox/rehype-prism')
+    require('mdx-prism')
   ],
   extendFrontMatter: {
     process: (mdxContent) => ({

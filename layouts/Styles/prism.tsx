@@ -7,7 +7,7 @@ const Prism = styled.article`
 
     background: none;
     font-family: 'Fira Code', monospace;
-    font-size: 0.93em;
+    font-size: 0.9em;
 
     text-align: left;
     white-space: pre;
@@ -147,6 +147,13 @@ const Prism = styled.article`
 
   .token.entity {
     cursor: help;
+  }
+
+  .mdx-marker {
+    background: #303240;
+    border-left: 3px solid var(--syntax-cyan);
+    margin-left: calc(-1em - 0.149%);
+    margin-right: calc(-1em - 2%);
   }
 
   pre.line-numbers {
