@@ -30,20 +30,16 @@ export const Description = styled.p`
 `;
 
 export const Article = styled(Prism)`
-  max-width: 80ch;
+  max-width: 75ch;
   padding: 0 1.2rem;
   margin: 0 auto;
   margin-top: 3rem;
-  line-height: 1.7;
-  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.3px;
 
   hyphens: auto;
   font-kerning: normal;
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
-
-  h1 {
-    color: var(--color-heading-primary);
-  }
 
   h1,
   h2,
@@ -51,7 +47,7 @@ export const Article = styled(Prism)`
   h4,
   h5,
   h6 {
-    font-family: 'Lemonada', cursive;
+    color: var(--color-heading-primary);
   }
   h2,
   h3,
@@ -59,7 +55,6 @@ export const Article = styled(Prism)`
   h5,
   h6 {
     margin-top: 2.5em;
-    color: var(--color-heading-secondary);
   }
 
   a {

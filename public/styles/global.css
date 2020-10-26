@@ -1,8 +1,8 @@
 :root {
-  --color-text: #1a1919;
+  --color-text: #2e2f39;
   --color-text-secondary: #383838;
   --color-background: #fdfdfd;
-  --color-heading-primary: #ff29a1;
+  --color-heading-primary: #1a1c26;
   --color-heading-secondary: #08ce3a;
   --color-highlight-1: #ff29a1;
   --color-highlight-2: #7717ff;
@@ -21,10 +21,10 @@
 }
 
 html[data-theme='dark'] {
-  --color-text: #f8f8f2;
+  --color-text: #c4c5c9;
   --color-text-secondary: #dbdada;
-  --color-background: #282a36;
-  --color-heading-primary: #ff79c6;
+  --color-background: #141516;
+  --color-heading-primary: #ffffff;
   --color-heading-secondary: #50fa7b;
   --color-highlight-1: #ff79c6;
   --color-highlight-2: #bd93f9;
@@ -48,51 +48,31 @@ body,
   width: 100%;
   height: 100%;
   font-family: 'Inter', sans-serif;
+  font-size: 18px;
   scroll-behavior: smooth;
   color: var(--color-text);
   background: var(--color-background);
   transition: all 500ms ease-in-out;
 }
 
-* {
+html {
+  font: 100%/28px 'Inter', -apple-system, 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-@media screen {
-  html {
-    font-size: 22px;
-  }
-}
-
-@media screen and (max-width: 1690px) {
-  html {
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 1280px) {
-  html {
-    font-size: 18px;
-  }
-}
-@media screen and (max-width: 980px) {
-  html {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 736px) {
-  html {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 480px) {
-  html {
-    font-size: 14px;
-  }
-}
+/* *::selection{
+  background: var(--color-background);
+} */
 
 :not(pre) > code {
   background: var(--syntax-background);
-  color: var(--syntax-pink);
+  color: var(--syntax-white);
 
   font-family: 'Fira Code', monospace;
   font-size: 0.9em;
