@@ -24,7 +24,8 @@ const Content = styled(AppWrapper)`
     color: white;
     letter-spacing: 2px;
     text-transform: capitalize;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
+    font-family: 'Inter', sans-serif;
   }
 `;
 
@@ -49,11 +50,13 @@ const Footer: React.FC = () => {
     setRandomIndex(Math.max(randomIndex + 1, 0));
   };
 
+  const currentYear = new Date().getFullYear();
+
   return (
     <Wrapper id="footer">
       <Content>
         <a href={Links[randomIndex]} target="_blank" onClick={onClick} rel="noopener noreferrer">
-          {!clicked ? 'Click Me!' : 'Click Me Again!!'}
+          © {currentYear} Arpit Bharti
         </a>
       </Content>
     </Wrapper>

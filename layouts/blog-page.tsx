@@ -2,6 +2,7 @@ import styled from '@emotion/styled';
 import { NextSeo } from 'next-seo';
 import Link from 'next/link';
 
+import Social from '../components/Intro/Social';
 import formatDate from '../utils/formatDate';
 import { Article, DateAndReadTime, Description, Separator, Title } from './Styles/blog';
 
@@ -32,6 +33,17 @@ const GoBack: React.FC = () => {
 
 type Props = { frontMatter: FrontMatter };
 
+const SocialWrapper = styled.div`
+  border: 1px solid red;
+  margin-top: 2rem 0;
+  ul,
+  ol {
+    list-style: none;
+    margin: 0 auto;
+    width: 12rem;
+  }
+`;
+
 const Layout: React.FC<Props> = ({ frontMatter, children }) => {
   return (
     <>
@@ -46,6 +58,9 @@ const Layout: React.FC<Props> = ({ frontMatter, children }) => {
         </DateAndReadTime>
         <Description>{frontMatter.description}</Description>
         {children}
+        <SocialWrapper>
+          <Social />
+        </SocialWrapper>
       </Article>
     </>
   );
