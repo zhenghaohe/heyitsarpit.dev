@@ -59,6 +59,8 @@ const ThemeSwitch: React.FC = () => {
 const Wrapper = styled.header`
   flex-shrink: 0;
   border-bottom: 1px solid #dddddd;
+  background: var(--color-background);
+  width: 100%;
 `;
 
 const Content = styled(AppWrapper)`
@@ -83,20 +85,22 @@ const StyledLink = styled.a`
 
 const Nav: React.FC = () => {
   return (
-    <Wrapper>
-      <Content>
-        <Link href="/" passHref>
-          <StyledLink>
-            <LogoImage src="/images/astro.png" alt="home" />
-            <span>Arpit</span>
-          </StyledLink>
-        </Link>
-        <Link href="/posts" passHref>
-          <StyledLink>Posts</StyledLink>
-        </Link>
-        <ThemeSwitch />
-      </Content>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Content>
+          <Link href="/" passHref>
+            <StyledLink>
+              <LogoImage src="/images/astro.png" alt="home" />
+              <span>Arpit</span>
+            </StyledLink>
+          </Link>
+          <Link href="/posts" passHref>
+            <StyledLink>Posts</StyledLink>
+          </Link>
+          <ThemeSwitch />
+        </Content>
+      </Wrapper>
+    </>
   );
 };
 

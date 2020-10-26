@@ -8,7 +8,7 @@
   --color-highlight-2: #7717ff;
   --color-link: #0078e1;
 
-  --syntax-background: #fbfbfb;
+  --syntax-background: #f5f6f9;
   --syntax-muted: #7d7d7d;
   --syntax-white: #202020;
   --syntax-cyan: #1590ac;
@@ -51,7 +51,7 @@ body,
   scroll-behavior: smooth;
   color: var(--color-text);
   background: var(--color-background);
-  transition: all 1s ease-in-out;
+  transition: all 500ms ease-in-out;
 }
 
 * {
