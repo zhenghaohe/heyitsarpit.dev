@@ -10,7 +10,7 @@ const Meta: React.FC = () => {
       <link rel="stylesheet" type="text/css" href="/styles/normalize.css" />
       <link rel="stylesheet" type="text/css" href="/styles/global.css" />
       <link
-        href="https://fonts.googleapis.com/css2?family=Lemonada&Inter:wght@400;500;700&family=Fira+Code:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Lemonada&family=Inter:wght@400;500;700&family=Fira+Code:wght@400;500;700&display=swap"
         rel="stylesheet"
       />
     </Head>

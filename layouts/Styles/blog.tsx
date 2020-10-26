@@ -30,7 +30,7 @@ export const Description = styled.p`
 `;
 
 export const Article = styled(Prism)`
-  max-width: 70ch;
+  max-width: 80ch;
   padding: 0 1.2rem;
   margin: 0 auto;
   margin-top: 3rem;
