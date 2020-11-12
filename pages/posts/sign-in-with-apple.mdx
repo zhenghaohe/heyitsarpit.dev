@@ -98,13 +98,10 @@ const initApple = () => {
 };
 ```
 
----
-
-**NOTE**
-
+<p className="info">
 Apple makes a POST request to the `redirectURI` that you specify, normally you'd have a link to your backend API where the data gets posted, however we can bypass this and capture the information on the frontend by using the `usePopup` flag. This will instead capture apple's response on the client side.
+</p>
 
----
 
 The below function is how we start the apple authentication workflow. It will open a popup window where a user will be asked to input their apple email and password.
 After a successful login apple will send a response object with user data that we can store in our backend.
@@ -141,13 +138,10 @@ This is what the response will look like (for first time users).
 }
 ```
 
----
-
-**NOTE**
-
+<p className="info">
 The `user` object is only sent the first time a user logs in, the rest of the times apple will only send the `authentication` object.
+</p>
 
----
 
 Great! now that we have authenticated the user from apple's perspective we need to verify the user in the backend before authenticating them. You can use whatever utility you wish axios, fetch; it doesn't matter as long as you get your data to your server.
 

@@ -23,25 +23,20 @@ const ListItem = styled.li`
 `;
 
 const Title = styled.h2`
-  font-size: 1.1rem;
-  font-weight: 900;
   text-transform: capitalize;
-  font-family: 'Emilys Candy', cursive;
 
-  text-decoration: none;
-  margin-bottom: 0.5rem;
-  display: block;
+  margin-bottom: 0.3rem;
   a {
+    text-decoration: none;
     color: var(--color-heading-primary);
   }
 `;
 
 const DateAndReadTime = styled.div`
-  color: var(--color-highlight-2);
-  font-weight: 400;
-  font-size: 0.75rem;
+  color: var(--color-heading-primary);
+  font-weight: 700;
+  font-size: 0.85rem;
   text-transform: capitalize;
-  font-style: italic;
 `;
 
 const Separator = styled.span`
@@ -49,10 +44,9 @@ const Separator = styled.span`
 `;
 
 const Description = styled.div`
-  padding: 0.7rem 0;
+  padding: 0.3rem 0;
   color: var(--color-text-secondary);
-  font-size: 0.8rem;
-  font-style: italic;
+  font-size: 0.95rem;
 `;
 
 const ReadMore = styled(Title)`
@@ -98,15 +92,8 @@ const Blogs: React.FC = () => {
             </Title>
 
             <DateAndReadTime>
-              <Emoji role="img" aria-label="date">
-                🗓️
-              </Emoji>
               {formatDate(date)}
               <Separator>•</Separator>
-              <Emoji role="img" aria-label="time to read">
-                ⌛
-              </Emoji>
-
               {readingTime.text}
             </DateAndReadTime>
             <Description>{description}</Description>

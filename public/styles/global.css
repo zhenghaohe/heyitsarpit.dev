@@ -1,12 +1,13 @@
 :root {
-  --color-text: #2e2f39;
+  --color-text: #3f404f;
   --color-text-secondary: #383838;
   --color-background: #fdfdfd;
-  --color-heading-primary: #1a1c26;
+  --color-heading-primary: #34384d;
   --color-heading-secondary: #08ce3a;
   --color-highlight-1: #ff29a1;
   --color-highlight-2: #7717ff;
-  --color-link: #0078e1;
+  --color-link: #0971f1;
+  --highlight-box: #0971f117;
 
   --syntax-background: #f5f6f9;
   --syntax-muted: #7d7d7d;
@@ -29,6 +30,7 @@ html[data-theme='dark'] {
   --color-highlight-1: #ff79c6;
   --color-highlight-2: #bd93f9;
   --color-link: #8be9fd;
+  --highlight-box: #3a3d4f8a;
 
   --syntax-background: #1b1c24;
   --syntax-muted: #6272a4;
@@ -66,9 +68,10 @@ html {
   box-sizing: border-box;
 }
 
-/* *::selection{
-  background: var(--color-background);
-} */
+*::selection {
+  background: var(--color-text);
+  color: var(--color-background);
+}
 
 :not(pre) > code {
   background: var(--syntax-background);
@@ -79,10 +82,4 @@ html {
   padding: 0.07em 0.5em;
   margin: 0 0.1em;
   border-radius: 3px;
-}
-
-a {
-  color: var(--color-link);
-  text-decoration: none;
-  font-family: 'Lemonada', cursive;
 }

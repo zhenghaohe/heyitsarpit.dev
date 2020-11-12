@@ -19,7 +19,7 @@ const Layout: React.FC = ({ children }) => {
       <Container>
         <Nav />
         <Main>{children}</Main>
-        <Footer />
+        {/* <Footer /> */}
       </Container>
     </>
   );

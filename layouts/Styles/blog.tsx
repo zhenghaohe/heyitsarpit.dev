@@ -11,13 +11,12 @@ export const Title = styled.h1`
   text-align: unset;
 `;
 
-export const DateAndReadTime = styled.em`
-  color: var(--color-highlight-2);
-  font-weight: 400;
+export const DateAndReadTime = styled.div`
+  color: var(--color-heading-primary);
+  font-weight: 700;
   font-size: 0.9rem;
   margin-top: 0.4rem;
   text-transform: capitalize;
-  font-style: italic;
 `;
 
 export const Separator = styled.span`
@@ -71,6 +70,46 @@ export const Article = styled(Prism)`
     width: 30%;
   }
 
+  strong {
+    color: var(--color-heading-primary);
+  }
+
+  .info {
+    padding: 1rem;
+    margin: 3rem 0;
+    border-radius: 6px;
+    background: var(--highlight-box);
+
+    display: flex;
+
+    --color-info-highlight: #4433ff;
+    border-left: 3px solid var(--color-info-highlight);
+  }
+
+  .info ::before {
+    content: 'i';
+
+    --size: 1rem;
+    width: var(--size);
+    height: var(--size);
+
+    font-family: 'Fira Code', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--color-info-highlight);
+
+    margin-right: 0.5rem;
+    color: #111111;
+
+    padding: 1rem;
+    /* background: var(--color-background); */
+    background: white;
+
+    border-radius: 100vh;
+    translate: -2rem -2rem;
+  }
+
   .anchor {
     visibility: hidden;
     opacity: 0;
@@ -103,9 +142,18 @@ export const Article = styled(Prism)`
   ol {
     margin: 0;
     padding: 0 0 0 1em;
-    list-style-position: outside;
-    list-style-image: url('/images/diya.svg');
-    /* list-style: disc; */
+    position: relative;
+    list-style: none;
+  }
+
+  li::before {
+    content: '->';
+    position: absolute;
+    left: 0;
+    padding-right: 0.5rem;
+    translate: -0.4rem;
+    color: #2674c8;
+    font-weight: bold;
   }
 
   ul ul,
@@ -113,6 +161,5 @@ export const Article = styled(Prism)`
   ol ul,
   ol ul {
     padding-left: 1em;
-    list-style: circle;
   }
 `;

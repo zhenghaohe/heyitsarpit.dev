@@ -23,8 +23,8 @@ const Content = styled(AppWrapper)`
     text-decoration: none;
     color: white;
     letter-spacing: 2px;
+    font-size: 0.8rem;
     text-transform: capitalize;
-    font-size: 0.6rem;
     font-family: 'Inter', sans-serif;
   }
 `;

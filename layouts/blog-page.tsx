@@ -7,7 +7,15 @@ import formatDate from '../utils/formatDate';
 import { Article, DateAndReadTime, Description, Separator, Title } from './Styles/blog';
 
 const GoBackLink = styled.a`
-  padding-top: 3rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: var(--color-text);
+  vertical-align: middle;
+
+  transition: 0.4s;
+  &:hover {
+    background: var(--highlight-box);
+  }
 `;
 
 const GoBack: React.FC = () => {
@@ -23,7 +31,7 @@ const GoBack: React.FC = () => {
           xmlns="http://www.w3.org/2000/svg">
           <path
             d="M15.535 3.515L7.04999 12L15.535 20.485L16.95 19.071L9.87799 12L16.95 4.929L15.535 3.515Z"
-            fill="var(--color-link)"></path>
+            fill="var(--color-text)"></path>
         </svg>
         <span>Go Back</span>
       </GoBackLink>
@@ -34,7 +42,6 @@ const GoBack: React.FC = () => {
 type Props = { frontMatter: FrontMatter };
 
 const SocialWrapper = styled.div`
-  border: 1px solid red;
   margin-top: 2rem 0;
   ul,
   ol {
