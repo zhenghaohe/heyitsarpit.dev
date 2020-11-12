@@ -40,6 +40,16 @@ export const Article = styled(Prism)`
   font-kerning: normal;
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 
+  p a {
+    color: var(--color-link-posts);
+    box-shadow: 0 1px 0 0 currentColor;
+    text-decoration: none;
+
+    :hover {
+      box-shadow: none;
+    }
+  }
+
   h1,
   h2,
   h3,
@@ -54,10 +64,6 @@ export const Article = styled(Prism)`
   h5,
   h6 {
     margin-top: 2.5em;
-  }
-
-  a {
-    text-decoration: none;
   }
 
   img {

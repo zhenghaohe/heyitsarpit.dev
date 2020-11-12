@@ -7,6 +7,9 @@
   --color-highlight-1: #ff29a1;
   --color-highlight-2: #7717ff;
   --color-link: #0971f1;
+  --color-link-posts: #ff29a1;
+  --color-highlight-1: #ff29a1;
+
   --highlight-box: #0971f117;
 
   --syntax-background: #f5f6f9;
@@ -30,6 +33,7 @@ html[data-theme='dark'] {
   --color-highlight-1: #ff79c6;
   --color-highlight-2: #bd93f9;
   --color-link: #8be9fd;
+  --color-link-posts: #d63369;
   --highlight-box: #3a3d4f8a;
 
   --syntax-background: #1b1c24;
@@ -54,7 +58,8 @@ body,
   scroll-behavior: smooth;
   color: var(--color-text);
   background: var(--color-background);
-  transition: all 500ms ease-in-out;
+  transition: background 500ms ease-in-out;
+  text-rendering: optimizeLegibility;
 }
 
 html {
@@ -75,7 +80,7 @@ html {
 
 :not(pre) > code {
   background: var(--syntax-background);
-  color: var(--syntax-white);
+  color: var(--color-link-posts);
 
   font-family: 'Fira Code', monospace;
   font-size: 0.9em;
@@ -83,3 +88,11 @@ html {
   margin: 0 0.1em;
   border-radius: 3px;
 }
+
+/* :not(pre) > code::before {
+  content: '`';
+}
+
+:not(pre) > code::after {
+  content: '`';
+} */
