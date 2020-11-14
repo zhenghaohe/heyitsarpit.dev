@@ -27,14 +27,16 @@ const Wrapper = styled.aside`
 `;
 
 const Content = styled.nav`
-  position: fixed;
-
   display: flex;
-  flex-direction: column;
 
-  height: 95%;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 1000px) {
+    width: 100%;
+    flex-direction: row;
+  }
 `;
 
 const LogoImage = styled.img`
@@ -52,7 +54,7 @@ const StyledLink = styled.a`
 const Nav: React.FC = () => {
   return (
     <Wrapper>
-      {/* <Content>
+      <Content>
         <Link href="/" passHref>
           <StyledLink>
             <LogoImage src="/images/astro.png" alt="home" />
@@ -62,7 +64,7 @@ const Nav: React.FC = () => {
           <StyledLink>Posts</StyledLink>
         </Link>
         <ThemeSwitch />
-      </Content> */}
+      </Content>
     </Wrapper>
   );
 };
