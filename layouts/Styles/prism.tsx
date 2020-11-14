@@ -7,7 +7,7 @@ const Prism = styled.article`
 
     background: none;
     font-family: 'Fira Code', monospace;
-    font-size: 0.9em;
+    font-size: 0.85em;
 
     text-align: left;
     white-space: pre;
@@ -37,12 +37,16 @@ const Prism = styled.article`
   pre[class*='language-'] {
     padding: 1em;
     overflow: auto;
-    margin: 0.5em -1.5em;
+    margin: 0.5em -1em;
     border-radius: 6px;
 
-    @media screen and (max-width: 480px) {
-      margin: 0.5em -1.5em;
+    @media screen and (max-width: 700px) {
+      margin: 0.5em 0;
       border-radius: 0;
+      position: relative;
+      width: 100%; /*Fallback for older browsers*/
+      width: 100vw; /*Percentage of full screen viewing width*/
+      left: calc(-50vw + 50%); /*Centres div*/
     }
   }
 
