@@ -18,7 +18,7 @@ module.exports = {
     amd: true,
     node: true
   },
-  plugins: ['simple-import-sort', 'emotion', 'react-hooks'],
+  plugins: ['simple-import-sort', '@emotion', 'react-hooks'],
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
@@ -35,7 +35,7 @@ module.exports = {
     'react/prop-types': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'simple-import-sort/sort': 'error',
-    'emotion/jsx-import': 'error',
+    '@emotion/jsx-import': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'jsx-a11y/anchor-is-valid': [

@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { NextSeo } from 'next-seo';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import Social from '../components/Intro/Social';
@@ -66,20 +67,25 @@ const SocialWrapper = styled.div`
   }
 `;
 
-const Hero = styled.div<{ imgUrl: string }>`
-  background-image: url(${(p) => p.imgUrl});
+const Hero = styled.div`
   box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.09), 0 3px 14px 2px rgba(0, 0, 0, 0.09),
     0 5px 5px -3px rgba(0, 0, 0, 0.12);
 
   border-bottom: 1px solid #353434;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: cover;
+
+  position: relative;
+
+  & .next_image {
+    pointer-events: none;
+    object-fit: cover;
+  }
 
   & .hero_inner {
     padding: 4rem 1rem;
     max-width: 75ch;
     margin: 0 auto;
+    z-index: 1;
+    position: relative;
   }
 `;
 
@@ -87,7 +93,8 @@ const Layout: React.FC<Props> = ({ frontMatter, children }) => {
   return (
     <>
       <NextSeo title={frontMatter.title} description={frontMatter.description} />
-      <Hero className="hero" imgUrl={frontMatter.cover_image}>
+      <Hero>
+        <Image src={frontMatter.cover_image} layout="fill" alt="cover" className="next_image" />
         <div className="hero_inner">
           <GoBack />
           <Title>{frontMatter.title}</Title>
