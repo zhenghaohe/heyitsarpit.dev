@@ -2,7 +2,71 @@ import styled from '@emotion/styled';
 
 import Prism from './prism';
 
+export const GoBackWrapper = styled.div``;
+
+export const GoBackLink = styled.a`
+  --color-text: #c4c5c9;
+  --color-heading-primary: #ffffff;
+
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: var(--color-heading-primary);
+  vertical-align: middle;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  .back-arrow {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+  }
+
+  transition: all 0.4s;
+  &:hover {
+    background: var(--highlight-box);
+    color: var(--color-link-posts);
+  }
+`;
+
+export const SocialWrapper = styled.div`
+  margin-top: 2rem 0;
+  ul,
+  ol {
+    list-style: none;
+    margin: 0 auto;
+    width: 12rem;
+
+    li::before {
+      display: none;
+    }
+  }
+`;
+
+export const Hero = styled.div`
+  box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.09), 0 3px 14px 2px rgba(0, 0, 0, 0.09),
+    0 5px 5px -3px rgba(0, 0, 0, 0.12);
+
+  border-bottom: 1px solid #353434;
+
+  position: relative;
+
+  & .next_image {
+    pointer-events: none;
+    object-fit: cover;
+  }
+
+  & .hero_inner {
+    padding: 4rem 1rem;
+    max-width: 75ch;
+    margin: 0 auto;
+    z-index: 1;
+    position: relative;
+  }
+`;
+
 export const Title = styled.h1`
+  --color-heading-primary: #ffffff;
+
+  color: var(--color-heading-primary);
   line-height: 1.3em;
   font-weight: 900;
   text-transform: capitalize;
@@ -12,6 +76,8 @@ export const Title = styled.h1`
 `;
 
 export const DateAndReadTime = styled.div`
+  --color-heading-primary: #ffffff;
+
   color: var(--color-heading-primary);
   font-weight: 700;
   font-size: 0.9rem;
@@ -24,6 +90,9 @@ export const Separator = styled.span`
 `;
 
 export const Description = styled.p`
+  --color-text: #c4c5c9;
+
+  color: var(--color-text);
   padding: 2.2rem 0 0;
   font-style: italic;
 `;
