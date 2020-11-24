@@ -20,7 +20,7 @@ const GoBack: React.FC = () => {
   return (
     <GoBackWrapper>
       <Link href="/posts" passHref>
-        <GoBackLink>
+        <GoBackLink arai-label="Go Back To All Posts" title="Go Back To All Posts">
           <span>
             <span className="back-arrow">&#x22D6;</span>
             <span>Go Back</span>

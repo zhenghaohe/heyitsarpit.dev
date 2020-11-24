@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
+import { RiArticleFill } from 'react-icons/ri';
 
 import ThemeSwitch from './ThemeSwitch';
 
@@ -10,12 +11,12 @@ const Wrapper = styled.aside`
   height: 100vh;
 
   position: fixed;
-  z-index: 1;
+  z-index: 2;
 
   box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12),
     0 5px 5px -3px rgba(0, 0, 0, 0.2);
-  background: black;
-  border: 1px solid red;
+  background: #0000008f;
+  backdrop-filter: blur(10px) saturate(1.7);
 
   @media (max-width: 1000px) {
     width: 100%;
@@ -56,12 +57,14 @@ const Nav: React.FC = () => {
     <Wrapper>
       <Content>
         <Link href="/" passHref>
-          <StyledLink>
+          <StyledLink title="Home" aria-label="Home">
             <LogoImage src="/images/astro.png" alt="home" />
           </StyledLink>
         </Link>
         <Link href="/posts" passHref>
-          <StyledLink>Posts</StyledLink>
+          <StyledLink title="Posts" aria-label="Home">
+            <RiArticleFill size="2rem" />
+          </StyledLink>
         </Link>
         <ThemeSwitch />
       </Content>

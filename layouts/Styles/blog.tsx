@@ -55,7 +55,8 @@ export const Hero = styled.div`
   }
 
   & .hero_inner {
-    padding: 4rem 1rem;
+    padding: 7rem 1rem 4rem;
+
     max-width: 75ch;
     margin: 0 auto;
     z-index: 1;
