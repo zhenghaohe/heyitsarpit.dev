@@ -40,6 +40,8 @@ const Prism = styled.article`
     margin: 0.5em -1em;
     border-radius: 6px;
 
+    transition: 500ms;
+
     @media screen and (max-width: 700px) {
       margin: 0.5em 0;
       border-radius: 0;

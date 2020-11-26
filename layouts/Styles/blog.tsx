@@ -21,6 +21,7 @@ export const GoBackLink = styled.a`
   }
 
   transition: all 0.4s;
+
   &:hover {
     background: var(--highlight-box);
     color: var(--color-link-posts);
@@ -105,6 +106,8 @@ export const Article = styled(Prism)`
   margin-top: 3rem;
   line-height: 1.9;
   letter-spacing: 0.3px;
+
+  transition: 500ms;
 
   hyphens: auto;
   font-kerning: normal;

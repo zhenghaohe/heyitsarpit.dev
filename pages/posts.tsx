@@ -62,8 +62,6 @@ const Title = styled.h2`
   text-transform: capitalize;
   font-size: 1.3rem;
 
-  opacity: 0.9;
-
   &:hover {
     opacity: 1;
   }
@@ -91,6 +89,8 @@ const Description = styled.div`
   color: var(--color-text-secondary);
   font-size: 1rem;
   opacity: 0.9;
+  text-align: justify;
+  text-justify: inter-character;
 `;
 
 const formatPath = (p: string) => p.replace(/\.mdx$/, '');
@@ -121,6 +121,27 @@ type SearchProps = {
   setSearching: (val: boolean) => void;
 };
 
+const SearchForm = styled.form`
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+`;
+
+const SearchInput = styled.input`
+  display: block;
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  background: transparent;
+  border-radius: 4px;
+  color: var(--color-text-secondary);
+
+  padding: 10px;
+  &::placeholder {
+    font-size: 1rem;
+  }
+`;
+
 const Search: React.FC<SearchProps> = ({ query, setQuery, setSearching }) => {
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -129,7 +150,11 @@ const Search: React.FC<SearchProps> = ({ query, setQuery, setSearching }) => {
     setQuery(value);
   };
 
-  return <input type="text" onChange={onChange} value={query} />;
+  return (
+    <SearchForm onSubmit={(e) => e.preventDefault()}>
+      <SearchInput type="text" onChange={onChange} value={query} placeholder="Search Posts" />
+    </SearchForm>
+  );
 };
 
 const Blogs: React.FC<{ blogs: FrontMatter[] }> = memo(({ blogs }) => {

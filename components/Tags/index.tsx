@@ -1,6 +1,5 @@
 import styled from '@emotion/styled';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { memo } from 'react';
 
 const Tags = styled.ul`
@@ -13,28 +12,33 @@ const Tags = styled.ul`
 const Tag = styled.li`
   display: inline;
   padding-right: 0.7rem;
-  text-transform: lowercase;
+`;
 
-  a {
-    color: var(--color-text-secondary);
-    text-decoration: none;
-    font-size: 1rem;
+const Anchor = styled.a`
+  color: var(--color-text-secondary);
+  text-decoration: none;
 
-    :hover {
-      text-decoration: underline;
-    }
+  /* text-transform: capitalize; */
+
+  font-size: 1rem;
+  transition: all 0.4s;
+  color: var(--color-link-posts);
+
+  &:hover {
+    text-decoration: underline;
   }
 `;
 
 const TagList: React.FC<{ tags: string }> = memo(({ tags }) => {
   const parseTags = (t: string): string[] => t.replace(/ /g, '').split(',');
 
+  const capitalize = (str: string): string => `${str[0].toUpperCase()}${str.slice(1)}`;
   return (
     <Tags>
       {parseTags(tags).map((tag) => (
         <Tag key={tag}>
-          <Link href={`/posts/?q=${tag}`}>
-            <a>{tag}</a>
+          <Link href={`/posts/?q=${tag}`} passHref>
+            <Anchor>{capitalize(tag)}</Anchor>
           </Link>
         </Tag>
       ))}
