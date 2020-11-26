@@ -7,6 +7,7 @@ import ScrollProgress from './ScrollProgress';
 
 const Container = styled.div`
   display: flex;
+  height: 100%;
 `;
 
 const Layout: React.FC = ({ children }) => {

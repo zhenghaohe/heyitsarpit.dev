@@ -5,13 +5,13 @@ const AppWrapper = styled.div`
   width: 100%;
 
   @media screen {
-    max-width: 50%;
+    max-width: 700px;
   }
   @media screen and (max-width: 1690px) {
     max-width: 50%;
   }
   @media screen and (max-width: 1280px) {
-    max-width: 70%;
+    max-width: 60%;
   }
   @media screen and (max-width: 980px) {
     max-width: 80%;

@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 import { ChangeEvent, memo, useEffect, useMemo, useRef, useState } from 'react';
 
 import AppWrapper from '../components/Common/AppWrapper';
-// import TagList from '../components/Tags';
+import TagList from '../components/Tags';
 import formatDate from '../utils/formatDate';
 import { useDebounce } from '../utils/useDebounce';
 import { frontMatter as blogPosts } from './posts/**/*.mdx';
@@ -21,7 +21,9 @@ export const getStaticProps = async () => {
   return { props: { blogs } };
 };
 
-const Wrapper = styled(AppWrapper)``;
+const Wrapper = styled(AppWrapper)`
+  margin-top: 4rem;
+`;
 
 const List = styled.ul`
   display: flex;
@@ -32,12 +34,39 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
-  padding: 1rem 0;
+  padding: 1rem 0 2rem 0;
+  border-bottom: var(--color-muted) 1px solid;
+  position: relative;
+
+  transition: 500ms;
+
+  &::after {
+    transition: 500ms;
+
+    display: block;
+    content: '';
+    width: 7px;
+    height: 7px;
+    border: var(--color-muted) 1px solid;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    margin-left: -5px;
+    background: var(--color-background);
+    border-radius: 100%;
+    box-shadow: var(--color-background) 0 0 0 5px;
+  }
 `;
 
 const Title = styled.h2`
   text-transform: capitalize;
+  font-size: 1.3rem;
 
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+  }
   margin-bottom: 0.3rem;
   a {
     text-decoration: none;
@@ -47,44 +76,26 @@ const Title = styled.h2`
 
 const DateAndReadTime = styled.div`
   color: var(--color-heading-primary);
-  font-weight: 700;
   font-size: 0.85rem;
   text-transform: capitalize;
-`;
+  margin-top: 1.25rem;
 
-const Separator = styled.span`
-  padding: 0 0.2rem;
+  opacity: 0.6;
+
+  display: flex;
+  justify-content: space-between;
 `;
 
 const Description = styled.div`
   padding: 0.3rem 0;
   color: var(--color-text-secondary);
-  font-size: 0.95rem;
-`;
-
-const ReadMore = styled(Title)`
-  color: #12afff;
-  font-size: 0.8rem;
-
-  &:hover {
-    color: #25b5ff;
-  }
-`;
-
-const Emoji = styled.span`
-  padding-right: 0.3rem;
+  font-size: 1rem;
+  opacity: 0.9;
 `;
 
 const formatPath = (p: string) => p.replace(/\.mdx$/, '');
 
-const BlogCard: React.FC<FrontMatter> = ({
-  __resourcePath,
-  title,
-  date,
-  description,
-  readingTime,
-  tags
-}) => {
+const BlogCard: React.FC<FrontMatter> = ({ __resourcePath, title, date, description, tags }) => {
   return (
     <ListItem>
       <Title>
@@ -93,12 +104,13 @@ const BlogCard: React.FC<FrontMatter> = ({
         </Link>
       </Title>
 
-      <DateAndReadTime>
-        {formatDate(date)}
-        <Separator>•</Separator>
-        {readingTime.text}
-      </DateAndReadTime>
       <Description>{description}</Description>
+      <DateAndReadTime>
+        <div>
+          <TagList tags={tags} />
+        </div>
+        <div>{formatDate(date)}</div>
+      </DateAndReadTime>
     </ListItem>
   );
 };

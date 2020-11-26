@@ -8,23 +8,32 @@ const Tags = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  text-transform: lowercase;
 `;
 
 const Tag = styled.li`
   display: inline;
   padding-right: 0.7rem;
+  text-transform: lowercase;
+
+  a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+
+    :hover {
+      text-decoration: underline;
+    }
+  }
 `;
 
 const TagList: React.FC<{ tags: string }> = memo(({ tags }) => {
   const parseTags = (t: string): string[] => t.replace(/ /g, '').split(',');
-  const { pathname } = useRouter();
 
   return (
     <Tags>
       {parseTags(tags).map((tag) => (
         <Tag key={tag}>
-          <Link href={{ pathname, query: { tag } }}>
+          <Link href={`/posts/?q=${tag}`}>
             <a>{tag}</a>
           </Link>
         </Tag>

@@ -4,7 +4,7 @@ import { RiArticleFill } from 'react-icons/ri';
 
 import ThemeSwitch from './ThemeSwitch';
 
-const Wrapper = styled.aside`
+const Wrapper = styled.div`
   --width: 4rem;
 
   width: var(--width);
