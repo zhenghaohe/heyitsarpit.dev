@@ -2,15 +2,17 @@ import styled from '@emotion/styled';
 import Link from 'next/link';
 import { RiArticleFill } from 'react-icons/ri';
 
+import ScrollProgress from './ScrollProgress';
 import ThemeSwitch from './ThemeSwitch';
 
 const Wrapper = styled.div`
-  --width: 4rem;
+  --width: 80px;
 
   width: var(--width);
   height: 100vh;
 
   position: fixed;
+  top: 0;
   z-index: 2;
 
   box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12),
@@ -19,16 +21,20 @@ const Wrapper = styled.div`
   backdrop-filter: blur(10px) saturate(1.7);
 
   @media (max-width: 1000px) {
+    position: sticky;
+
     width: 100%;
     height: var(--width);
   }
 
   display: flex;
-  justify-content: center;
+  flex-direction: row-reverse;
+  justify-content: space-between;
 `;
 
 const Content = styled.nav`
   display: flex;
+  flex: 1;
 
   flex-direction: column;
   justify-content: space-between;
@@ -52,9 +58,21 @@ const StyledLink = styled.a`
   align-items: center;
 `;
 
+const ProgressBar = styled('div')`
+  @media (min-width: 1000px) {
+    width: 7px;
+    height: 100%;
+    will-change: width;
+    transform-origin: 0% 50%;
+  }
+`;
+
 const Nav: React.FC = () => {
   return (
     <Wrapper>
+      <ProgressBar>
+        <ScrollProgress control="height" />
+      </ProgressBar>
       <Content>
         <Link href="/" passHref>
           <StyledLink title="Home" aria-label="Home">
