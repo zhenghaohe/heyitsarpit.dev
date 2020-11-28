@@ -89,8 +89,6 @@ const Description = styled.div`
   color: var(--color-text-secondary);
   font-size: 1rem;
   opacity: 0.9;
-  text-align: justify;
-  text-justify: inter-character;
 `;
 
 const formatPath = (p: string) => p.replace(/\.mdx$/, '');
