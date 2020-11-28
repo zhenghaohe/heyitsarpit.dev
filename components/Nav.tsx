@@ -5,7 +5,7 @@ import { RiArticleFill } from 'react-icons/ri';
 import ScrollProgress from './ScrollProgress';
 import ThemeSwitch from './ThemeSwitch';
 
-const Wrapper = styled.div`
+const Wrapper = styled.header`
   --width: 80px;
 
   width: var(--width);
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 
   box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12),
     0 5px 5px -3px rgba(0, 0, 0, 0.2);
-  background: #0000008f;
+  background: var(--color-nav-background);
   backdrop-filter: blur(10px) saturate(1.7);
 
   @media (max-width: 1000px) {
