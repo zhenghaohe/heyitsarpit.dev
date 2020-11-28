@@ -153,40 +153,33 @@ export const Article = styled(Prism)`
     color: var(--color-heading-primary);
   }
 
-  .info {
-    padding: 1rem;
-    margin: 3rem 0;
-    border-radius: 6px;
-    background: var(--highlight-box);
+  blockquote {
+    code {
+      font-style: normal;
+    }
 
-    display: flex;
+    padding-left: 2ch;
+    margin: 2rem 0;
+    font-style: italic;
 
-    --color-info-highlight: #4433ff;
-    border-left: 3px solid var(--color-info-highlight);
-  }
+    position: relative;
+    ::before {
+      content: '';
+      width: 0.8ch;
+      height: 100%;
 
-  .info ::before {
-    content: 'i';
+      position: absolute;
+      top: 0;
+      left: 0;
 
-    --size: 1rem;
-    width: var(--size);
-    height: var(--size);
+      display: inline-block;
 
-    font-family: 'Fira Code', monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid var(--color-info-highlight);
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 350% 350%;
 
-    margin-right: 0.5rem;
-    color: #111111;
-
-    padding: 1rem;
-    /* background: var(--color-background); */
-    background: white;
-
-    border-radius: 100vh;
-    translate: -2rem -2rem;
+      // See ScrollProgress for implementation
+      animation: gradient 10s ease infinite;
+    }
   }
 
   .anchor {

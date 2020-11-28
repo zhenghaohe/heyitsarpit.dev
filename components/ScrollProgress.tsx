@@ -4,9 +4,13 @@ import { useScroll } from './ScrollProvider';
 
 const Bar = styled.div`
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+
   background-size: 350% 350%;
 
-  height: 6px;
+  @media (max-width: 1000px) {
+    height: 6px;
+  }
+
   animation: gradient 10s ease infinite;
 
   @keyframes gradient {
