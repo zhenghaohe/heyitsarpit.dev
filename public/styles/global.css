@@ -2,6 +2,7 @@
   --color-text: #3f404f;
   --color-text-secondary: #383838;
   --color-background: #fdfdfd;
+  --color-nav-background: #fffc;
   --color-muted: #cccfd0;
   --color-heading-primary: #34384d;
   --color-heading-secondary: #08ce3a;
@@ -30,6 +31,7 @@ html[data-theme='dark'] {
   --color-text: #c4c5c9;
   --color-text-secondary: #dbdada;
   --color-background: #141516;
+  --color-nav-background: #000000ad;
   --color-muted: #2c2d2d;
   --color-heading-primary: #ffffff;
   --color-heading-secondary: #50fa7b;
