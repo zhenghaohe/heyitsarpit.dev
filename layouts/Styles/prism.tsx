@@ -23,8 +23,8 @@ const Prism = styled.article`
   pre[class*='language-'] ::selection,
   code[class*='language-']::selection,
   code[class*='language-'] ::selection {
-    text-shadow: none;
-    background: var(--syntax-background);
+    color: var(--color-background);
+    background: var(--color-text);
   }
 
   @media print {
@@ -37,7 +37,7 @@ const Prism = styled.article`
   pre[class*='language-'] {
     padding: 1em;
     overflow: auto;
-    margin: 0.5em -1em;
+    margin: 1.5em 0;
     border-radius: 6px;
 
     transition: 500ms;
