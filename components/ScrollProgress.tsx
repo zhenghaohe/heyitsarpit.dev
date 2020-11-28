@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
-import { useEffect, useState } from 'react';
+
+import { useScroll } from './ScrollProvider';
 
 const Bar = styled.div`
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -24,19 +25,7 @@ const Bar = styled.div`
 type Props = { control: 'width' | 'height' };
 
 const ScrollProgress: React.FC<Props> = ({ control }) => {
-  const [length, setLength] = useState(0);
-
-  useEffect(() => {
-    const getLength = () => {
-      const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
-      const ratio = scrollTop / (scrollHeight - clientHeight);
-      setLength(ratio * 100);
-    };
-    window.addEventListener('scroll', getLength);
-    return () => {
-      window.removeEventListener('scroll', getLength);
-    };
-  }, []);
+  const { length } = useScroll();
 
   return <Bar style={{ [control]: `${length}%` }} />;
 };
