@@ -6,7 +6,7 @@ import ScrollProgress from './ScrollProgress';
 import ThemeSwitch from './ThemeSwitch';
 
 const Wrapper = styled.header`
-  --width: 80px;
+  --width: 60px;
 
   width: var(--width);
   height: 100vh;
@@ -40,9 +40,11 @@ const Content = styled.nav`
   justify-content: space-between;
   align-items: center;
 
+  padding: 1rem 0;
   @media (max-width: 1000px) {
     width: 100%;
     flex-direction: row;
+    padding: 0 1rem;
   }
 `;
 
