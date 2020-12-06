@@ -23,7 +23,7 @@ export const GoBackLink = styled.a`
   transition: all 0.4s;
 
   &:hover {
-    background: var(--highlight-box);
+    background: #3a3d4f8a;
     color: var(--color-link-posts);
   }
 `;
