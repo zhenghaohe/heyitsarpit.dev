@@ -20,6 +20,9 @@ const Wrapper = styled.header`
   background: var(--color-nav-background);
   backdrop-filter: blur(10px) saturate(1.7);
 
+  transition: 500ms;
+  transition-property: background, color;
+
   @media (max-width: 1000px) {
     position: sticky;
 

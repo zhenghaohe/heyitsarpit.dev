@@ -13,7 +13,7 @@
 
   --color-highlight-1: #ff29a1;
 
-  /* --highlight-box: #0971f117; */
+  --highlight-box: #0971f117;
 
   --syntax-background: #f5f6f9;
   --syntax-muted: #7d7d7d;
@@ -40,7 +40,7 @@ html[data-theme='dark'] {
   --color-link: #8be9fd;
   --color-link-posts: #d63369;
 
-  /* --highlight-box: #3a3d4f8a; */
+  --highlight-box: #3a3d4f8a;
 
   --syntax-background: #1b1c24;
   --syntax-muted: #6272a4;

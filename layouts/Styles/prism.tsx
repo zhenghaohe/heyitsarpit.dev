@@ -35,12 +35,38 @@ const Prism = styled.article`
   }
   /* Code blocks */
   pre[class*='language-'] {
+    position: relative;
+
     padding: 1em;
     overflow: auto;
     margin: 1.5em 0;
     border-radius: 6px;
 
     transition: 500ms;
+
+    .code_copy {
+      position: absolute;
+      right: 0.5rem;
+      top: 0.5rem;
+      background: transparent;
+      border: none;
+      padding: 10px;
+
+      cursor: pointer;
+
+      opacity: 0.5;
+      transition: opacity 500ms;
+      :hover {
+        opacity: 1;
+      }
+      :active {
+        opacity: 0;
+      }
+      svg {
+        width: 1.2rem;
+        pointer-events: none;
+      }
+    }
 
     @media screen and (max-width: 700px) {
       margin: 0.5em 0;

@@ -1,6 +1,7 @@
 import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useLayoutEffect } from 'react';
 
 import Social from '../components/Intro/Social';
 import formatDate from '../utils/formatDate';
@@ -34,6 +35,28 @@ const GoBack: React.FC = () => {
 type Props = { frontMatter: FrontMatter };
 
 const Layout: React.FC<Props> = ({ frontMatter, children }) => {
+  useLayoutEffect(() => {
+    const codeBlocks$ = document.querySelectorAll("pre[class*='language-']");
+
+    codeBlocks$.forEach((block$) => {
+      const copyButton$ = document.createElement('button');
+      copyButton$.innerHTML =
+        '<svg class="w-6 h-6" fill="none" stroke="var(--syntax-cyan)" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>';
+
+      copyButton$.classList.add('code_copy');
+      copyButton$.title = 'Copy';
+
+      copyButton$.onclick = (e) => {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
+        const code$ = e.target?.previousElementSibling;
+        navigator.clipboard.writeText(code$.innerText);
+      };
+
+      block$.appendChild(copyButton$);
+    });
+  }, []);
+
   return (
     <>
       <NextSeo title={frontMatter.title} description={frontMatter.description} />

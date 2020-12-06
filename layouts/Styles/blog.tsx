@@ -158,9 +158,13 @@ export const Article = styled(Prism)`
       font-style: normal;
     }
 
+    padding: 0.2rem 0;
     padding-left: 2ch;
+    padding-right: 1ch;
+
     margin: 2rem 0;
     font-style: italic;
+    background: #998aa614;
 
     position: relative;
     ::before {
@@ -219,13 +223,12 @@ export const Article = styled(Prism)`
   }
 
   li::before {
-    content: '->';
+    content: '⏺';
     position: absolute;
     left: 0;
-    padding-right: 0.5rem;
-    translate: -0.4rem;
+    transform: translateY(6px);
     color: #2674c8;
-    font-weight: bold;
+    font-size: 0.7rem;
   }
 
   ul ul,
