@@ -101,7 +101,7 @@ export const Description = styled.p`
 
 export const Article = styled(Prism)`
   max-width: 75ch;
-  padding: 0 1.2rem;
+  padding: 0 1rem;
   margin: 0 auto;
   margin-top: 3rem;
   line-height: 1.9;
@@ -109,9 +109,13 @@ export const Article = styled(Prism)`
 
   transition: 500ms;
 
-  hyphens: auto;
+  /* hyphens: auto; */
   font-kerning: normal;
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
+
+  @media screen and (max-width: 736px) {
+    font-size: 1rem;
+  }
 
   p a {
     color: var(--color-link-posts);
@@ -192,18 +196,13 @@ export const Article = styled(Prism)`
     padding-left: 4px;
     transition: opacity 240ms ease-in-out;
   }
-  @media screen and (max-width: 736px) {
+  /* @media screen and (max-width: 736px) {
     .anchor {
       visibility: visible;
       opacity: 1;
     }
-  }
-  @media screen and (max-width: 480px) {
-    .anchor {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
+  } */
+
   h1:hover .anchor,
   h2:hover .anchor,
   h3:hover .anchor,

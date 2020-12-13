@@ -44,7 +44,13 @@ const Prism = styled.article`
 
     transition: 500ms;
 
+    :hover .code_copy {
+      visibility: visible;
+      opacity: 0.5;
+    }
+
     .code_copy {
+      visibility: hidden;
       position: absolute;
       right: 0.5rem;
       top: 0.5rem;
@@ -54,7 +60,7 @@ const Prism = styled.article`
 
       cursor: pointer;
 
-      opacity: 0.5;
+      opacity: 0;
       transition: opacity 500ms;
       :hover {
         opacity: 1;
