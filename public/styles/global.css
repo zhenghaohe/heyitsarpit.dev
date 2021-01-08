@@ -64,6 +64,8 @@ body,
   color: var(--color-text);
   background: var(--color-background);
   transition: 500ms;
+  transition-property: background, color;
+
   text-rendering: optimizeLegibility;
 }
 
@@ -90,6 +92,7 @@ html {
   color: var(--color-link-posts);
 
   transition: 500ms;
+  transition-property: background, color;
 
   font-family: 'Fira Code', monospace;
   font-size: 0.9em;

@@ -39,9 +39,11 @@ const ListItem = styled.li`
   position: relative;
 
   transition: 500ms;
+  transition-property: background, color;
 
   &::after {
     transition: 500ms;
+    transition-property: background, color;
 
     display: block;
     content: '';

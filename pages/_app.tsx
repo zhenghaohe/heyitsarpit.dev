@@ -1,3 +1,6 @@
+import '../public/styles/global.css';
+import '../public/styles/normalize.css';
+
 import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
 

@@ -43,6 +43,7 @@ const Prism = styled.article`
     border-radius: 6px;
 
     transition: 500ms;
+    transition-property: background, color;
 
     :hover .code_copy {
       visibility: visible;
