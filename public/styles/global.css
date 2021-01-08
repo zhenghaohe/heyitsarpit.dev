@@ -12,6 +12,7 @@
   --color-link-posts: #ff29a1;
 
   --color-highlight-1: #ff29a1;
+  --nav-box-shadow: 0 7px 30px #dbdbdb59;
 
   --highlight-box: #0971f117;
 
@@ -41,6 +42,7 @@ html[data-theme='dark'] {
   --color-link-posts: #d63369;
 
   --highlight-box: #3a3d4f8a;
+  --nav-box-shadow: none;
 
   --syntax-background: #1b1c24;
   --syntax-muted: #6272a4;

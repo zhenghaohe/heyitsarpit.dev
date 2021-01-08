@@ -15,7 +15,7 @@ const Wrapper = styled.header`
   top: 0;
   z-index: 2;
 
-  box-shadow: 0 7px 30px #dbdbdb59;
+  box-shadow: var(--nav-box-shadow);
   background: var(--color-nav-background);
   backdrop-filter: blur(10px) saturate(1.7);
 
