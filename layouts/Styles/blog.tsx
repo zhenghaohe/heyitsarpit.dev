@@ -168,7 +168,14 @@ export const Article = styled(Prism)`
 
     margin: 2rem 0;
     font-style: italic;
-    background: #998aa614;
+    background: #8a63ad14;
+
+    @media screen and (max-width: 700px) {
+      position: relative;
+      width: 100%; /*Fallback for older browsers*/
+      width: 100vw; /*Percentage of full screen viewing width*/
+      left: calc(-50vw + 50%); /*Centres div*/
+    }
 
     position: relative;
     ::before {
