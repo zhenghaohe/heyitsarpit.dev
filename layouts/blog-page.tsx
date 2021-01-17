@@ -1,7 +1,7 @@
-import { NextSeo } from 'next-seo';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useLayoutEffect } from 'react';
+import { NextSeo } from 'next-seo';
+import { useEffect } from 'react';
 
 import Social from '../components/Intro/Social';
 import formatDate from '../utils/formatDate';
@@ -35,7 +35,7 @@ const GoBack: React.FC = () => {
 type Props = { frontMatter: FrontMatter };
 
 const Layout: React.FC<Props> = ({ frontMatter, children }) => {
-  useLayoutEffect(() => {
+  useEffect(() => {
     const codeBlocks$ = document.querySelectorAll("pre[class*='language-']");
 
     codeBlocks$.forEach((block$) => {

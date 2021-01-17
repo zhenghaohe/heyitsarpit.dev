@@ -1,8 +1,8 @@
 import '../public/styles/global.css';
 import '../public/styles/normalize.css';
 
-import { DefaultSeo } from 'next-seo';
 import { AppProps } from 'next/app';
+import { DefaultSeo } from 'next-seo';
 
 import Layout from '../components/Layout';
 import Meta from '../components/Meta';
