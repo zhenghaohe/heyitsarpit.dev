@@ -222,7 +222,7 @@ export const Article = styled(Prism)`
   }
 
   li::before {
-    content: '⏺';
+    content: '●';
     position: absolute;
     left: 0;
     transform: translateY(6px);
