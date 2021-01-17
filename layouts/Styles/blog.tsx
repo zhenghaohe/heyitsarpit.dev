@@ -222,12 +222,14 @@ export const Article = styled(Prism)`
   }
 
   li::before {
-    content: '●';
+    content: '';
     position: absolute;
     left: 0;
-    transform: translateY(6px);
-    color: #2674c8;
-    font-size: 0.7rem;
+    transform: translateY(14px);
+    background-color: #2674c8;
+    height: 7px;
+    width: 7px;
+    border-radius: 100vw;
   }
 
   ul ul,
