@@ -1,0 +1,2 @@
+- [x] Fix font 404 bug
+- [] Fix correct font rendering bug
