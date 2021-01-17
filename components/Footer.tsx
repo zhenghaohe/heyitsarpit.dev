@@ -25,7 +25,6 @@ const Content = styled(AppWrapper)`
     letter-spacing: 2px;
     font-size: 0.8rem;
     text-transform: capitalize;
-    font-family: 'Inter', sans-serif;
   }
 `;
 
