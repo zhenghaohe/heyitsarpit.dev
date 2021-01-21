@@ -9,7 +9,8 @@ class MyDocument extends Document {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="shortcut icon" href="/images/icon-48x48.png" />
-        <link href="/scripts/setColorTheme.js" as="script" rel="script preload" />
+        <link href="/scripts/setColorTheme.js" as="script" rel="preload" />
+        <script src="/scripts/setColorTheme.js" />
         <body>
           <Main />
           <NextScript />
