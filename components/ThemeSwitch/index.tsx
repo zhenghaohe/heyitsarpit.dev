@@ -1,4 +1,3 @@
-import styled from '@emotion/styled';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { DarkModeSwitch } from 'react-toggle-dark-mode';
@@ -6,19 +5,6 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 import { getLocalStorage, setLocalStorage } from '../../utils/localStorage';
 
 type ColorTheme = 'light' | 'dark';
-
-const ThemeToggle = styled.button`
-  background: transparent;
-  border: none;
-  cursor: pointer;
-
-  padding: 0.5rem;
-  border: 1px solid white;
-  border-radius: 6px;
-  &:hover {
-    background: white;
-  }
-`;
 
 const ThemeSwitch: React.FC = () => {
   const COLOR_THEME = 'COLOR_THEME';

@@ -1,2 +1,6 @@
 - [x] Fix font 404 bug
 - [x] Fix correct font rendering bug
+- [ ] Experiment with `linear-gradient(-30deg, #caecd742, #f8e1fc5c)`
+- [ ] Fix code highlight
+- [x] Fix color flashing on first render
+- [x] Fix lang="en" accessibility bug
