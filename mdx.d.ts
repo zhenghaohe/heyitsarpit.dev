@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 interface FrontMatter {
   __resourcePath: string;
   layout: string;
@@ -17,7 +16,7 @@ interface FrontMatter {
 }
 
 declare module '*.mdx' {
-  let MDXComponent: (props: any) => JSX.Element;
+  let MDXComponent: (props: unknown) => JSX.Element;
   export default MDXComponent;
   export const frontMatter: FrontMatter[];
 }
