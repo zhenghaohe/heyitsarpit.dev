@@ -8,8 +8,8 @@
     root.setAttribute('data-theme', ls);
     return;
   }
-  if (!pcs) {
-    root.setAttribute('data-theme', 'dark');
+  if (pcs) {
+    root.setAttribute('data-theme', 'light');
     return;
   }
 })();

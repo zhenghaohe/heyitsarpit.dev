@@ -1,4 +1,5 @@
 :root {
+  --theme: 'light';
   --color-text: #3f404f;
   --color-text-secondary: #383838;
   --color-background: #fdfdfd;
@@ -29,6 +30,7 @@
 }
 
 html[data-theme='dark'] {
+  --theme: 'dark';
   --color-text: #c4c5c9;
   --color-text-secondary: #dbdada;
   --color-background: #141516;
@@ -64,8 +66,8 @@ body,
   font-size: 18px;
   color: var(--color-text);
   background: var(--color-background);
-  transition: 500ms;
-  transition-property: background, color;
+  /* transition: 500ms;
+  transition-property: background, color; */
 
   text-rendering: optimizeLegibility;
 }

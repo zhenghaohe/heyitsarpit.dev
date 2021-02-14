@@ -15,7 +15,8 @@ const ThemeSwitch: React.FC = () => {
 
   useEffect(() => {
     setHasMounted(true);
-    setTheme(getLocalStorage<ColorTheme>(COLOR_THEME, 'dark'));
+    const theme = getLocalStorage<ColorTheme>(COLOR_THEME, 'dark');
+    setTheme(theme);
   }, []);
 
   useEffect(() => {

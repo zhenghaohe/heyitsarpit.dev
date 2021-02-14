@@ -100,7 +100,7 @@ const BlogCard: React.FC<FrontMatter> = ({ __resourcePath, title, date, descript
   return (
     <ListItem>
       <Title>
-        <Link href={formatPath(__resourcePath)} passHref>
+        <Link href={formatPath(__resourcePath)}>
           <a>{title}</a>
         </Link>
       </Title>
