@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from '@linaria/react';
 
 const StyledLink = styled.a`
   grid-area: SayHello;

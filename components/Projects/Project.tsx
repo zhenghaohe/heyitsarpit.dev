@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from '@linaria/react';
 
 const Title = styled.h3`
   font-size: 1.1rem;

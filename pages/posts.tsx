@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
-import styled from '@emotion/styled';
+import { styled } from '@linaria/react';
 import fuzzysort from 'fuzzysort';
 import { GetStaticProps, InferGetStaticPropsType } from 'next';
 import Link from 'next/link';

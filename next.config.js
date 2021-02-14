@@ -3,6 +3,7 @@
 
 const withMdxEnhanced = require('next-mdx-enhanced');
 const readingTime = require('reading-time');
+const withLinaria = require('next-linaria');
 
 const autoLinkHeadingsOptions = {
   behaviour: 'append',
@@ -51,9 +52,11 @@ module.exports = withMdxEnhanced({
       readingTime: readingTime(mdxContent)
     })
   }
-})({
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx', 'md'],
-  images: {
-    domains: ['images.pexels.com']
-  }
-});
+})(
+  withLinaria({
+    pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx', 'md'],
+    images: {
+      domains: ['images.pexels.com']
+    }
+  })
+);

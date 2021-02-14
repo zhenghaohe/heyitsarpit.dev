@@ -22,3 +22,5 @@ out
 client_id
 
 .ds_store
+
+.linaria-cache

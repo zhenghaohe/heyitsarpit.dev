@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from '@linaria/react';
 import { MouseEvent, useEffect, useRef, useState } from 'react';
 
 type Coordinate = [number, number];

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from '@linaria/react';
 
 const Duration = styled.div`
   color: var(--color-text-secondary);

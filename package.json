@@ -10,7 +10,7 @@
     "react",
     "redux",
     "typescript",
-    "emotion"
+    "linaria"
   ],
   "scripts": {
     "dev": "cross-env NODE_ENV=development next",
@@ -21,12 +21,15 @@
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc --ignore-path ./.gitignore"
   },
   "dependencies": {
-    "@emotion/react": "^11.1.4",
-    "@emotion/styled": "^11.0.0",
+    "@linaria/babel-preset": "^3.0.0-beta.1",
+    "@linaria/core": "^3.0.0-beta.1",
+    "@linaria/react": "^3.0.0-beta.1",
+    "@linaria/shaker": "^3.0.0-beta.1",
     "fuzzysort": "^1.1.4",
     "light-date": "^1.2.0",
     "mdx-prism": "^0.3.1",
     "next": "^10.0.5",
+    "next-linaria": "^0.10.0",
     "next-seo": "^4.17.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -44,7 +47,6 @@
     "@types/react-dom": "17.0.0",
     "@typescript-eslint/eslint-plugin": "4.12.0",
     "@typescript-eslint/parser": "4.12.0",
-    "babel-plugin-emotion": "11.0.0",
     "babel-plugin-import-glob-array": "^0.2.0",
     "cross-env": "7.0.3",
     "eslint": "^7.17.0",

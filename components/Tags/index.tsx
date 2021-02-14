@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from '@linaria/react';
 import Link from 'next/link';
 import { memo } from 'react';
 

@@ -1,4 +1,4 @@
-import styled from '@emotion/styled';
+import { styled } from '@linaria/react';
 
 import AppWrapper from '../Common/AppWrapper';
 import Heading from '../Common/Heading';
