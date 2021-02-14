@@ -9,12 +9,13 @@ type ColorTheme = 'light' | 'dark';
 const ThemeSwitch: React.FC = () => {
   const COLOR_THEME = 'COLOR_THEME';
 
-  const [theme, setTheme] = useState(() => getLocalStorage<ColorTheme>(COLOR_THEME, 'dark'));
+  const [theme, setTheme] = useState<ColorTheme>('dark');
 
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
     setHasMounted(true);
+    setTheme(getLocalStorage<ColorTheme>(COLOR_THEME, 'dark'));
   }, []);
 
   useEffect(() => {
