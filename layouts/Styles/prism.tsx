@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 const Prism = styled.article`
   code[class*='language-'],
   pre[class*='language-'] {
-    color: var(--syntax-pink);
+    color: var(--syntax-primary);
 
     background: none;
     font-family: 'Fira Code', monospace;
@@ -101,40 +101,40 @@ const Prism = styled.article`
   .token.prolog,
   .token.doctype,
   .token.cdata {
-    color: var(--syntax-muted);
+    color: var(--syntax-comment);
   }
 
   .token.punctuation {
-    color: var(--syntax-purple);
+    color: var(--syntax-keyword);
     font-weight: 500;
   }
 
   .token.plain-text {
-    color: var(--syntax-white);
+    color: var(--syntax-text);
   }
 
   .token.selector,
   .token.tag {
-    color: var(--syntax-red);
+    color: var(--syntax-html-tag);
   }
 
   .token.property {
-    color: var(--syntax-cyan);
+    color: var(--syntax-operator);
   }
 
   .token.number {
-    color: var(--syntax-orange);
+    color: var(--syntax-number);
   }
 
   .token.boolean {
-    color: var(--syntax-yellow);
+    color: var(--syntax-boolean);
   }
 
   .token.constant,
   .token.symbol,
   .token.attr-name,
   .token.deleted {
-    color: var(--syntax-orange);
+    color: var(--syntax-number);
     font-style: italic;
   }
 
@@ -143,7 +143,7 @@ const Prism = styled.article`
   .token.attr-value,
   .token.builtin,
   .token.inserted {
-    color: var(--syntax-green);
+    color: var(--syntax-string);
   }
 
   .token.operator,
@@ -151,7 +151,7 @@ const Prism = styled.article`
   .token.url,
   .language-css .token.string,
   .style .token.string {
-    color: var(--syntax-cyan);
+    color: var(--syntax-operator);
   }
 
   .token.operator {
@@ -160,19 +160,19 @@ const Prism = styled.article`
 
   .token.atrule,
   .token.keyword {
-    color: var(--syntax-purple);
+    color: var(--syntax-keyword);
     font-weight: 500;
   }
 
   .token.function {
-    color: var(--syntax-cyan);
+    color: var(--syntax-operator);
     font-weight: bold;
   }
 
   .token.regex,
   .token.important,
   .token.variable {
-    color: var(--syntax-purple);
+    color: var(--syntax-keyword);
   }
 
   .token.important,
@@ -190,7 +190,7 @@ const Prism = styled.article`
 
   .mdx-marker {
     background: #303240;
-    border-left: 3px solid var(--syntax-cyan);
+    border-left: 3px solid var(--syntax-operator);
     margin-left: calc(-1em - 0.149%);
     margin-right: calc(-1em - 2%);
   }
@@ -226,7 +226,7 @@ const Prism = styled.article`
 
   .line-numbers-rows > span:before {
     content: counter(linenumber);
-    color: var(--syntax-muted);
+    color: var(--syntax-comment);
     display: block;
     padding-right: 0.8em;
     text-align: right;
