@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 import { styled } from '@linaria/react';
 import fuzzysort from 'fuzzysort';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { ChangeEvent, memo, useEffect, useMemo, useRef, useState } from 'react';
@@ -12,7 +12,6 @@ import formatDate from '../utils/formatDate';
 import { useDebounce } from '../utils/useDebounce';
 import { frontMatter as blogPosts } from './posts/**/*.mdx';
 
-// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const getStaticProps = async () => {
   const blogs = blogPosts
     .filter(({ published }) => published)
