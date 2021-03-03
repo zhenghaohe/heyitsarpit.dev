@@ -31,7 +31,7 @@ export const Wrapper = styled.header`
 
 export const Content = styled.nav`
   display: flex;
-  flex: 1;
+  /* flex: 1; */
 
   flex-direction: column;
   justify-content: space-between;
