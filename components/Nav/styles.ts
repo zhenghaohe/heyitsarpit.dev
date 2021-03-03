@@ -1,11 +1,6 @@
 import { styled } from '@linaria/react';
-import Link from 'next/link';
-import { RiArticleFill } from 'react-icons/ri';
 
-import ScrollProgress from './ScrollProgress';
-import ThemeSwitch from './ThemeSwitch';
-
-const Wrapper = styled.header`
+export const Wrapper = styled.header`
   --width: 60px;
 
   width: var(--width);
@@ -34,7 +29,7 @@ const Wrapper = styled.header`
   justify-content: space-between;
 `;
 
-const Content = styled.nav`
+export const Content = styled.nav`
   display: flex;
   flex: 1;
 
@@ -50,19 +45,19 @@ const Content = styled.nav`
   }
 `;
 
-const LogoImage = styled.img`
+export const LogoImage = styled.img`
   height: 2.9rem;
   border-radius: 50%;
 `;
 
-const StyledLink = styled.a`
+export const StyledLink = styled.a`
   color: var(--color-text);
   text-decoration: none;
   display: flex;
   align-items: center;
 `;
 
-const ProgressBar = styled('div')`
+export const ProgressBar = styled('div')`
   @media (min-width: 1000px) {
     width: 7px;
     height: 100%;
@@ -70,28 +65,3 @@ const ProgressBar = styled('div')`
     transform-origin: 0% 50%;
   }
 `;
-
-const Nav: React.FC = () => {
-  return (
-    <Wrapper>
-      <ProgressBar>
-        <ScrollProgress control="height" />
-      </ProgressBar>
-      <Content>
-        <Link href="/" passHref>
-          <StyledLink title="Home" aria-label="Home">
-            <LogoImage src="/images/astro.png" alt="home" />
-          </StyledLink>
-        </Link>
-        <Link href="/posts" passHref>
-          <StyledLink title="Posts" aria-label="Home">
-            <RiArticleFill size="2rem" />
-          </StyledLink>
-        </Link>
-        <ThemeSwitch />
-      </Content>
-    </Wrapper>
-  );
-};
-
-export default Nav;
