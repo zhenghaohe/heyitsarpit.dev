@@ -7,7 +7,6 @@ import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 
 import Layout from '../components/Layout';
-import { ScrollProvider } from '../components/ScrollProvider';
 import SEO from '../next-seo.config';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
@@ -17,11 +16,9 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <DefaultSeo {...SEO} />
-      <ScrollProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </ScrollProvider>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   );
 };
@@ -29,5 +26,5 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 export default MyApp;
 
 export function reportWebVitals(metric: NextWebVitalsMetric) {
-  console.log(metric)
+  console.log(metric);
 }

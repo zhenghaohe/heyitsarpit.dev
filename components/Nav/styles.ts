@@ -57,11 +57,3 @@ export const StyledLink = styled.a`
   align-items: center;
 `;
 
-export const ProgressBar = styled('div')`
-  @media (min-width: 1000px) {
-    width: 7px;
-    height: 100%;
-    will-change: width;
-    transform-origin: 0% 50%;
-  }
-`;

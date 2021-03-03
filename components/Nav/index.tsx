@@ -8,9 +8,7 @@ import * as S from './styles';
 const Nav: React.FC = () => {
   return (
     <S.Wrapper>
-      <S.ProgressBar>
-        <ScrollProgress control="height" />
-      </S.ProgressBar>
+      <ScrollProgress />
       <S.Content>
         <Link href="/" passHref>
           <S.StyledLink title="Home" aria-label="Home">
