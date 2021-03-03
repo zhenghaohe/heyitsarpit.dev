@@ -2,7 +2,7 @@ import '../public/styles/font.css';
 import '../public/styles/normalize.css';
 import '../public/styles/global.css';
 
-import { AppProps } from 'next/app';
+import { AppProps, NextWebVitalsMetric } from 'next/app';
 import Head from 'next/head';
 import { DefaultSeo } from 'next-seo';
 
@@ -27,3 +27,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
 };
 
 export default MyApp;
+
+export function reportWebVitals(metric: NextWebVitalsMetric) {
+  console.log(metric)
+}
