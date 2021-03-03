@@ -15,7 +15,11 @@ import { frontMatter as blogPosts } from './posts/**/*.mdx';
 export const getStaticProps = async () => {
   const blogs = blogPosts
     .filter(({ published }) => published)
-    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)));
+    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
+    .map((blog) => {
+      blog.cover_image += '?crop=entropy&cs=srgb&fit=crop&fm=jpg&h=1000&w=1800';
+      return blog;
+    });
 
   return { props: { blogs } };
 };
