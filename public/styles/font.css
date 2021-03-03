@@ -2,7 +2,7 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 400;
-  font-display: optional;
+  font-display: swap;
   src: url(/fonts/inter/inter-v2-latin-regular.woff2) format('woff2'),
        url(/fonts/inter/inter-v2-latin-regular.woff) format('woff');
 }
@@ -10,14 +10,14 @@
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
-  font-display: optional;
+  font-display: swap;
   src: url(/fonts/inter/inter-v2-latin-500.woff2) format('woff2'),
        url(/fonts/inter/inter-v2-latin-500.woff) format('woff');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
   font-weight: 700;
   src: url(/fonts/inter/inter-v2-latin-700.woff2) format('woff2'),
        url(/fonts/inter/inter-v2-latin-700.woff) format('woff');
@@ -26,7 +26,7 @@
 @font-face {
   font-family: 'Fira Code';
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
   font-weight: 400;
   src: url(/fonts/fira-code/fira-code-v9-latin-regular.woff2) format('woff2'),
        url(/fonts/fira-code/fira-code-v9-latin-regular.woff) format('woff');
@@ -34,7 +34,7 @@
 @font-face {
   font-family: 'Fira Code';
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
   font-weight: 500;
   src: url(/fonts/fira-code/fira-code-v9-latin-500.woff2) format('woff2'),
        url(/fonts/fira-code/fira-code-v9-latin-500.woff) format('woff');
@@ -42,7 +42,7 @@
 @font-face {
   font-family: 'Fira Code';
   font-style: normal;
-  font-display: optional;
+  font-display: swap;
   font-weight: 700;
   src: url(/fonts/fira-code/fira-code-v9-latin-700.woff2) format('woff2'),
        url(/fonts/fira-code/fira-code-v9-latin-700.woff) format('woff');
