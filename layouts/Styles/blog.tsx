@@ -192,8 +192,19 @@ export const Article = styled(Prism)`
       background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
       background-size: 350% 350%;
 
-      // See ScrollProgress for implementation
-      animation: gradient 10s ease infinite;
+      animation: gradient_0 10s ease infinite;
+
+      @keyframes gradient_0 {
+        0% {
+          background-position: 0% 100%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 100%;
+        }
+      }
     }
   }
 
