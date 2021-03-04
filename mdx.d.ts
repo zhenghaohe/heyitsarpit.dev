@@ -6,6 +6,8 @@ interface FrontMatter {
   description: string;
   tags: string;
   cover_image: string;
+  cover_artist: string;
+  cover_artist_url: string;
   date: string;
   readingTime: {
     text: string;

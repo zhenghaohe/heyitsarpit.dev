@@ -14,6 +14,9 @@ export const GoBackLink = styled.a`
   vertical-align: middle;
   text-decoration: none;
   text-transform: uppercase;
+  backdrop-filter: blur(10px) saturate(1.5);
+  font-family: 'Fira Code', monospace;
+  letter-spacing: 1px;
 
   .back-arrow {
     font-size: 1.5rem;
@@ -54,14 +57,38 @@ export const Hero = styled.div`
     pointer-events: none;
     object-fit: cover;
   }
+`;
 
-  & .hero_inner {
-    padding: 7rem 1rem 4rem;
+export const HeroInner = styled.div`
+  padding: 7rem 1rem 4rem;
 
-    max-width: 75ch;
-    margin: 0 auto;
-    z-index: 1;
-    position: relative;
+  max-width: 75ch;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+`;
+
+export const CoverCredits = styled.p`
+  position: absolute;
+  right: 10px;
+  bottom: -5px;
+  text-align: right;
+  line-height: 1;
+  font-size: 0.7em;
+  font-family: 'Fira Code', monospace;
+  opacity: 0.7;
+  color: #c4c5c9;
+
+  a {
+    color: currentColor;
+    text-decoration: none;
+  }
+
+  transition: opacity 500ms;
+
+  &:hover {
+    opacity: 0.9;
+    color: #faefff;
   }
 `;
 
@@ -96,7 +123,6 @@ export const Description = styled.p`
 
   color: var(--color-text);
   padding: 2.2rem 0 0;
-  font-style: italic;
 `;
 
 export const Article = styled(Prism)`
