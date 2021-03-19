@@ -206,7 +206,7 @@ export const Article = styled(Prism)`
     position: relative;
     ::before {
       content: '';
-      width: 0.8ch;
+      width: 0.5ch;
       height: 100%;
 
       position: absolute;

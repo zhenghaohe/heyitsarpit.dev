@@ -37,8 +37,15 @@ const List = styled.ul`
 `;
 
 const ListItem = styled.li`
+  --border-color: var(--color-muted);
+  --title-opacity: 1;
+
+  &:hover,
+  &:active {
+    --title-opacity: 0.8;
+  }
   padding: 1rem 0 2rem 0;
-  border-bottom: var(--color-muted) 1px solid;
+  border-bottom: var(--border-color) 1px solid;
   position: relative;
 
   transition: 500ms;
@@ -52,7 +59,9 @@ const ListItem = styled.li`
     content: '';
     width: 7px;
     height: 7px;
-    border: var(--color-muted) 1px solid;
+    border: 1px solid;
+    border-color: var(--border-color);
+
     position: absolute;
     bottom: -5px;
     left: 50%;
@@ -67,9 +76,7 @@ const Title = styled.h2`
   text-transform: capitalize;
   font-size: 1.3rem;
 
-  &:hover {
-    opacity: 1;
-  }
+  opacity: var(--title-opacity);
   margin-bottom: 0.3rem;
   a {
     text-decoration: none;
@@ -93,7 +100,7 @@ const Description = styled.div`
   padding: 0.3rem 0;
   color: var(--color-text-secondary);
   font-size: 1rem;
-  opacity: 0.9;
+  opacity: 0.7;
   line-height: 1.8;
 `;
 
@@ -135,10 +142,20 @@ const SearchForm = styled.form`
 const SearchInput = styled.input`
   display: block;
   width: 100%;
-  border: 1px solid #e4e4e4;
+  border: 2px solid;
+  border-color: var(--color-muted);
   background: transparent;
   border-radius: 4px;
   color: var(--color-text-secondary);
+
+  &:hover {
+    border-color: var(--color-text);
+  }
+  &:active,
+  &:focus {
+    outline: none;
+    border-color: var(--color-link-posts);
+  }
 
   padding: 10px;
   &::placeholder {
