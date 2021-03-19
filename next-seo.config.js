@@ -1,13 +1,13 @@
 //TODO: Look into canonical url
 
 export default {
-  title: 'Arpit Bharti ― Software Developer',
-  description: 'Young and bright eyed software developer.',
+  title: "Hi I'm Arpit 👋🏼",
+  description: 'Software Developer',
   openGraph: {
     type: 'website',
     locale: 'en_IE',
-    url: 'https://www.arpit73.xyz',
-    site_name: 'arpit73'
+    url: 'https://heyitsarpit.dev/',
+    site_name: 'heyitsarpit'
   },
   twitter: {
     handle: '@onygami',
