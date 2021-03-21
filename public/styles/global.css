@@ -10,7 +10,7 @@
   --color-highlight-1: #ff29a1;
   --color-highlight-2: #7717ff;
   --color-link: #0971f1;
-  --color-link-posts: #ff29a1;
+  --color-link-posts: #eb3b75;
 
   --color-highlight-1: #ff29a1;
   --nav-box-shadow: 0 7px 30px #dbdbdb59;
@@ -31,7 +31,7 @@
 
 html[data-theme='dark'] {
   --theme: 'dark';
-  --color-text: #ced7df;
+  --color-text: #f0f1f3;
   --color-text-secondary: #dbdada;
   --color-background: #0b0b0c;
   --color-nav-background: #00000063;
@@ -85,8 +85,10 @@ html {
 }
 
 *::selection {
-  background: var(--color-text);
-  color: var(--color-background);
+  /* background: var(--color-text);
+  color: var(--color-background); */
+  background: var(--color-link-posts);
+  color: #fff;
 }
 
 :not(pre) > code {

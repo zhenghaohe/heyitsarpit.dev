@@ -1,7 +1,7 @@
 //TODO: Look into canonical url
 
 export default {
-  title: "Hi I'm Arpit 👋🏼",
+  title: "Hi, I'm Arpit",
   description: 'Software Developer',
   openGraph: {
     type: 'website',

@@ -13,12 +13,18 @@ const Wrapper = styled(AppWrapper)`
       box-shadow: none;
     }
   }
+  h1 {
+    font-size: 3rem;
+  }
+  p {
+    font-size: 1.3rem;
+  }
 `;
 
 const Home: React.FC = () => {
   return (
     <Wrapper>
-      <h1>Hello I&apos;m Arpit</h1>
+      <h1>Hi, my name is Arpit</h1>
       <p>
         Software Developer.{' '}
         <Link href="/posts">
