@@ -1,4 +1,5 @@
 import { styled } from '@linaria/react';
+import Router from 'next/router';
 import { useEffect, useRef } from 'react';
 
 const Wrapper = styled('div')`
@@ -63,17 +64,49 @@ const getLength = () => {
 const ScrollProgress: React.FC = () => {
   const bar$ = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    const setLength = () => {
-      const length = getLength();
-      bar$.current?.style.setProperty('--length', length);
-    };
+  const setLength = (length: string) => {
+    bar$.current?.style.setProperty('--length', length);
+  };
 
-    setLength();
-    window.addEventListener('scroll', setLength);
+  useEffect(() => {
+    const speed = 50;
+    let length = 0;
+    let tick: NodeJS.Timeout;
+
+    Router.events.on('routeChangeStart', () => {
+      const startTime = performance.now();
+
+      tick = setInterval(() => {
+        const endTime = performance.now();
+        let timeDiff = endTime - startTime;
+        timeDiff /= 1000;
+
+        length = 10 * timeDiff ** 0.5;
+        console.log(length);
+        setLength(`${length}%`);
+      }, speed);
+    });
+
+    Router.events.on('routeChangeComplete', () => {
+      clearInterval(tick);
+      setLength('100%');
+    });
+
+    Router.events.on('routeChangeError', () => {
+      clearInterval(tick);
+      setLength('100%');
+    });
+  }, []);
+
+  useEffect(() => {
+    const length = getLength();
+    setLength(length);
+
+    const tick = () => setLength(getLength());
+    window.addEventListener('scroll', tick);
 
     return () => {
-      window.removeEventListener('scroll', setLength);
+      window.removeEventListener('scroll', tick);
     };
   }, []);
 
