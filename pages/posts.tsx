@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
 import { styled } from '@linaria/react';
 import fuzzysort from 'fuzzysort';
 import { InferGetStaticPropsType } from 'next';
@@ -241,8 +240,6 @@ const BlogsPage: React.FC<Props> = ({ blogs }) => {
       setSearching(true);
       router.push(`/posts?q=${q}`, undefined, { shallow: true });
     }
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [debouncedQuery]);
 
   const foundBlogs = useMemo(() => {
