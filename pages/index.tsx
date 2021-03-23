@@ -15,7 +15,7 @@ const Wrapper = styled(AppWrapper)`
   }
   h1 {
     font-size: 3rem;
-    line-height: 3.2rem;
+    line-height: 1.15;
   }
   p {
     font-size: 1.3rem;
