@@ -65,9 +65,8 @@ const Layout: React.FC<Props> = ({ frontMatter, children }) => {
           <Blog.Description>{frontMatter.description}</Blog.Description>
         </Blog.HeroInner>
         <Blog.CoverCredits>
-          Photo By —{' '}
           <a href={frontMatter.cover_artist_url} target="_blank" rel="noopener noreferrer">
-            {frontMatter.cover_artist}
+            Photo By — {frontMatter.cover_artist}
           </a>
         </Blog.CoverCredits>
       </Blog.Hero>

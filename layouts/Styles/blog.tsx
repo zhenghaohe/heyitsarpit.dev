@@ -63,6 +63,7 @@ export const HeroInner = styled.div`
   padding: 7rem 1rem 4rem;
 
   max-width: 75ch;
+  font-size: 1rem;
   margin: 0 auto;
   z-index: 1;
   position: relative;
@@ -139,8 +140,8 @@ export const Article = styled(Prism)`
   font-kerning: normal;
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 
+  font-size: 1rem;
   @media screen and (max-width: 736px) {
-    font-size: 1rem;
   }
 
   p a {
