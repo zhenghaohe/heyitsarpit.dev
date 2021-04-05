@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 import { useEffect } from 'react';
 
-import Social from '../components/Intro/Social';
 import formatDate from '../utils/formatDate';
 import * as Blog from './Styles/blog';
 
@@ -70,12 +69,7 @@ const Layout: React.FC<Props> = ({ frontMatter, children }) => {
           </a>
         </Blog.CoverCredits>
       </Blog.Hero>
-      <Blog.Article>
-        {children}
-        <Blog.SocialWrapper>
-          <Social />
-        </Blog.SocialWrapper>
-      </Blog.Article>
+      <Blog.Article>{children}</Blog.Article>
     </>
   );
 };

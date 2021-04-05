@@ -31,20 +31,6 @@ export const GoBackLink = styled.a`
   }
 `;
 
-export const SocialWrapper = styled.div`
-  margin-top: 2rem 0;
-  ul,
-  ol {
-    list-style: none;
-    margin: 0 auto;
-    width: 12rem;
-
-    li::before {
-      display: none;
-    }
-  }
-`;
-
 export const Hero = styled.div`
   box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.09), 0 3px 14px 2px rgba(0, 0, 0, 0.09),
     0 5px 5px -3px rgba(0, 0, 0, 0.12);
