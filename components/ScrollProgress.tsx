@@ -82,7 +82,6 @@ const ScrollProgress: React.FC = () => {
         timeDiff /= 1000;
 
         length = 10 * timeDiff ** 0.5;
-        console.log(length);
         setLength(`${length}%`);
       }, speed);
     });
