@@ -163,6 +163,22 @@ const SearchInput = styled.input`
 `;
 
 const Search: React.FC<SearchProps> = ({ query, setQuery, setSearching }) => {
+  const inputRef = useRef<HTMLInputElement | null>(null);
+
+  useEffect(() => {
+    const onKeyUp = (event: KeyboardEvent) => {
+      if (event.code == 'Slash') {
+        inputRef.current?.focus();
+      }
+    };
+
+    document.addEventListener('keyup', onKeyUp);
+
+    return () => {
+      document.removeEventListener('keyup', onKeyUp);
+    };
+  }, []);
+
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
 
@@ -172,7 +188,13 @@ const Search: React.FC<SearchProps> = ({ query, setQuery, setSearching }) => {
 
   return (
     <SearchForm onSubmit={(e) => e.preventDefault()}>
-      <SearchInput type="text" onChange={onChange} value={query} placeholder="Search Posts" />
+      <SearchInput
+        type="text"
+        ref={inputRef}
+        onChange={onChange}
+        value={query}
+        placeholder={`Search Posts (press "/" to focus)`}
+      />
     </SearchForm>
   );
 };
