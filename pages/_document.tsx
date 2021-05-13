@@ -8,6 +8,7 @@ class MyDocument extends Document {
         <Head>
           <link rel="shortcut icon" href="/images/icon-48x48.png" />
           <script src="/scripts/setColorTheme.js" />
+          <script async src="https://cdn.splitbee.io/sb.js" />
         </Head>
         <body>
           <Main />
