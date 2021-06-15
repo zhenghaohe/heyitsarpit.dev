@@ -26,6 +26,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:react-hooks/recommended',
     'plugin:jsx-a11y/recommended',
+    'next',
     'plugin:prettier/recommended'
   ],
   rules: {

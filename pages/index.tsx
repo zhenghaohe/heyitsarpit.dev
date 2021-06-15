@@ -25,7 +25,7 @@ const Wrapper = styled(AppWrapper)`
 const Home: React.FC = () => {
   return (
     <Wrapper>
-      <h1>Hi, my name is Arpit</h1>
+      <h1>Hi, I&apos;m Arpit</h1>
       <p>
         Software Developer.{' '}
         <Link href="/posts">

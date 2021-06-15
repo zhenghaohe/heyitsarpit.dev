@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import Document, { Head, Html, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 
 class MyDocument extends Document {
   render() {
@@ -7,8 +8,8 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           <link rel="shortcut icon" href="/images/icon-48x48.png" />
-          <script src="/scripts/setColorTheme.js" />
-          <script async src="https://cdn.splitbee.io/sb.js" />
+          <Script src="/scripts/setColorTheme.js" strategy="beforeInteractive" />
+          <Script async src="https://cdn.splitbee.io/sb.js" />
         </Head>
         <body>
           <Main />

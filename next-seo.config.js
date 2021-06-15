@@ -1,6 +1,6 @@
 //TODO: Look into canonical url
 
-export default {
+const SEO = {
   title: "Hi, I'm Arpit",
   description: 'Software Developer',
   openGraph: {
@@ -15,3 +15,5 @@ export default {
     cardType: 'summary_large_image'
   }
 };
+
+export default SEO;

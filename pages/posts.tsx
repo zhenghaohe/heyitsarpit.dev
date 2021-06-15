@@ -262,7 +262,7 @@ const BlogsPage: React.FC<Props> = ({ blogs }) => {
       setSearching(true);
       router.push(`/posts?q=${q}`, undefined, { shallow: true });
     }
-  }, [debouncedQuery]);
+  }, [debouncedQuery, router]);
 
   const foundBlogs = useMemo(() => {
     return findBlogs(debouncedQuery.split(' '), blogs);

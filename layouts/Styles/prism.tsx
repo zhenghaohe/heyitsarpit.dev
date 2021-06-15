@@ -58,7 +58,7 @@ const Prism = styled.article`
       background: transparent;
       border: none;
       padding: 10px;
-
+      color: var(--syntax-operator);
       cursor: pointer;
 
       opacity: 0;
