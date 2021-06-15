@@ -42,6 +42,11 @@ const Layout: React.FC<Props> = ({ frontMatter, children }) => {
         // @ts-ignore
         const code$ = e.target?.previousElementSibling;
         navigator.clipboard.writeText(code$.innerText);
+        copyButton$.innerText = 'Copied!';
+
+        setTimeout(() => {
+          copyButton$.innerHTML = CopySVG;
+        }, 1000);
       };
 
       block$.appendChild(copyButton$);
