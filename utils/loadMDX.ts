@@ -21,7 +21,7 @@ export const getAllPostsMeta = async () => {
 
   return allPostPaths
     .map((postPath): PostMeta => {
-      const post = fs.readFileSync(postPath, 'utf-8');
+      const post = fs.readFileSync(path.join(RootPath, postPath), 'utf-8');
 
       const slug = path.basename(postPath).replace('.mdx', '');
       const meta = matter(post).data;
@@ -46,7 +46,6 @@ export const getPost = async (slug: string) => {
         rehypeSlug,
         [rehypeAutolink, autoLinkHeadingsOptions]
       ];
-
       return options;
     }
   });

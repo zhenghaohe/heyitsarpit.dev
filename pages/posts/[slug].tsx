@@ -1,5 +1,5 @@
 import { getMDXComponent } from 'mdx-bundler/client';
-import { InferGetStaticPropsType } from 'next';
+import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { useMemo } from 'react';
 
 import PostPageLayout from '../../components/PostPage';
@@ -10,12 +10,12 @@ export const getStaticPaths = async () => {
   const paths = posts.map(({ slug }) => ({ params: { slug } }));
 
   return {
-    paths: paths,
+    paths,
     fallback: false // 404
   };
 };
 
-export const getStaticProps = async (context) => {
+export const getStaticProps = async (context: GetStaticPropsContext) => {
   const slug = context.params?.slug as string;
   const post = await getPost(slug);
 
