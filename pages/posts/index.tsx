@@ -3,24 +3,17 @@ import fuzzysort from 'fuzzysort';
 import { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { ChangeEvent, memo, useEffect, useMemo, useRef, useState } from 'react';
+import { ChangeEvent, useEffect, useMemo, useRef, useState } from 'react';
 
-import AppWrapper from '../components/Common/AppWrapper';
-import TagList from '../components/Tags';
-import formatDate from '../utils/formatDate';
-import { useDebounce } from '../utils/useDebounce';
-import { frontMatter as blogPosts } from './posts/**/*.mdx';
+import AppWrapper from '../../components/Common/AppWrapper';
+import TagList from '../../components/Tags';
+import formatDate from '../../utils/formatDate';
+import { getAllPostsMeta } from '../../utils/loadMDX';
+import { useDebounce } from '../../utils/useDebounce';
 
 export const getStaticProps = async () => {
-  const blogs = blogPosts
-    .filter(({ published }) => published)
-    .sort((a, b) => Number(new Date(b.date)) - Number(new Date(a.date)))
-    .map((blog) => {
-      blog.cover_image += '?crop=entropy&cs=srgb&fit=crop&fm=jpg&h=1000&w=1800';
-      return blog;
-    });
-
-  return { props: { blogs } };
+  const posts = await getAllPostsMeta();
+  return { props: { posts } };
 };
 
 const Wrapper = styled(AppWrapper)`
@@ -103,13 +96,11 @@ const Description = styled.div`
   line-height: 1.8;
 `;
 
-const formatPath = (p: string) => p.replace(/\.mdx$/, '');
-
-const BlogCard: React.FC<FrontMatter> = ({ __resourcePath, title, date, description, tags }) => {
+const PostPreview: React.FC<PostMeta> = ({ slug, title, date, description, tags }) => {
   return (
     <ListItem>
       <Title>
-        <Link href={formatPath(__resourcePath)}>
+        <Link href={`posts/${slug}`}>
           <a>{title}</a>
         </Link>
       </Title>
@@ -199,24 +190,21 @@ const Search: React.FC<SearchProps> = ({ query, setQuery, setSearching }) => {
   );
 };
 
-const Blogs: React.FC<{ blogs: FrontMatter[] }> = memo(({ blogs }) => {
+const PostPreviewList: React.FC<{ posts: PostMeta[] }> = ({ posts }) => {
   return (
     <List>
-      {blogs.map((blog) => (
-        <BlogCard key={blog.__resourcePath} {...blog} />
+      {posts.map((post) => (
+        <PostPreview key={post.slug} {...post} />
       ))}
     </List>
   );
-});
-Blogs.displayName = 'Blogs';
+};
 
-type Props = InferGetStaticPropsType<typeof getStaticProps>;
-
-const findBlogs = (queries: string[], blogs: FrontMatter[]): FrontMatter[] => {
-  const foundBlogs = new Set<FrontMatter>();
+const findPosts = (queries: string[], posts: PostMeta[]): PostMeta[] => {
+  const foundPosts = new Set<PostMeta>();
 
   queries.forEach((query) => {
-    const results = fuzzysort.go(query, blogs, {
+    const results = fuzzysort.go(query, posts, {
       keys: ['title', 'tags'],
       threshold: -10000,
       allowTypo: true
@@ -224,17 +212,19 @@ const findBlogs = (queries: string[], blogs: FrontMatter[]): FrontMatter[] => {
 
     results.forEach((result) => {
       if (result.length) {
-        foundBlogs.add(result.obj);
+        foundPosts.add(result.obj);
       }
     });
   });
 
-  return Array.from(foundBlogs);
+  return Array.from(foundPosts);
 };
 
 const Delimiter = '|';
 
-const BlogsPage: React.FC<Props> = ({ blogs }) => {
+type Props = InferGetStaticPropsType<typeof getStaticProps>;
+
+const Posts: React.FC<Props> = ({ posts }) => {
   const router = useRouter();
 
   const [searching, setSearching] = useState(false);
@@ -264,16 +254,16 @@ const BlogsPage: React.FC<Props> = ({ blogs }) => {
     }
   }, [debouncedQuery]);
 
-  const foundBlogs = useMemo(() => {
-    return findBlogs(debouncedQuery.split(' '), blogs);
-  }, [debouncedQuery, blogs]);
+  const foundPosts = useMemo(() => {
+    return findPosts(debouncedQuery.split(' '), posts);
+  }, [debouncedQuery, posts]);
 
   return (
     <Wrapper>
       <Search setSearching={setSearching} query={query} setQuery={setQuery} />
-      <Blogs blogs={searching ? foundBlogs : blogs} />
+      <PostPreviewList posts={searching ? foundPosts : posts} />
     </Wrapper>
   );
 };
 
-export default BlogsPage;
+export default Posts;
