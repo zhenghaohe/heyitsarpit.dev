@@ -13,9 +13,13 @@ const PostPreview: React.FC<PostMeta> = ({ slug, title, date }) => {
   return (
     <li className="my-4">
       <Link href={`posts/${slug}`}>
-        <a className="group flex items-center hover:bg-cl-muted p-1 rounded-md">
-          <p className="text-sm mr-8 min-w-[50px] text-cl-secondary">{formatDate(date)}</p>
-          <h3 className="font-medium group-hover:text-cl-accent">{title}</h3>
+        <a className="transition duration-300 group flex items-center hover:bg-pink-50 p-1 rounded-md dark:hover:bg-pink-300/10">
+          <p className="transition duration-300 text-sm mr-8 min-w-[50px] text-cl-secondary group-hover:text-pink-400">
+            {formatDate(date)}
+          </p>
+          <h3 className="transition duration-300 font-medium group-hover:text-cl-accent">
+            {title}
+          </h3>
         </a>
       </Link>
     </li>
