@@ -1,47 +1,35 @@
-import { styled } from '@linaria/react';
 import Link from 'next/link';
-
-import AppWrapper from '../components/Common/AppWrapper';
-
-const Wrapper = styled(AppWrapper)`
-  margin-top: 13rem;
-  a {
-    color: var(--color-link-posts);
-    box-shadow: 0 1px 0 0 currentColor;
-    text-decoration: none;
-    :hover {
-      box-shadow: none;
-    }
-  }
-  h1 {
-    font-size: 3rem;
-    line-height: 1.15;
-  }
-  p {
-    font-size: 1.3rem;
-  }
-`;
 
 const Home: React.FC = () => {
   return (
-    <Wrapper>
-      <h1>Hi, I&apos;m Arpit</h1>
-      <p>
-        Software Developer.{' '}
-        <Link href="/posts">
-          <a>Writing</a>
-        </Link>{' '}
-        about Programming and Web Development. <br />
-        Making 3D {/* <Link href="/art"> */}
-        <a href="https://www.instagram.com/arpitb_/" target="_blank" rel="noreferrer">
-          Art
-        </a>
-        {/* </Link> */} and animations. Working at{' '}
-        <a href="https://www.linkedin.com/company/antillia-llc/" target="_blank" rel="noreferrer">
-          Antillia
-        </a>
-      </p>
-    </Wrapper>
+    <div className="w-full h-full px-5 flex justify-center items-center">
+      <section className="prose prose-pink dark:prose-dark">
+        <h1 className="font-bold text-3xl mb-3">Hi, I&apos;m Arpit</h1>
+        <p>
+          Software Developer.{' '}
+          <Link href="/posts">
+            <a className="link">Writing</a>
+          </Link>{' '}
+          about Programming and Web Development. <br />
+          Making 3D {/* <Link href="/art"> */}
+          <a
+            className="link"
+            href="https://www.instagram.com/arpitb_/"
+            target="_blank"
+            rel="noreferrer">
+            Art
+          </a>
+          {/* </Link> */} and animations. Working at{' '}
+          <a
+            className="link"
+            href="https://www.linkedin.com/company/antillia-llc/"
+            target="_blank"
+            rel="noreferrer">
+            Antillia
+          </a>
+        </p>
+      </section>
+    </div>
   );
 };
 

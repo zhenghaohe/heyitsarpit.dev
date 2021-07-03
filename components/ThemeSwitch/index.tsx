@@ -22,6 +22,7 @@ const ThemeSwitch: React.FC = () => {
   useEffect(() => {
     const root = window.document.documentElement;
     root.setAttribute('data-theme', theme);
+    theme === 'dark' ? document.body.classList.add('dark') : document.body.classList.remove('dark');
     setLocalStorage<ColorTheme>(COLOR_THEME, theme);
   }, [theme]);
 

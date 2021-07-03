@@ -1,28 +1,28 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { RiArticleFill } from 'react-icons/ri';
 
+import astro from '../../public/images/astro.png';
 import ScrollProgress from '../ScrollProgress';
 import ThemeSwitch from '../ThemeSwitch';
-import * as S from './styles';
 
 const Nav: React.FC = () => {
   return (
-    <S.Wrapper>
+    <header className="fixed z-10 w-full h-16 flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-[color:var(--color-nav-background)]">
       <ScrollProgress />
-      <S.Content>
+      <nav className="w-full flex px-5 justify-between items-center">
         <Link href="/" passHref>
-          <S.StyledLink title="Home" aria-label="Home">
-            <S.LogoImage src="/images/astro.png" alt="home" />
-          </S.StyledLink>
+          <a title="Home" aria-label="Home">
+            <div className="h-11 w-11">
+              <Image src={astro} alt="home" className="rounded-full" />
+            </div>
+          </a>
         </Link>
         <Link href="/posts" passHref>
-          <S.StyledLink title="Posts" aria-label="Home">
-            <RiArticleFill size="2rem" />
-          </S.StyledLink>
+          <a>Posts</a>
         </Link>
         <ThemeSwitch />
-      </S.Content>
-    </S.Wrapper>
+      </nav>
+    </header>
   );
 };
 

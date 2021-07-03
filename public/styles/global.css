@@ -1,9 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .link {
+    @apply text-pink-600 underline hover:no-underline;
+  }
+}
+
 :root {
   --theme: 'light';
   --color-text: #3f404f;
   --color-text-secondary: #383838;
   --color-background: #fdfdfd;
-  --color-nav-background: #ffffff4d;
+  --color-nav-background: transparent;
   --color-muted: #cccfd077;
   --color-heading-primary: #34384d;
   --color-heading-secondary: #08ce3a;
@@ -63,13 +73,9 @@ body,
 #__next {
   width: 100%;
   height: 100%;
-  font-size: 18px;
+  text-rendering: optimizeLegibility;
   color: var(--color-text);
   background: var(--color-background);
-  /* transition: 500ms;
-  transition-property: background, color; */
-
-  text-rendering: optimizeLegibility;
 }
 
 html {

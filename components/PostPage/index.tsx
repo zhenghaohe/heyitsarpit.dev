@@ -27,7 +27,13 @@ const Layout: React.FC<Props> = ({ meta, children }) => {
     <>
       <NextSeo title={meta.title} description={meta.description} />
       <Blog.Hero>
-        <Image src={meta.cover_image} layout="fill" alt="cover" className="next_image" />
+        {/* <Image src={meta.cover_image} layout="fill" alt="cover" className="next_image" /> */}
+        {/* <Image
+          src="/images/pexels-elena-koloskova-8580325.jpg"
+          layout="fill"
+          alt="cover"
+          className="next_image"
+        /> */}
         <Blog.HeroInner>
           <GoBack />
           <Blog.Title>{meta.title}</Blog.Title>

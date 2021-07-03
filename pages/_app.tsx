@@ -3,7 +3,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 import '../public/styles/font.css';
-import '../public/styles/normalize.css';
 import '../public/styles/global.css';
 
 import { AppProps } from 'next/app';
