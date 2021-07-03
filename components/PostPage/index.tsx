@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
@@ -40,11 +39,6 @@ const Layout: React.FC<Props> = ({ meta, children }) => {
           <Blog.DateAndReadTime>{formatDate(meta.date)}</Blog.DateAndReadTime>
           <Blog.Description>{meta.description}</Blog.Description>
         </Blog.HeroInner>
-        <Blog.CoverCredits>
-          <a href={meta.cover_artist_url} target="_blank" rel="noopener noreferrer">
-            Photo By — {meta.cover_artist}
-          </a>
-        </Blog.CoverCredits>
       </Blog.Hero>
       <Blog.Article>{children}</Blog.Article>
     </>
