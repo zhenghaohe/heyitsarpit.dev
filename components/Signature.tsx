@@ -1,9 +1,5 @@
-import { styled } from '@linaria/react';
-
-const Wrapper = styled.div``;
-
 export const Signature = (): JSX.Element => (
-  <Wrapper>
+  <div>
     <svg
       width="100"
       height="50"
@@ -21,5 +17,5 @@ export const Signature = (): JSX.Element => (
         fill="var(--color-text)"
       />
     </svg>
-  </Wrapper>
+  </div>
 );

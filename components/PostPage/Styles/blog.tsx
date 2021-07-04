@@ -1,7 +1,5 @@
 import { styled } from '@linaria/react';
 
-// import Prism from './prism';
-
 export const Article = styled.article`
   max-width: 75ch;
   padding: 0 1rem;

@@ -3,11 +3,10 @@ import Head from 'next/head';
 import { NextSeo } from 'next-seo';
 
 import { formateDateFull, validDate } from '../../utils/formatDate';
-import * as Blog from './Styles/blog';
 
 type Props = { meta: PostMeta };
 
-const Layout: React.FC<Props> = ({ meta, children }) => {
+const PostPage: React.FC<Props> = ({ meta, children }) => {
   return (
     <>
       <NextSeo title={meta.title} description={meta.description} />
@@ -28,4 +27,4 @@ const Layout: React.FC<Props> = ({ meta, children }) => {
   );
 };
 
-export default Layout;
+export default PostPage;

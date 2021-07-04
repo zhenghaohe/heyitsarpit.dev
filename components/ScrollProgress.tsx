@@ -1,29 +1,5 @@
-import { styled } from '@linaria/react';
 import Router from 'next/router';
 import { useEffect, useRef } from 'react';
-
-const Bar = styled.div`
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-
-  background-size: 350% 350%;
-
-  width: var(--length, 0);
-  height: 6px;
-
-  animation: gradient 10s ease infinite;
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 100%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 100%;
-    }
-  }
-`;
 
 const getLength = () => {
   const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
@@ -81,8 +57,11 @@ const ScrollProgress: React.FC = () => {
   }, []);
 
   return (
-    <div className="w-full sm:h-1 h-2 fixed z-20">
-      <Bar ref={bar$} className="" />
+    <div className="w-full fixed z-20">
+      <div
+        ref={bar$}
+        className="animate-gradient bg-iridescent bg-zoom-350 h-[6px] w-[var(--length)]"
+      />
     </div>
   );
 };
