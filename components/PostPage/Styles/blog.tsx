@@ -15,8 +15,6 @@ export const Article = styled.article`
   font-feature-settings: 'kern', 'liga', 'clig', 'calt';
 
   font-size: 1rem;
-  @media screen and (max-width: 736px) {
-  }
 
   p a {
     color: var(--color-link-posts);

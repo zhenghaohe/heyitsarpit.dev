@@ -3,105 +3,88 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --theme: 'light';
+    --color-text: #3f404f;
+    --color-text-secondary: #6d6f88;
+    --color-background: #fdfdfd;
+    --color-nav-background: transparent;
+    --color-muted: #cccfd077;
+    --color-heading-primary: #34384d;
+    --color-heading-secondary: #08ce3a;
+
+    --color-link-posts: #eb3b75;
+
+    --syntax-background: #f5f6f9;
+    --syntax-comment: #7d7d7d;
+    --syntax-text: #202020;
+    --syntax-operator: #1590ac;
+    --syntax-string: #07a830;
+    --syntax-number: #cc6900;
+    --syntax-primary: #d20378;
+    --syntax-keyword: #5501ce;
+    --syntax-html-tag: #ec0303;
+    --syntax-boolean: #b6c420;
+  }
+
+  html[data-theme='dark'] {
+    --theme: 'dark';
+    --color-text: #f0f1f3;
+    --color-text-secondary: #dbdada;
+    --color-background: #0b0b0c;
+    --color-nav-background: #00000063;
+    --color-muted: #2c2d2dbb;
+    --color-heading-primary: #ffffff;
+    --color-heading-secondary: #50fa7b;
+    --color-link-posts: #d63369;
+
+    --syntax-background: #1b1c24;
+    --syntax-comment: #6272a4;
+    --syntax-text: #f8f8f2;
+    --syntax-operator: #8be9fd;
+    --syntax-string: #50fa7b;
+    --syntax-number: #ffb86c;
+    --syntax-primary: #ff70c2;
+    --syntax-keyword: #bd93f9;
+    --syntax-html-tag: #ff5555;
+    --syntax-boolean: #f1fa8c;
+  }
+
+  html,
+  body,
+  #__next {
+    @apply w-full h-full;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    color: var(--color-text);
+    background: var(--color-background);
+    font: 100%/28px 'Inter', 'DejaVu Sans', sans-serif;
+  }
+
+  *::selection {
+    @apply text-white bg-accent;
+  }
+
+  :not(pre) > code {
+    background: var(--syntax-background);
+    color: var(--color-link-posts);
+
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9em;
+    padding: 0.07em 0.5em;
+    margin: 0 0.1em;
+    border-radius: 3px;
+  }
+
+  :not(pre) > code {
+    @apply transition-colors delay-300;
+  }
+
   .link {
     @apply text-pink-600 underline hover:no-underline;
   }
 }
 
-:root {
-  --theme: 'light';
-  --color-text: #3f404f;
-  --color-text-secondary: #6d6f88;
-  --color-background: #fdfdfd;
-  --color-nav-background: transparent;
-  --color-muted: #cccfd077;
-  --color-heading-primary: #34384d;
-  --color-heading-secondary: #08ce3a;
-
-  --color-link-posts: #eb3b75;
-
-  --syntax-background: #f5f6f9;
-  --syntax-comment: #7d7d7d;
-  --syntax-text: #202020;
-  --syntax-operator: #1590ac;
-  --syntax-string: #07a830;
-  --syntax-number: #cc6900;
-  --syntax-primary: #d20378;
-  --syntax-keyword: #5501ce;
-  --syntax-html-tag: #ec0303;
-  --syntax-boolean: #b6c420;
-}
-
-html[data-theme='dark'] {
-  --theme: 'dark';
-  --color-text: #f0f1f3;
-  --color-text-secondary: #dbdada;
-  --color-background: #0b0b0c;
-  --color-nav-background: #00000063;
-  --color-muted: #2c2d2dbb;
-  --color-heading-primary: #ffffff;
-  --color-heading-secondary: #50fa7b;
-  --color-link-posts: #d63369;
-
-  --syntax-background: #1b1c24;
-  --syntax-comment: #6272a4;
-  --syntax-text: #f8f8f2;
-  --syntax-operator: #8be9fd;
-  --syntax-string: #50fa7b;
-  --syntax-number: #ffb86c;
-  --syntax-primary: #ff70c2;
-  --syntax-keyword: #bd93f9;
-  --syntax-html-tag: #ff5555;
-  --syntax-boolean: #f1fa8c;
-}
-
-html,
-body,
-#__next {
-  width: 100%;
-  height: 100%;
-  text-rendering: optimizeLegibility;
-  color: var(--color-text);
-  background: var(--color-background);
-}
-
-html {
-  scroll-behavior: smooth;
-
-  font: 100%/28px 'Inter', 'DejaVu Sans', sans-serif;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-*::selection {
-  /* background: var(--color-text);
-  color: var(--color-background); */
-  background: var(--color-link-posts);
-  color: #fff;
-}
-
-:not(pre) > code {
-  background: var(--syntax-background);
-  color: var(--color-link-posts);
-
-  transition: 500ms;
-  transition-property: background, color;
-
-  font-family: 'Fira Code', monospace;
-  font-size: 0.9em;
-  padding: 0.07em 0.5em;
-  margin: 0 0.1em;
-  border-radius: 3px;
-}
-
-/* :not(pre) > code::before {
-  content: '`';
-}
-
-:not(pre) > code::after {
-  content: '`';
-} */
