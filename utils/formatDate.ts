@@ -1,6 +1,6 @@
 import { format, localeFormat } from 'light-date';
 
-const formatDate = (d: string): string => {
+export const formateDatePreview = (d: string): string => {
   const date = new Date(d);
 
   const month = localeFormat(date, '{MMM}', 'en-GB');
@@ -9,4 +9,21 @@ const formatDate = (d: string): string => {
   return `${month} ${_date} `;
 };
 
-export default formatDate;
+export const formateDateFull = (d: string): string => {
+  const date = new Date(d);
+
+  const month = localeFormat(date, '{MMM}', 'en-GB');
+  const _date = format(date, '{dd}');
+  const year = format(date, '{yyyy}');
+
+  return `${_date} ${month}, ${year}`;
+};
+
+/**
+ * Exports data as 2021-07-01 format, to be used with <time /> tag
+ */
+export const validDate = (d: string): string => {
+  const date = new Date(d);
+
+  return format(date, '{yyyy}-{MM}-{dd}');
+};

@@ -1,7 +1,7 @@
 import { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 
-import formatDate from '../../utils/formatDate';
+import { formateDatePreview, validDate } from '../../utils/formatDate';
 import { getAllPostsMeta } from '../../utils/loadMDX';
 
 export const getStaticProps = async () => {
@@ -13,9 +13,9 @@ const PostPreview: React.FC<PostMeta> = ({ slug, title, date }) => {
   return (
     <li className="my-4">
       <Link href={`posts/${slug}`}>
-        <a className="transition duration-300 group flex items-center hover:bg-pink-50 p-1 rounded-md dark:hover:bg-pink-300/10">
+        <a className="hover:ring-1 ring-pink-400/40 transition duration-300 group flex items-center hover:bg-pink-50 p-1 rounded-md dark:hover:bg-pink-300/10">
           <p className="transition duration-300 text-sm mr-8 min-w-[50px] text-cl-secondary group-hover:text-pink-400">
-            {formatDate(date)}
+            <time dateTime={validDate(date)}>{formateDatePreview(date)}</time>
           </p>
           <h3 className="transition duration-300 font-medium group-hover:text-cl-accent">
             {title}
