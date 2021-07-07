@@ -3,7 +3,7 @@ import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { useMemo } from 'react';
 
 import { components } from '../../components/MDXPostComponents';
-import PostPageLayout from '../../components/PostPage';
+import { PostPage } from '../../components/PostPage';
 import { getAllPostsMeta, getPost } from '../../utils/loadMDX';
 
 export const getStaticPaths = async () => {
@@ -29,9 +29,9 @@ export const Post: React.FC<Props> = ({ meta, code }) => {
   const Component = useMemo(() => getMDXComponent(code), [code]);
 
   return (
-    <PostPageLayout meta={meta}>
+    <PostPage meta={meta}>
       <Component components={components} />
-    </PostPageLayout>
+    </PostPage>
   );
 };
 

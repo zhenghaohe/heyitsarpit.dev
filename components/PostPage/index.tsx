@@ -6,10 +6,15 @@ import { formateDateFull, validDate } from '../../utils/formatDate';
 
 type Props = { meta: PostMeta };
 
-const PostPage: React.FC<Props> = ({ meta, children }) => {
+export const PostPage: React.FC<Props> = ({ meta, children }) => {
   return (
     <>
-      <NextSeo title={meta.title} description={meta.description} />
+      <NextSeo
+        title={meta.title}
+        description={meta.description}
+        canonical={`https://heyitsarpit.dev/posts/${meta.slug}`}
+        openGraph={{ url: `https://heyitsarpit.dev/posts/${meta.slug}` }}
+      />
       <Head>
         <link rel="stylesheet" href="/styles/prism.css" />
       </Head>
@@ -26,5 +31,3 @@ const PostPage: React.FC<Props> = ({ meta, children }) => {
     </>
   );
 };
-
-export default PostPage;

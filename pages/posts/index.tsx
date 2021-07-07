@@ -1,5 +1,6 @@
 import { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
+import { NextSeo } from 'next-seo';
 
 import { formateDatePreview, validDate } from '../../utils/formatDate';
 import { getAllPostsMeta } from '../../utils/loadMDX';
@@ -53,9 +54,16 @@ type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
 const Posts: React.FC<Props> = ({ posts }) => {
   return (
-    <div className="w-full md:w-4/5 lg:w-1/2  2xl:w-1/3 m-auto px-5 flex flex-col justify-center items-center">
-      <PostPreviewList posts={posts} />
-    </div>
+    <>
+      <NextSeo
+        title="Posts"
+        canonical="https://heyitsarpit.dev/posts"
+        openGraph={{ url: 'https://heyitsarpit.dev/posts' }}
+      />
+      <div className="w-full md:w-4/5 lg:w-1/2  2xl:w-1/3 m-auto px-5 flex flex-col justify-center items-center">
+        <PostPreviewList posts={posts} />
+      </div>
+    </>
   );
 };
 
