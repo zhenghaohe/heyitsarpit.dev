@@ -1,4 +1,0 @@
-{
-    "presets": ["next/babel", "@linaria"],
-    "plugins": ["import-glob-array"]
-}
