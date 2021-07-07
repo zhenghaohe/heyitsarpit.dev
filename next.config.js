@@ -1,8 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const withLinaria = require('next-linaria');
-
-module.exports = withLinaria({
+module.exports = {
   images: {
-    domains: ['images.pexels.com']
+    domains: ['images.pexels.com', 'user-images.githubusercontent.com']
   }
-});
+};

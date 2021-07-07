@@ -183,7 +183,6 @@ pre.line-numbers > code {
   width: 3em; /* works for line-numbers below 1000 lines */
   letter-spacing: -1px;
   border-right: 0;
-
   user-select: none;
 }
 

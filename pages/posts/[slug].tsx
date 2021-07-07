@@ -2,6 +2,7 @@ import { getMDXComponent } from 'mdx-bundler/client';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { useMemo } from 'react';
 
+import { components } from '../../components/MDXPostComponents';
 import PostPageLayout from '../../components/PostPage';
 import { getAllPostsMeta, getPost } from '../../utils/loadMDX';
 
@@ -29,7 +30,7 @@ export const Post: React.FC<Props> = ({ meta, code }) => {
 
   return (
     <PostPageLayout meta={meta}>
-      <Component />
+      <Component components={components} />
     </PostPageLayout>
   );
 };

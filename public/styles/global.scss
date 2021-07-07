@@ -68,23 +68,79 @@
     @apply text-white bg-accent;
   }
 
-  :not(pre) > code {
-    background: var(--syntax-background);
-    color: var(--color-link-posts);
-
-    font-family: 'Fira Code', monospace;
-    font-size: 0.9em;
-    padding: 0.07em 0.5em;
-    margin: 0 0.1em;
-    border-radius: 3px;
-  }
-
-  :not(pre) > code {
-    @apply transition-colors delay-300;
-  }
-
   .link {
     @apply text-pink-600 underline hover:no-underline;
   }
+
+  article {
+    :is(h2, h3, h4, h5, h6) {
+      @apply text-primary mt-10 font-semibold flex;
+    }
+
+    h2 {
+      @apply text-xl;
+    }
+    h3 {
+      @apply text-lg;
+    }
+
+    img {
+      @apply w-full mx-auto;
+    }
+
+    hr {
+      @apply text-primary w-1/3;
+    }
+
+    strong {
+      @apply text-white dark:text-black;
+    }
+
+    blockquote {
+      code {
+        @apply not-italic;
+      }
+    }
+
+    :not(pre) > code {
+      background: var(--syntax-background);
+      color: var(--color-link-posts);
+
+      font-family: 'Fira Code', monospace;
+      @apply rounded-sm mx-1 py-[2px] px-2 text-sm transition-colors duration-300;
+    }
+
+    blockquote {
+      @apply relative py-1 pl-[2ch] pr-[1ch] my-8 italic bg-[#8a63ad14];
+
+      ::before {
+        content: '';
+        @apply w-2 h-full absolute top-0 left-0 inline-block bg-iridescent bg-zoom-350 animate-gradient;
+      }
+      @media screen and (max-width: 700px) {
+        width: 100vw; /*Percentage of full screen viewing width*/
+        left: calc(-50vw + 50%); /*Centres div*/
+      }
+    }
+
+    ol {
+      @apply list-inside list-decimal;
+    }
+    ul {
+      @apply list-inside list-disc;
+    }
+
+    li::marker {
+      @apply text-gray-400;
+    }
+  }
 }
 
+.anchor {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
+:is(h2, h3, h4, h4, h6):hover .anchor {
+  opacity: 1;
+}

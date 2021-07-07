@@ -13,9 +13,9 @@ const PostPage: React.FC<Props> = ({ meta, children }) => {
       <Head>
         <link rel="stylesheet" href="/styles/prism.css" />
       </Head>
-      <article>
+      <article className="max-w-[75ch] mx-auto py-16 px-4">
         <div>
-          <h1 className="font-bold text-3xl">{meta.title}</h1>
+          <h1 className="font-bold text-3xl text-black dark:text-white">{meta.title}</h1>
           <p>
             <time dateTime={validDate(meta.date)}>{formateDateFull(meta.date)}</time>
           </p>
