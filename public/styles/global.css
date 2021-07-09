@@ -71,7 +71,7 @@
   }
 
   .link {
-    @apply text-pink-600 underline hover:no-underline;
+    @apply text-pink-600 hover:underline no-underline;
   }
 
   article :is(h2, h3, h4, h5, h6) {

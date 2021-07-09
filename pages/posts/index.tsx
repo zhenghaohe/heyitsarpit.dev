@@ -37,7 +37,7 @@ const PostPreviewList: React.FC<{ posts: PostMeta[] }> = ({ posts }) => {
   return (
     <>
       {Object.entries(postsByYear).map(([year, posts]) => (
-        <div key={year}>
+        <div key={year} className="w-full">
           <h2 className="pl-1 font-bold text-lg">{year}</h2>
           <ul>
             {posts.map((post) => (
@@ -60,7 +60,7 @@ const Posts: React.FC<Props> = ({ posts }) => {
         canonical="https://heyitsarpit.dev/posts"
         openGraph={{ url: 'https://heyitsarpit.dev/posts' }}
       />
-      <div className="w-full md:w-4/5 lg:w-1/2  2xl:w-1/3 m-auto px-5 flex flex-col justify-center items-center">
+      <div className="w-full sm:max-w-[75ch] m-auto px-5 flex flex-col justify-center items-center">
         <PostPreviewList posts={posts} />
       </div>
     </>

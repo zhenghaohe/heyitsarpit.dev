@@ -8,7 +8,7 @@ import '../public/styles/global.css';
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import Layout from '../components/Layout';
+import Nav from '../components/Nav';
 import { SEO } from '../components/SEO';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
@@ -18,9 +18,12 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <SEO />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <div className="w-full h-full">
+        <Nav />
+        <main className="w-full">
+          <Component {...pageProps} />
+        </main>
+      </div>
     </>
   );
 };
