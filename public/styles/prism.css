@@ -4,7 +4,7 @@ pre[class*='language-'] {
 
   background: none;
   font-family: 'Fira Code', monospace;
-  font-size: 0.85em;
+  font-size: 0.85rem;
 
   text-align: left;
   white-space: pre;
