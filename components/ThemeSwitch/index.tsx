@@ -1,6 +1,10 @@
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
-import { DarkModeSwitch } from 'react-toggle-dark-mode';
+
+const DarkModeSwitch = dynamic(() =>
+  import('react-toggle-dark-mode').then((mod) => mod.DarkModeSwitch)
+);
 
 import { getLocalStorage, setLocalStorage } from '../../utils/localStorage';
 
@@ -10,7 +14,6 @@ const ThemeSwitch: React.FC = () => {
   const COLOR_THEME = 'COLOR_THEME';
 
   const [theme, setTheme] = useState<ColorTheme>('dark');
-
   const [hasMounted, setHasMounted] = useState(false);
 
   useEffect(() => {
