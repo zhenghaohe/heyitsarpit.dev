@@ -124,16 +124,13 @@
     @apply w-2 h-full absolute top-0 left-0 inline-block bg-iridescent bg-zoom-350 animate-gradient;
   }
 
-  article ol {
-    @apply list-inside list-decimal;
+  article li {
+    @apply relative pl-7 my-3;
   }
 
-  article ul {
-    @apply list-inside list-disc;
-  }
-
-  article li::marker {
-    @apply text-gray-400;
+  article li::before {
+    content: '';
+    @apply absolute bg-gray-300 dark:bg-gray-600 rounded-full w-1.5 h-1.5 left-1 top-2.5;
   }
 }
 
