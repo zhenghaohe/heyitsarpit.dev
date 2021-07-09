@@ -40,8 +40,8 @@ const ThemeSwitch: React.FC = () => {
       <DarkModeSwitch
         checked={theme === 'dark'}
         onChange={switchTheme}
-        moonColor="var(--color-text)"
-        sunColor="var(--color-text)"
+        moonColor="white"
+        sunColor="black"
       />
     </>
   );

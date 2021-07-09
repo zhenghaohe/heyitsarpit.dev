@@ -5,7 +5,7 @@
 @layer base {
   :root {
     --theme: 'light';
-    --color-text: #3f404f;
+    --color-text: theme('colors.gray.800');
     --color-text-secondary: #6d6f88;
     --color-background: #fdfdfd;
     --color-nav-background: transparent;
@@ -29,7 +29,7 @@
 
   html[data-theme='dark'] {
     --theme: 'dark';
-    --color-text: #f0f1f3;
+    --color-text: theme('colors.gray.200');
     --color-text-secondary: #dbdada;
     --color-background: #0b0b0c;
     --color-nav-background: #00000063;
@@ -61,7 +61,9 @@
     text-rendering: optimizeLegibility;
     color: var(--color-text);
     background: var(--color-background);
-    font: 100%/28px 'Inter', 'DejaVu Sans', sans-serif;
+    font: 100%/1.75 'Inter', 'DejaVu Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   *::selection {
@@ -73,7 +75,7 @@
   }
 
   article :is(h2, h3, h4, h5, h6) {
-    @apply text-primary mt-10 font-semibold flex;
+    @apply text-gray-800 mt-8 mb-5 dark:text-gray-100 font-semibold flex;
   }
 
   h2 {
@@ -92,7 +94,7 @@
   }
 
   article strong {
-    @apply text-white dark:text-black;
+    @apply dark:text-white text-black;
   }
 
   article blockquote code {
@@ -133,13 +135,13 @@
   article li::marker {
     @apply text-gray-400;
   }
+}
 
-  article .anchor {
-    opacity: 0;
-    transition: opacity 300ms ease-in-out;
-  }
+article .anchor {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
 
-  article :is(h2, h3, h4, h4, h6):hover .anchor {
-    opacity: 1;
-  }
+article :is(h2, h3, h4, h4, h6):hover .anchor {
+  opacity: 1;
 }
