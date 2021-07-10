@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import ScrollProgress from '../ScrollProgress';
-import ThemeSwitch from '../ThemeSwitch';
+import ScrollProgress from './ScrollProgress';
+import ThemeSwitch from './ThemeSwitch';
 
 const Nav: React.FC = () => {
   return (

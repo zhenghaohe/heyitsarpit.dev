@@ -6,7 +6,7 @@ const DarkModeSwitch = dynamic(() =>
   import('react-toggle-dark-mode').then((mod) => mod.DarkModeSwitch)
 );
 
-import { getLocalStorage, setLocalStorage } from '../../utils/localStorage';
+import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
 
 type ColorTheme = 'light' | 'dark';
 

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 
-import { formateDateFull, validDate } from '../../utils/formatDate';
+import { formateDateFull, validDate } from '../utils/formatDate';
 
 type Props = { meta: PostMeta };
 
