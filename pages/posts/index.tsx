@@ -2,8 +2,8 @@ import { InferGetStaticPropsType } from 'next';
 import Link from 'next/link';
 import { NextSeo } from 'next-seo';
 
-import { formateDatePreview, validDate } from '../../utils/formatDate';
-import { getAllPostsMeta } from '../../utils/loadMDX';
+import { formateDatePreview, validDate } from '@/utils/formatDate';
+import { getAllPostsMeta } from '@/utils/loadMDX';
 
 export const getStaticProps = async () => {
   const posts = await getAllPostsMeta();

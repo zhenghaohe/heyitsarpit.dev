@@ -2,9 +2,9 @@ import { getMDXComponent } from 'mdx-bundler/client';
 import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 import { useMemo } from 'react';
 
-import { components } from '../../components/MDXPostComponents';
-import { PostPage } from '../../components/PostPage';
-import { getAllPostsMeta, getPost } from '../../utils/loadMDX';
+import { components } from '@/components/MDXComponents';
+import { PostPage } from '@/components/PostPage';
+import { getAllPostsMeta, getPost } from '@/utils/loadMDX';
 
 export const getStaticPaths = async () => {
   const posts = await getAllPostsMeta();

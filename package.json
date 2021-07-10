@@ -1,9 +1,9 @@
 {
-  "name": "next-js-template",
-  "version": "0.0.1",
-  "description": "A template for next-js apps",
+  "name": "heyitsarpit.dev",
+  "version": "1.0.0",
+  "description": "Personal Website of Arpit",
   "main": "index.js",
-  "author": "Your Name<email@example.com>",
+  "author": "Arpit<arpitbharti@gmail.com>",
   "license": "MIT",
   "keywords": [
     "next",

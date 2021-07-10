@@ -2,14 +2,14 @@ if (process.env.NODE_ENV === 'development') {
   require('preact/debug');
 }
 
-import '../public/styles/font.css';
-import '../public/styles/global.css';
+import '@/public/styles/font.css';
+import '@/public/styles/global.css';
 
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 
-import Nav from '../components/Nav';
-import { SEO } from '../components/SEO';
+import Nav from '@/components/Nav';
+import { SEO } from '@/components/SEO';
 
 const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
