@@ -24,3 +24,5 @@ client_id
 .ds_store
 
 .linaria-cache
+
+public/*.js
