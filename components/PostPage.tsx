@@ -11,7 +11,7 @@ export const PostPage: React.FC<Props> = ({ meta, children }) => {
   return (
     <>
       <NextSeo
-        title={meta.title}
+        title={`${meta.title} - Arpit`}
         description={meta.description}
         canonical={`https://heyitsarpit.dev/posts/${meta.slug}`}
         openGraph={{ url: `https://heyitsarpit.dev/posts/${meta.slug}` }}
