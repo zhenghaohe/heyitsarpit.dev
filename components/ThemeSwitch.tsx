@@ -34,7 +34,6 @@ const ThemeSwitch: React.FC = () => {
     }
 
     setLocalStorage<ColorTheme>(COLOR_THEME, theme);
-    console.log(document.body.classList, theme, localStorage.getItem(COLOR_THEME));
   }, [theme]);
 
   const switchTheme = () => (theme === 'light' ? setTheme('dark') : setTheme('light'));
