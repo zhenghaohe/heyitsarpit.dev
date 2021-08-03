@@ -26,3 +26,4 @@ client_id
 .linaria-cache
 
 public/*.js
+public/*.js.map
