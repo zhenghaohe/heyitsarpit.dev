@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
+  body.light {
     --theme: 'light';
     --color-text: theme('colors.gray.800');
     --color-text-secondary: #6d6f88;
@@ -27,7 +27,7 @@
     --syntax-boolean: #b6c420;
   }
 
-  html[data-theme='dark'] {
+  body.dark {
     --theme: 'dark';
     --color-text: theme('colors.gray.200');
     --color-text-secondary: #dbdada;
@@ -56,14 +56,12 @@
     @apply w-full h-full;
   }
 
-  html {
+  body {
     scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     color: var(--color-text);
     background: var(--color-background);
     font: 100%/1.75 'Inter', 'DejaVu Sans', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   *::selection {
