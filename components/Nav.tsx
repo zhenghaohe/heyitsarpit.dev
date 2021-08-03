@@ -14,10 +14,12 @@ const Nav: React.FC = () => {
               ARPIT
             </a>
           </Link>
-          <Link href="/posts" passHref>
-            <a>Posts</a>
-          </Link>
-          <ThemeSwitch />
+          <div className="flex items-center gap-10">
+            <Link href="/posts" passHref>
+              <a>Posts</a>
+            </Link>
+            <ThemeSwitch />
+          </div>
         </nav>
       </div>
     </header>
