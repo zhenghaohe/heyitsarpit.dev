@@ -15,6 +15,10 @@
 
     --color-link-posts: #eb3b75;
 
+    --sc-bg: #f1f1f1;
+    --sc-divider-light:rgba(140, 140, 140, .42);
+    --sc-divider-dark:rgba(140, 140, 140, 1);;
+
     --syntax-background: #f5f6f9;
     --syntax-comment: #7d7d7d;
     --syntax-text: #202020;
@@ -38,6 +42,10 @@
     --color-heading-secondary: #50fa7b;
     --color-link-posts: #d63369;
 
+    --sc-bg: #111;
+    --sc-divider-light:rgba(200, 200, 200, .12);
+    --sc-divider-dark:rgba(200, 200, 200, .48);
+
     --syntax-background: #1b1c24;
     --syntax-comment: #6272a4;
     --syntax-text: #f8f8f2;
@@ -54,10 +62,29 @@
   body,
   #__next {
     @apply w-full h-full;
+    --sc-width: 6px;
   }
 
   * {
-    scrollbar-color: red yellow;
+    scrollbar-color: var(--sc-divider-light) var(--sc-bg);
+  }
+
+  ::-webkit-scrollbar {
+    width: var(--sc-width);
+  }
+  ::-webkit-scrollbar:horizontal {
+    height: var(--sc-width);
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--sc-bg);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--sc-divider-light);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--sc-divider-dark);
   }
 
   body {
