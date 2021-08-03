@@ -1,37 +1,40 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 const DarkModeSwitch = dynamic(() =>
   import('react-toggle-dark-mode').then((mod) => mod.DarkModeSwitch)
 );
 
-import { getLocalStorage, setLocalStorage } from '../utils/localStorage';
+import { setLocalStorage } from '../utils/localStorage';
 
 type ColorTheme = 'light' | 'dark';
 
 const ThemeSwitch: React.FC = () => {
-  const COLOR_THEME = 'COLOR_THEME';
+  const COLOR_THEME = 'theme';
 
-  const [theme, setTheme] = useState<ColorTheme>('light');
+  const [theme, setTheme] = useState<ColorTheme>('dark');
   const [hasMounted, setHasMounted] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setHasMounted(true);
-    const theme = getLocalStorage<ColorTheme>(COLOR_THEME, 'light');
+    const theme = (document.body.getAttribute('class') as ColorTheme) || 'dark';
     setTheme(theme);
   }, []);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const bodyClass = document.body.classList;
+
     if (theme === 'dark') {
-      document.body.classList.remove('light');
-      document.body.classList.add('dark');
+      bodyClass.remove('light');
+      bodyClass.add('dark');
     } else {
-      document.body.classList.add('light');
-      document.body.classList.remove('dark');
+      bodyClass.add('light');
+      bodyClass.remove('dark');
     }
 
     setLocalStorage<ColorTheme>(COLOR_THEME, theme);
+    console.log(document.body.classList, theme, localStorage.getItem(COLOR_THEME));
   }, [theme]);
 
   const switchTheme = () => (theme === 'light' ? setTheme('dark') : setTheme('light'));

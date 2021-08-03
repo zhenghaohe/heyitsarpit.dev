@@ -29,9 +29,9 @@
 
   body.dark {
     --theme: 'dark';
-    --color-text: theme('colors.gray.200');
+    --color-text: #fafbfc;
     --color-text-secondary: #dbdada;
-    --color-background: #0b0b0c;
+    --color-background: #141415;
     --color-nav-background: #00000063;
     --color-muted: #2c2d2dbb;
     --color-heading-primary: #ffffff;
@@ -54,6 +54,10 @@
   body,
   #__next {
     @apply w-full h-full;
+  }
+
+  * {
+    scrollbar-color: red yellow;
   }
 
   body {
