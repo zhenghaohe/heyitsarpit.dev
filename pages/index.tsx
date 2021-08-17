@@ -1,5 +1,39 @@
 import Link from 'next/link';
 
+const Social = () => (
+  <section>
+    <h2>Find Me Online</h2>
+    <ul>
+      {[
+        { name: 'Github', url: 'https://github.com/heyitsarpit' },
+        { name: 'LinkedIn', url: 'https://www.linkedin.com/in/arpitbharti' },
+        { name: 'Twitter', url: 'https://twitter.com/heyitsarpit' }
+      ].map(({ name, url }) => (
+        <li
+          key={name}
+          className="max-w-max flex items-center pl-0 before:hidden hover:text-[color:var(--color-link-posts)] hover:cursor-pointer">
+          <a className="" href={url} rel="noopener noreferrer" target="_blank">
+            {name}
+          </a>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-4 h-4 ml-1"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor">
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            />
+          </svg>
+        </li>
+      ))}
+    </ul>
+  </section>
+);
+
 const Home: React.FC = () => {
   return (
     <div className="w-full sm:max-w-[75ch] mt-[30vh] mx-auto h-full px-5 flex justify-center items-center">
@@ -17,49 +51,18 @@ const Home: React.FC = () => {
             href="https://www.instagram.com/arpitb_/"
             target="_blank"
             rel="noreferrer">
-            Art
+            Art{' '}
           </a>
-          {/* </Link> */} and animations. Working at{' '}
+          and animations. Working at{' '}
           <a
             className="link"
             href="https://www.linkedin.com/company/antillia-llc/"
             target="_blank"
             rel="noreferrer">
-            Antillia
+            Antillia.
           </a>
-          .
         </p>
-        <section>
-          <h2>Find Me Online</h2>
-          <ul>
-            {[
-              { name: 'Github', url: 'https://github.com/heyitsarpit' },
-              { name: 'LinkedIn', url: 'https://www.linkedin.com/in/arpitbharti' },
-              { name: 'Twitter', url: 'https://twitter.com/heyitsarpit' }
-            ].map(({ name, url }) => (
-              <li
-                key={name}
-                className="max-w-max flex items-center pl-0 before:hidden hover:text-[color:var(--color-link-posts)]">
-                <a className="" href={url} rel="noopener noreferrer" target="_blank">
-                  {name}
-                </a>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-4 h-4 ml-1"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
-              </li>
-            ))}
-          </ul>
-        </section>
+        <Social />
       </article>
     </div>
   );
