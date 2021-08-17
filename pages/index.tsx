@@ -3,8 +3,8 @@ import Link from 'next/link';
 const Home: React.FC = () => {
   return (
     <div className="w-full sm:max-w-[75ch] mt-[30vh] mx-auto h-full px-5 flex justify-center items-center">
-      <section className="w-full">
-        <h1 className="font-bold text-3xl mb-3">Hi, I&apos;m Arpit</h1>
+      <article className="w-full">
+        <h1 className="mb-3 text-3xl font-bold">Hi, I&apos;m Arpit</h1>
         <p>
           Software Developer.{' '}
           <Link href="/posts">
@@ -29,7 +29,38 @@ const Home: React.FC = () => {
           </a>
           .
         </p>
-      </section>
+        <section>
+          <h2>Find Me Online</h2>
+          <ul>
+            {[
+              { name: 'Github', url: 'https://github.com/heyitsarpit' },
+              { name: 'LinkedIn', url: 'https://www.linkedin.com/in/arpitbharti' },
+              { name: 'Twitter', url: 'https://twitter.com/heyitsarpit' }
+            ].map(({ name, url }) => (
+              <li
+                key={name}
+                className="max-w-max flex items-center pl-0 before:hidden hover:text-[color:var(--color-link-posts)]">
+                <a className="" href={url} rel="noopener noreferrer" target="_blank">
+                  {name}
+                </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="w-4 h-4 ml-1"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </article>
     </div>
   );
 };
