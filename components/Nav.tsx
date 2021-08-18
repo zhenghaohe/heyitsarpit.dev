@@ -15,8 +15,11 @@ const Nav: React.FC = () => {
             </a>
           </Link>
           <div className="flex items-center gap-10">
-            <Link href="/posts" passHref>
-              <a>Posts</a>
+            <Link href="/posts">
+              <a className="hover:text-[color:var(--color-link-posts)]">Posts</a>
+            </Link>
+            <Link href="/art">
+              <a className="hover:text-[color:var(--color-link-posts)]">Art</a>
             </Link>
             <ThemeSwitch />
           </div>
