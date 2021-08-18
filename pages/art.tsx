@@ -12,10 +12,25 @@ const Art: React.FC = () => {
           className={`flex ${
             image.width / image.height > 1.5 ? 'md:w-8/12 lg:w-8/12' : 'md:w-6/12 lg:w-5/12'
           } w-full p-4 m-8 dark:bg-white bg-gray-100 relative z-10 shadow-2xl`}>
-          <Image src={image} alt="art" placeholder="blur" objectFit="contain" className="z-10" />
+          <Image
+            src={image}
+            alt="art"
+            placeholder="blur"
+            objectFit="contain"
+            className="z-10"
+            priority
+            blurDataURL={image.blurDataURL}
+          />
 
           <div className="absolute z-0 scale-110 opacity-40 saturate-[4] blur-3xl">
-            <Image src={image} alt="art" placeholder="blur" objectFit="contain" />
+            <Image
+              src={image}
+              alt="art"
+              placeholder="blur"
+              objectFit="contain"
+              priority
+              blurDataURL={image.blurDataURL}
+            />
           </div>
         </div>
       ))}
