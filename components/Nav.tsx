@@ -5,8 +5,8 @@ import ThemeSwitch from './ThemeSwitch';
 
 const Nav: React.FC = () => {
   return (
-    <header className="w-full h-16 relative">
-      <div className="fixed h-16 z-10 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-transparent">
+    <header className="relative w-full h-16">
+      <div className="fixed h-16 z-20 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-transparent">
         <ScrollProgress />
         <nav className="w-full sm:max-w-[75ch] m-auto flex px-5 justify-between items-center dark:text-white">
           <Link href="/" passHref>

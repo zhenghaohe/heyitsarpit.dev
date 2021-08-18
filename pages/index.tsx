@@ -45,15 +45,11 @@ const Home: React.FC = () => {
             <a className="link">Writing</a>
           </Link>{' '}
           about Programming and Web Development. <br />
-          Making 3D {/* <Link href="/art"> */}
-          <a
-            className="link"
-            href="https://www.instagram.com/arpitb_/"
-            target="_blank"
-            rel="noreferrer">
-            Art{' '}
-          </a>
-          and animations. Working at{' '}
+          Making some{' '}
+          <Link href="/art">
+            <a className="link">art. </a>
+          </Link>
+          Working at{' '}
           <a
             className="link"
             href="https://www.linkedin.com/company/antillia-llc/"
