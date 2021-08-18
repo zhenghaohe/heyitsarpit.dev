@@ -34,12 +34,12 @@ const Art: React.FC = () => {
           </div>
         </div>
       ))}
-      {videos.map((video, i) => (
+      {videos.map(([video, poster], i) => (
         <div
           key={video}
           className="relative flex p-2 m-4 bg-gray-100 shadow-2xl md:m-8 md:p-4 dark:bg-white"
           style={{ order: (i % 12) + 1 }}>
-          <video loop muted playsInline autoPlay className="z-10 min-w-[50vw]">
+          <video loop muted playsInline autoPlay className="z-10 min-w-[50vw]" poster={poster}>
             <source src={video} type="video/mp4" />
           </video>
           <video
@@ -47,7 +47,8 @@ const Art: React.FC = () => {
             muted
             playsInline
             autoPlay
-            className="absolute z-0 scale-150 opacity-30 saturate-200 bg-zoom-150 blur-3xl min-w-[50vw]">
+            className="absolute z-0 scale-150 opacity-30 saturate-200 bg-zoom-150 blur-3xl min-w-[50vw]"
+            poster={poster}>
             <source src={video} type="video/mp4" />
           </video>
         </div>
