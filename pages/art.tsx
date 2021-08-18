@@ -4,14 +4,14 @@ import { images, videos } from '../utils/arts';
 
 const Art: React.FC = () => {
   return (
-    <div className="flex flex-wrap items-start w-full h-full px-8 mx-auto xl:w-11/12 2xl:w-9/12 justify-evenly">
+    <div className="flex flex-wrap items-start w-full h-full mx-auto xl:w-11/12 2xl:w-9/12 justify-evenly">
       {images.map((image, i) => (
         <div
           key={image.src}
           style={{ order: (i % 12) + 1 }}
           className={`flex ${
             image.width / image.height > 1.5 ? 'md:w-8/12 lg:w-8/12' : 'md:w-6/12 lg:w-5/12'
-          } w-full p-4 m-8 dark:bg-white bg-gray-100 relative z-10 shadow-2xl`}>
+          } w-full p-2 m-4 md:p-4 md:m-8 dark:bg-white bg-gray-100 relative z-10 shadow-2xl`}>
           <Image
             src={image}
             alt="art"
@@ -37,7 +37,7 @@ const Art: React.FC = () => {
       {videos.map((video, i) => (
         <div
           key={video}
-          className="relative flex p-4 m-8 bg-gray-100 shadow-2xl dark:bg-white"
+          className="relative flex p-2 m-4 bg-gray-100 shadow-2xl md:p-4 md:m-8 dark:bg-white"
           style={{ order: (i % 12) + 1 }}>
           <video loop muted playsInline autoPlay className="z-10">
             <source src={video} type="video/mp4" />
