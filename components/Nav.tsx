@@ -1,9 +1,16 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import ScrollProgress from './ScrollProgress';
 import ThemeSwitch from './ThemeSwitch';
 
 const Nav: React.FC = () => {
+  const router = useRouter();
+
+  const isActive = (pathname) => {
+    return router.asPath.includes(pathname);
+  };
+
   return (
     <header className="relative w-full h-16">
       <div className="fixed h-16 z-20 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-transparent">
@@ -15,12 +22,14 @@ const Nav: React.FC = () => {
             </a>
           </Link>
           <div className="flex items-center gap-10">
-            <Link href="/posts">
-              <a className="hover:text-[color:var(--color-link-posts)]">Posts</a>
-            </Link>
-            <Link href="/art">
-              <a className="hover:text-[color:var(--color-link-posts)]">Art</a>
-            </Link>
+            {['/posts', '/art'].map((path) => (
+              <Link key={path} href={path}>
+                <a className={`capitalize ${isActive(path) ? '' : 'opacity-50'}`}>
+                  {path.replace('/', '')}
+                </a>
+              </Link>
+            ))}
+
             <ThemeSwitch />
           </div>
         </nav>

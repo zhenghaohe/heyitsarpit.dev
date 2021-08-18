@@ -12,7 +12,7 @@ const Social = () => (
         <li
           key={name}
           className="max-w-max flex items-center pl-0 before:hidden hover:text-[color:var(--color-link-posts)] hover:cursor-pointer">
-          <a className="" href={url} rel="noopener noreferrer" target="_blank">
+          <a className="hover:link" href={url} rel="noopener noreferrer" target="_blank">
             {name}
           </a>
           <svg
@@ -36,9 +36,9 @@ const Social = () => (
 
 const Home: React.FC = () => {
   return (
-    <div className="w-full sm:max-w-[75ch] mt-[30vh] mx-auto h-full px-5 flex justify-center items-center">
+    <div className="w-full sm:max-w-[75ch] mt-[20vh] mx-auto h-full px-5 flex justify-center items-center">
       <article className="w-full">
-        <h1 className="mb-3 text-3xl font-bold">Hi, I&apos;m Arpit</h1>
+        <h1 className="mb-3 text-3xl font-extrabold">Hi, I&apos;m Arpit</h1>
         <p>
           Software Developer.{' '}
           <Link href="/posts">

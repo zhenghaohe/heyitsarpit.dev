@@ -100,10 +100,12 @@
   }
 
   .link {
-    @apply text-pink-600 no-underline hover:underline;
+    background-image: linear-gradient(to right, rgb(238, 9, 149), rgb(255, 65, 46));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
-  article :is(h1,h2, h3, h4, h5, h6) {
+  article :is(h1, h2, h3, h4, h5, h6) {
     @apply flex mt-8 mb-5 font-semibold text-gray-800 dark:text-gray-100;
   }
 

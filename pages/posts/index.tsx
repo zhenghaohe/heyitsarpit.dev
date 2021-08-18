@@ -18,7 +18,7 @@ const PostPreview: React.FC<PostMeta> = ({ slug, title, date }) => {
           <p className="transition duration-300 text-sm mr-8 min-w-[50px] text-secondary group-hover:text-pink-400">
             <time dateTime={validDate(date)}>{formateDatePreview(date)}</time>
           </p>
-          <h3 className="font-medium transition duration-300 group-hover:text-accent">{title}</h3>
+          <h3 className="font-medium transition duration-300 group-hover:link">{title}</h3>
         </a>
       </Link>
     </li>
