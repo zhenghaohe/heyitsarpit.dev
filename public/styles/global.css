@@ -160,8 +160,8 @@
   }
 
   article li::before {
-    content: '';
-    @apply absolute bg-gray-300 dark:bg-gray-600 rounded-full w-1.5 h-1.5 left-1 top-2.5;
+    content: '—';
+    @apply absolute left-1 opacity-90;
   }
 }
 
