@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-import ScrollProgress from './ScrollProgress';
 import ThemeSwitch from './ThemeSwitch';
 
 const Nav: React.FC = () => {
@@ -14,7 +13,6 @@ const Nav: React.FC = () => {
   return (
     <header className="relative w-full h-16">
       <div className="fixed h-16 z-40 w-full flex justify-between backdrop-blur-[20px] backdrop-saturate-150 bg-white/50 dark:bg-black/50">
-        <ScrollProgress />
         <nav className="w-full sm:max-w-[75ch] m-auto flex px-5 justify-between items-center dark:text-white">
           <Link href="/" passHref>
             <a title="Home" aria-label="Home">
