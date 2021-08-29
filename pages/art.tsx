@@ -23,7 +23,7 @@ const Images = () => {
             blurDataURL={image.blurDataURL}
           />
 
-          <div className="absolute z-0 scale-110 opacity-40 saturate-[4] blur-3xl">
+          <div className="absolute z-0 scale-110 opacity-50 saturate-[4] blur-3xl">
             <Image
               src={image}
               alt="art"
@@ -68,7 +68,7 @@ const Pause = () => (
 );
 
 const Video = (props: { video: string; poster: string | undefined; index: number }) => {
-  const { video, poster, index } = props;
+  const { video, index } = props;
 
   const [playing, setPlaying] = useState(false);
 
@@ -108,8 +108,7 @@ const Video = (props: { video: string; poster: string | undefined; index: number
         loop
         muted
         playsInline
-        className="absolute z-0 scale-150 opacity-30 saturate-200 bg-zoom-150 blur-3xl min-w-[50vw]"
-        poster={poster}>
+        className="absolute z-0 scale-150 opacity-30 saturate-200 bg-zoom-150 blur-xl min-w-[50vw]">
         <source src={video} type="video/mp4" />
       </video>
     </div>
