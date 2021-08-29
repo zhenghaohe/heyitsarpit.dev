@@ -1,7 +1,19 @@
-@import url('https://rsms.me/inter/inter.css');
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: normal;
+  font-named-instance: 'Regular';
+  src: url(/fonts/inter/Inter-roman.var.woff2) format('woff2');
+}
 
-@supports (font-variation-settings: normal) {
-  html { font-family: 'Inter var', sans-serif; }
+@font-face {
+  font-family: 'Inter var';
+  font-weight: 100 900;
+  font-display: swap;
+  font-style: italic;
+  font-named-instance: 'Italic';
+  src: url(/fonts/inter/Inter-italic.var.woff2) format('woff2');
 }
 
 @font-face {
@@ -10,15 +22,16 @@
   font-display: swap;
   font-weight: 400;
   src: url(/fonts/fira-code/fira-code-v9-latin-regular.woff2) format('woff2'),
-       url(/fonts/fira-code/fira-code-v9-latin-regular.woff) format('woff');
+    url(/fonts/fira-code/fira-code-v9-latin-regular.woff) format('woff');
 }
+
 @font-face {
   font-family: 'Fira Code';
   font-style: normal;
   font-display: swap;
   font-weight: 500;
   src: url(/fonts/fira-code/fira-code-v9-latin-500.woff2) format('woff2'),
-       url(/fonts/fira-code/fira-code-v9-latin-500.woff) format('woff');
+    url(/fonts/fira-code/fira-code-v9-latin-500.woff) format('woff');
 }
 @font-face {
   font-family: 'Fira Code';
@@ -26,5 +39,5 @@
   font-display: swap;
   font-weight: 700;
   src: url(/fonts/fira-code/fira-code-v9-latin-700.woff2) format('woff2'),
-       url(/fonts/fira-code/fira-code-v9-latin-700.woff) format('woff');
+    url(/fonts/fira-code/fira-code-v9-latin-700.woff) format('woff');
 }
