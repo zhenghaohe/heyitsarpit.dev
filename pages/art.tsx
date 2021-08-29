@@ -11,8 +11,10 @@ const Images = () => {
           key={image.src}
           style={{ order: (i % 12) + 1 }}
           className={`flex ${
-            image.width / image.height > 1.5 ? 'md:w-8/12 lg:w-8/12' : 'md:w-6/12 lg:w-5/12'
-          } w-full p-2 md:p-4 m-4 md:m-8 dark:bg-white bg-gray-100 relative z-10 shadow-2xl`}>
+            image.width / image.height > 1.5
+              ? 'md:w-8/12 lg:w-6/12 2xl:w-5/12'
+              : 'md:w-6/12 lg:w-4/12 2xl:w-3/12'
+          } w-full p-2 mx-12 my-16 dark:bg-white bg-gray-100 relative z-10 shadow-2xl`}>
           <Image
             src={image}
             alt="art"
@@ -93,14 +95,14 @@ const Video = (props: { video: string; poster: string | undefined; index: number
 
   return (
     <div
-      className="relative flex items-center justify-center p-2 m-4 bg-gray-100 shadow-2xl md:m-8 md:p-4 dark:bg-white"
+      className="relative flex items-center justify-center p-2 mx-12 my-16 bg-gray-100 shadow-2xl dark:bg-white md:w-8/12 lg:w-6/12 2xl:w-5/12"
       style={{ order: (index % 12) + 1 }}>
       <button
         onClick={onPlayPause}
         className="absolute z-30 flex items-center justify-center w-full h-full text-white group">
         {playing ? <Pause /> : <Play />}
       </button>
-      <video ref={videoRef} loop muted playsInline className="z-10 min-w-[50vw]">
+      <video ref={videoRef} loop muted playsInline className="z-10 w-full">
         <source src={video} type="video/mp4" />
       </video>
       <video
@@ -108,7 +110,7 @@ const Video = (props: { video: string; poster: string | undefined; index: number
         loop
         muted
         playsInline
-        className="absolute z-0 scale-150 opacity-30 saturate-200 bg-zoom-150 blur-xl min-w-[50vw]">
+        className="absolute z-0 w-full scale-150 opacity-30 saturate-200 bg-zoom-150 blur-xl">
         <source src={video} type="video/mp4" />
       </video>
     </div>
@@ -127,7 +129,7 @@ const Videos = () => {
 
 const Art: React.FC = () => {
   return (
-    <div className="flex flex-wrap items-start w-full mx-auto overflow-hidden justify-evenly">
+    <div className="flex flex-wrap items-start w-full gap-12 py-16 mx-auto overflow-hidden justify-evenly">
       <Images />
       <Videos />
     </div>
