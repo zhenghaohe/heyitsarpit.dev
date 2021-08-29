@@ -12,7 +12,7 @@ export const formateDatePreview = (d: string): string => {
 export const formateDateFull = (d: string): string => {
   const date = new Date(d);
 
-  const month = localeFormat(date, '{MMM}', 'en-GB');
+  const month = localeFormat(date, '{MMMM}', 'en-GB');
   const _date = format(date, '{dd}');
   const year = format(date, '{yyyy}');
 

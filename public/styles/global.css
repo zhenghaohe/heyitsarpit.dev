@@ -5,7 +5,7 @@
 @layer base {
   body.light {
     --theme: 'light';
-    --color-text: theme('colors.gray.700');
+    --color-text: theme('colors.trueGray.800');
     --color-text-secondary: #6d6f88;
     --color-background: #fdfdfd;
     --color-nav-background: transparent;
@@ -118,7 +118,7 @@
   }
 
   article :is(h1, h2, h3, h4, h5, h6) {
-    @apply flex mt-8 mb-5 font-semibold text-gray-700 dark:text-gray-200;
+    @apply flex mt-8 mb-5 font-semibold text-trueGray-800 dark:text-gray-200;
   }
 
   h2 {

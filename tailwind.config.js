@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+const colors = require('tailwindcss/colors');
+
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{jsx,tsx}', './components/**/*.{jsx,tsx}'],
@@ -5,6 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        ...colors,
         primary: 'var(--color-text)',
         secondary: 'var(--color-text-secondary)',
         bg: 'var(--color-background)',

@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const Social = () => (
   <section>
-    <h2>Find Me Online</h2>
+    <h2 className="font-medium">Find Me Online</h2>
     <ul>
       {[
         { name: 'Github', url: 'https://github.com/heyitsarpit' },
