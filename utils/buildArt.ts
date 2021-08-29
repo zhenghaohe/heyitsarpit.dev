@@ -49,7 +49,9 @@ async function buildArt() {
   }
 
   exports.push(`\nexport const images = [${imgNames.toString()}];\n`);
-  exports.push(`\nexport const videos = [${videoPaths.toString()}];\n`);
+  exports.push(
+    `\nexport const videos: Array<[string, string | undefined]> = [${videoPaths.toString()}];\n`
+  );
 
   await fs.writeFile(join('.', 'utils', 'arts.ts'), exports, 'utf-8');
 }

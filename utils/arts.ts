@@ -62,7 +62,7 @@ export const images = [
   file22
 ];
 
-export const videos = [
+export const videos: Array<[string, string | undefined]> = [
   ['/art/2017-12-10_17-50-19_UTC.mp4', poster01.blurDataURL],
   ['/art/2018-01-20_14-36-42_UTC.mp4', poster02.blurDataURL],
   ['/art/2018-01-26_05-48-01_UTC.mp4', poster03.blurDataURL],
