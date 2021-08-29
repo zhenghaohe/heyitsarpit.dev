@@ -18,7 +18,7 @@ const PostPreview: React.FC<PostMeta> = ({ slug, title, date }) => {
           <p className="transition duration-300 text-sm mr-8 min-w-[50px] text-secondary group-hover:text-pink-400">
             <time dateTime={validDate(date)}>{formateDatePreview(date)}</time>
           </p>
-          <h3 className="font-medium transition duration-300 group-hover:link">{title}</h3>
+          <h3 className="font-light transition duration-300 group-hover:link">{title}</h3>
         </a>
       </Link>
     </li>
@@ -38,7 +38,7 @@ const PostPreviewList: React.FC<{ posts: PostMeta[] }> = ({ posts }) => {
     <>
       {Object.entries(postsByYear).map(([year, posts]) => (
         <div key={year} className="w-full">
-          <h2 className="pl-1 text-lg font-bold">{year}</h2>
+          <h2 className="pl-1 text-lg font-semibold">{year}</h2>
           <ul>
             {posts.map((post) => (
               <PostPreview key={post.slug} {...post} />
