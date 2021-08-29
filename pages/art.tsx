@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 import { images, videos } from '@/utils/arts';
 
@@ -14,7 +15,7 @@ const Images = () => {
             image.width / image.height > 1.5
               ? 'md:w-8/12 lg:w-6/12 2xl:w-5/12'
               : 'md:w-6/12 lg:w-4/12 2xl:w-3/12'
-          } w-full p-2 mx-12 my-16 dark:bg-white bg-gray-100 relative z-10 shadow-2xl`}>
+          } w-full p-2 mx-4 my-8 md:mx-12 md:my-16 dark:bg-white bg-gray-100 relative z-10 shadow-2xl`}>
           <Image
             src={image}
             alt="art"
@@ -73,6 +74,7 @@ const Video = (props: { video: string; poster: string | undefined; index: number
   const { video, index } = props;
 
   const [playing, setPlaying] = useState(false);
+  const { ref, inView } = useInView({ threshold: 0.1 });
 
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const videoShadowRef = useRef<HTMLVideoElement | null>(null);
@@ -93,9 +95,20 @@ const Video = (props: { video: string; poster: string | undefined; index: number
     }
   };
 
+  useEffect(() => {
+    if (inView) return;
+    if (!(videoRef.current && videoShadowRef.current)) return;
+
+    videoRef.current.pause();
+    videoShadowRef.current.pause();
+
+    setPlaying(false);
+  }, [inView]);
+
   return (
     <div
-      className="relative flex items-center justify-center p-2 mx-12 my-16 bg-gray-100 shadow-2xl dark:bg-white md:w-8/12 lg:w-6/12 2xl:w-5/12"
+      ref={ref}
+      className="relative flex items-center justify-center p-2 mx-4 my-8 bg-gray-100 shadow-2xl md:mx-12 md:my-16 dark:bg-white md:w-8/12 lg:w-6/12 2xl:w-5/12"
       style={{ order: (index % 12) + 1 }}>
       <button
         onClick={onPlayPause}
