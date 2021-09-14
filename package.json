@@ -23,6 +23,7 @@
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc --ignore-path ./.gitignore"
   },
   "dependencies": {
+    "critters": "^0.0.10",
     "light-date": "^1.2.0",
     "mdx-bundler": "^6.0.1",
     "next": "^11.1.0",

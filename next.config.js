@@ -7,6 +7,7 @@ module.exports = withPWA({
     dest: 'public',
     runtimeCaching
   },
+  experimental: { optimizeCss: true },
   images: {
     domains: ['images.pexels.com', 'user-images.githubusercontent.com']
   }
