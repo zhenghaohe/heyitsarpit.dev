@@ -1,6 +1,6 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const DarkModeSwitch = dynamic(() =>
   import('react-toggle-dark-mode').then((mod) => mod.DarkModeSwitch)
@@ -16,13 +16,13 @@ const ThemeSwitch: React.FC = () => {
   const [theme, setTheme] = useState<ColorTheme>('dark');
   const [hasMounted, setHasMounted] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     setHasMounted(true);
     const theme = (document.body.getAttribute('class') as ColorTheme) || 'dark';
     setTheme(theme);
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const bodyClass = document.body.classList;
 
     if (theme === 'dark') {
@@ -47,7 +47,7 @@ const ThemeSwitch: React.FC = () => {
       <Head>
         <meta name="theme-color" content={theme === 'dark' ? '#000' : '#fdfdfd'} />
       </Head>
-      <div className="w-5 h-5 bg-transparent">
+      <div className="flex items-center w-5 h-5 bg-transparent">
         <DarkModeSwitch
           checked={theme === 'dark'}
           onChange={switchTheme}
