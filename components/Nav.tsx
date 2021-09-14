@@ -1,8 +1,7 @@
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
-const ThemeSwitch = dynamic(() => import('./ThemeSwitch'));
+import ThemeSwitch from './ThemeSwitch';
 
 const Nav: React.FC = () => {
   const router = useRouter();
