@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
 const Social = () => (
-  <section>
-    <h2 className="font-medium">Find Me Online</h2>
+  <section className="mt-16">
+    <h2 className="font-semibold">Find Me Online</h2>
     <ul>
       {[
         { name: 'Github', url: 'https://github.com/heyitsarpit' },
@@ -38,7 +38,7 @@ const Home: React.FC = () => {
   return (
     <div className="w-full sm:max-w-[75ch] mt-[20vh] mx-auto h-full px-5 flex justify-center items-center">
       <article className="w-full">
-        <h1 className="mb-3 text-3xl font-medium">Hi, I&apos;m Arpit</h1>
+        <h1 className="mb-3 text-3xl font-semibold">Hi, I&apos;m Arpit</h1>
         <p>
           Software Developer.{' '}
           <Link href="/posts">

@@ -1,6 +1,5 @@
 /* eslint-disable @next/next/no-css-tags */
 import Head from 'next/head';
-import Image from 'next/image';
 import { NextSeo } from 'next-seo';
 
 import { formateDateFull, validDate } from '@/utils/formatDate';
@@ -21,10 +20,8 @@ export const PostPage: React.FC<Props> = ({ meta, children }) => {
       </Head>
       <article className="max-w-[75ch] mx-auto py-12 px-4">
         <div>
-          <h1 className="mb-1 text-3xl font-bold capitalize text-trueGray-800 md:text-4xl dark:text-white">
-            {meta.title}
-          </h1>
-          <div className="flex items-center pt-4 pb-8 text-sm uppercase font-extralight text-trueGray-500 dark:text-trueGray-400">
+          <h1 className="mb-1 text-3xl font-black capitalize md:text-4xl">{meta.title}</h1>
+          <div className="flex items-center pt-4 pb-8 text-sm font-thin uppercase text-warmGray-500 dark:text-warmGray-400">
             <time dateTime={validDate(meta.date)}>{formateDateFull(meta.date)}</time>
           </div>
           <p className="italic">{meta.description}</p>

@@ -12,7 +12,7 @@ export const getStaticProps = async () => {
 
 const PostPreview: React.FC<PostMeta> = ({ slug, title, date }) => {
   return (
-    <li className="my-4">
+    <li className="my-8">
       <Link href={`posts/${slug}`}>
         <a className="flex items-center p-1 capitalize transition duration-300 rounded-md outline-none focus:ring-1 focus:bg-pink-50 dark:focus:bg-pink-300/10 hover:ring-1 ring-pink-400/40 group hover:bg-pink-50 dark:hover:bg-pink-300/10">
           <p className="transition duration-300 text-sm mr-8 min-w-[50px] text-secondary group-hover:text-pink-400">
