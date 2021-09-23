@@ -123,7 +123,7 @@ const Video = (props: { video: string; poster: string | undefined; index: number
         loop
         muted
         playsInline
-        className="absolute z-0 w-full scale-150 opacity-30 saturate-200 bg-zoom-150 blur-xl">
+        className="absolute z-0 w-full scale-150 opacity-30 saturate-200 bg-zoom-150 blur-[30px]">
         <source src={video} type="video/mp4" />
       </video>
     </div>
