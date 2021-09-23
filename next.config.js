@@ -7,7 +7,7 @@ module.exports = withPWA({
     dest: 'public',
     runtimeCaching
   },
-  experimental: { optimizeCss: process.env.NODE_ENV === 'production' },
+  // experimental: { optimizeCss: process.env.NODE_ENV === 'production' },
   images: {
     domains: ['images.pexels.com', 'user-images.githubusercontent.com']
   }
