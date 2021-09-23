@@ -2,6 +2,7 @@
 
 !(function () {
   var b = document.body.classList;
+  b.remove('dark'); // remove default theme
   var e = localStorage.getItem('theme');
   if (e) b.add(e.replace(/"/g, ''));
   else {

@@ -12,10 +12,10 @@ class MyDocument extends Document {
           <link rel="manifest" href="/manifest.json" />
           <Script async src="https://cdn.splitbee.io/sb.js" />
         </Head>
-        <body>
+        <body className="dark">
           <script
             dangerouslySetInnerHTML={{
-              __html: `var e,a;e=document.body.classList,(a=localStorage.getItem("theme"))?e.add(a.replace(/"/g,"")):window.matchMedia("(prefers-color-scheme: dark)").matches?e.add("dark"):e.add("light");`
+              __html: `!function(){var a=document.body.classList;a.remove("dark");var e=localStorage.getItem("theme");e?a.add(e.replace(/"/g,"")):window.matchMedia("(prefers-color-scheme: dark)").matches?a.add("dark"):a.add("light")}()`
             }}
           />
           <Main />
