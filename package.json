@@ -15,6 +15,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
+    "postbuild": "next-sitemap",
     "start": "next start",
     "build:art": "esno utils/buildArt.ts",
     "export": "next export",
@@ -62,6 +63,7 @@
     "esno": "^0.9.1",
     "husky": "7.0.2",
     "lint-staged": "11.1.2",
+    "next-sitemap": "^1.6.168",
     "postcss": "^8.3.7",
     "prettier": "2.4.1",
     "tailwindcss": "^2.2.15",
