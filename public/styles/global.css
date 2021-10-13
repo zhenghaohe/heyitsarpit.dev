@@ -33,10 +33,9 @@
 
   body.dark {
     --theme: 'dark';
-    --color-text: theme('colors.warmGray.300');
-    /* --color-text: #cecece; */
+    --color-text: #f3f4f6;
     --color-text-secondary: #dbdada;
-    --color-background: #050506;
+    --color-background: #0D0D10;
     --color-nav-background: #00000063;
     --color-muted: #2c2d2dbb;
     --color-heading-primary: #ffffff;
@@ -117,11 +116,12 @@
   }
 
   .link {
-    background-image: linear-gradient(to right, rgb(238, 9, 149), rgb(255, 65, 46));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-size: 180%;
+    animation: gradient 8s ease infinite;
+    @apply bg-iridescent;
   }
-
   article :is(h1, h2, h3, h4, h5, h6) {
     @apply flex mt-8 mb-5 font-semibold text-warmGray-800 dark:text-warmGray-200;
   }
