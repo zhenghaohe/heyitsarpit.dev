@@ -39,6 +39,7 @@ module.exports = {
     'simple-import-sort/exports': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'jsx-a11y/anchor-is-valid': [
       'error',
       {
