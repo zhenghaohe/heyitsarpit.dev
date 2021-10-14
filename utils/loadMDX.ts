@@ -13,6 +13,22 @@ import { autoLinkHeadingsOptions } from './rehypeAutolinkPlugin';
 const RootPath = process.cwd();
 const PostPath = path.join(RootPath, 'posts');
 
+export async function loadMDX(source: string) {
+  const bundle = await bundleMDX(source, {
+    xdmOptions(options) {
+      options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm, remarkPrism];
+      options.rehypePlugins = [
+        ...(options?.rehypePlugins ?? []),
+        rehypeSlug,
+        [rehypeAutolink, autoLinkHeadingsOptions]
+      ];
+      return options;
+    }
+  });
+
+  return bundle;
+}
+
 /**
  * Get meta data of all posts
  */
@@ -38,17 +54,7 @@ export const getAllPostsMeta = async () => {
 export const getPost = async (slug: string) => {
   const source = fs.readFileSync(path.join(PostPath, `${slug}.mdx`), 'utf-8');
 
-  const { code, frontmatter } = await bundleMDX(source, {
-    xdmOptions(options) {
-      options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm, remarkPrism];
-      options.rehypePlugins = [
-        ...(options?.rehypePlugins ?? []),
-        rehypeSlug,
-        [rehypeAutolink, autoLinkHeadingsOptions]
-      ];
-      return options;
-    }
-  });
+  const { code, frontmatter } = await loadMDX(source);
 
   const meta = { ...frontmatter, slug } as PostMeta;
   return { meta, code };
