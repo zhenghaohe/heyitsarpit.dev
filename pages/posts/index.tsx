@@ -36,16 +36,18 @@ const PostPreviewList: React.FC<{ posts: PostMeta[] }> = ({ posts }) => {
 
   return (
     <>
-      {Object.entries(postsByYear).map(([year, posts]) => (
-        <div key={year} className="w-full">
-          <h2 className="pl-1 text-lg font-semibold">{year}</h2>
-          <ul>
-            {posts.map((post) => (
-              <PostPreview key={post.slug} {...post} />
-            ))}
-          </ul>
-        </div>
-      ))}
+      {Object.entries(postsByYear)
+        .reverse()
+        .map(([year, posts]) => (
+          <div key={year} className="w-full">
+            <h2 className="pl-1 text-lg font-semibold">{year}</h2>
+            <ul>
+              {posts.map((post) => (
+                <PostPreview key={post.slug} {...post} />
+              ))}
+            </ul>
+          </div>
+        ))}
     </>
   );
 };
