@@ -18,7 +18,7 @@ export const PostPage: React.FC<Props> = ({ meta, children }) => {
       <Head>
         <link rel="stylesheet" href="/styles/prism.css" />
       </Head>
-      <article className="max-w-[75ch] mx-auto py-12 px-4">
+      <article className="max-w-[75ch] mx-auto pt-12 pb-28  px-5">
         <div>
           <h1 className="mb-1 text-3xl font-black capitalize md:text-4xl">{meta.title}</h1>
           <div className="flex items-center pt-4 pb-8 text-sm font-thin uppercase text-warmGray-500 dark:text-warmGray-400">
