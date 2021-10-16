@@ -7,6 +7,7 @@ import { useMemo } from 'react';
 import { Experience } from '@/components/Experience';
 import { components } from '@/components/MDXComponents';
 import { Projects } from '@/components/Projects';
+import { Spacer } from '@/components/Spacer';
 import { loadMDX } from '@/utils/loadMDX';
 
 export const getStaticProps = async () => {
@@ -18,7 +19,7 @@ export const getStaticProps = async () => {
   return { props: { code } };
 };
 
-const mdxComponents = { ...components, Experience, Projects };
+const mdxComponents = { ...components, Experience, Projects, Spacer };
 
 type Props = InferGetStaticPropsType<typeof getStaticProps>;
 
