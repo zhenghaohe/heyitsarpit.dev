@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import { a11yDate, visibleDate } from '@/utils/date';
 
 const experience = [
@@ -23,8 +25,15 @@ const experience = [
     position: 'Google Summer of Code Intern',
     startDate: 'June 1, 2019',
     endDate: 'September 03, 2019',
-    details:
-      'Proposed and developed system to auto update firefox public suffix list. Successfully delivered in firefox 70. All my work is public and open source.'
+    details: (
+      <>
+        Proposed and developed system to auto update firefox public suffix list. Successfully
+        delivered in firefox 70.{' '}
+        <Link href="/posts/gsoc-2019">
+          <a className="link-btn">All my work is public and open source.</a>
+        </Link>
+      </>
+    )
   },
   {
     company: 'Splisys',
