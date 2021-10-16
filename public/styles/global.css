@@ -63,6 +63,7 @@
   #__next {
     @apply w-full h-full;
     --sc-width: 6px;
+    scroll-behavior: smooth;
   }
 
   html {
@@ -74,7 +75,6 @@
 
   @supports (font-variation-settings: normal) {
     html {
-      /* font: 100%/1.75 'iA Quattro', 'Inter var', 'DejaVu Sans', sans-serif; */
       font: 100%/1.75 'iA Quattro', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
         Liberation Mono, Courier New, monospace;
       font-stretch: 25% 150%;
@@ -104,7 +104,6 @@
   }
 
   body {
-    scroll-behavior: smooth;
     text-rendering: optimizeLegibility;
     color: var(--color-text);
     background: var(--color-background);
@@ -134,9 +133,8 @@
     background-size: 180%;
     animation: gradient 8s ease infinite;
     @apply bg-iridescent;
-
-    /* @apply p-[2px] font-medium rounded-sm dark:bg-warmGray-800 bg-warmGray-200 hover:bg-yellow-600; */
   }
+
   article :is(h1, h2, h3, h4, h5, h6) {
     @apply flex mt-8 mb-5 font-semibold text-warmGray-800 dark:text-warmGray-200;
   }
