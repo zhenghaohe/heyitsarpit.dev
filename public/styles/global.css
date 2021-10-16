@@ -171,7 +171,7 @@
     color: var(--syntax-text);
 
     font-family: 'Fira Code', monospace;
-    @apply rounded-sm mx-1 py-[2px] px-2 text-sm transition-colors duration-300;
+    @apply rounded-sm mx-1 py-[2px] px-2 text-sm;
   }
   article :not(pre) > code::before {
     content: '`';
@@ -182,18 +182,12 @@
   }
 
   article blockquote {
-    @apply relative py-1 pl-[2ch] pr-[1ch] my-8 italic bg-[#8a63ad14];
-  }
-  @media screen and (max-width: 700px) {
-    article blockquote {
-      width: 100vw; /*Percentage of full screen viewing width*/
-      left: calc(-50vw + 50%); /*Centres div*/
-    }
+    @apply relative py-1 pl-[2ch] pr-[1ch] my-8 italic bg-[#ada86314];
   }
 
   article blockquote::before {
     content: '';
-    @apply absolute top-0 left-0 inline-block w-2 h-full bg-iridescent bg-zoom-350 animate-gradient;
+    @apply absolute top-0 left-0 inline-block w-1 h-full bg-[color:var(--color-text)];
   }
 
   article li {
