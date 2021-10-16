@@ -19,23 +19,23 @@
     --sc-divider-light: rgba(140, 140, 140, 0.42);
     --sc-divider-dark: rgba(140, 140, 140, 1);
 
-    --syntax-background: #f5f6f9;
-    --syntax-comment: #7d7d7d;
-    --syntax-text: #202020;
-    --syntax-operator: #1590ac;
-    --syntax-string: #07a830;
-    --syntax-number: #cc6900;
-    --syntax-primary: #d20378;
-    --syntax-keyword: #5501ce;
-    --syntax-html-tag: #ec0303;
-    --syntax-boolean: #b6c420;
+    --syntax-background: hsl(60, 0%, 96%);
+    --syntax-comment: hsl(60, 0%, 60%);
+    --syntax-text: hsl(60, 0%, 20%);
+    --syntax-operator: hsl(39, 0%, 17.5%);
+    --syntax-string: hsl(60, 0%, 35%);
+    --syntax-number: hsl(42.3, 0%, 30%);
+    --syntax-primary: hsl(45, 0%, 32.5%);
+    --syntax-keyword: hsl(36.3, 0%, 19%);
+    --syntax-html-tag: hsl(0, 0%, 32%);
+    --syntax-boolean: hsl(60, 0%, 20%);
   }
 
   body.dark {
     --theme: 'dark';
     --color-text: #b0b0b0;
     --color-text-secondary: #dbdada;
-    --color-background: #0F0D0C;
+    --color-background: #0f0d0c;
     --color-nav-background: #00000063;
     --color-muted: #2c2d2dbb;
     --color-heading-primary: #ffffff;
@@ -46,16 +46,16 @@
     --sc-divider-light: rgba(200, 200, 200, 0.12);
     --sc-divider-dark: rgba(200, 200, 200, 0.48);
 
-    --syntax-background: #1b1c24;
-    --syntax-comment: #6272a4;
-    --syntax-text: #f8f8f2;
-    --syntax-operator: #8be9fd;
-    --syntax-string: #50fa7b;
-    --syntax-number: #ffb86c;
-    --syntax-primary: #ff70c2;
-    --syntax-keyword: #bd93f9;
-    --syntax-html-tag: #ff5555;
-    --syntax-boolean: #f1fa8c;
+    --syntax-background: hsl(60, 0%, 8.8%);
+    --syntax-comment: hsl(60, 0%, 40%);
+    --syntax-text: hsl(60, 0%, 80%);
+    --syntax-operator: hsl(39, 0%, 92.5%);
+    --syntax-string: hsl(60, 0%, 65%);
+    --syntax-number: hsl(42.3, 0%, 60%);
+    --syntax-primary: hsl(45, 0%, 67.5%);
+    --syntax-keyword: hsl(36.3, 0%, 87.8%);
+    --syntax-html-tag: hsl(33.9, 0%, 68%);
+    --syntax-boolean: hsl(60, 0%, 80%);
   }
 
   html,
@@ -115,16 +115,16 @@
     @apply bg-yellow-500 text-warmGray-800;
   }
 
-  .shadow_line{
+  .shadow_line {
     box-shadow: inset 0 -1px 0 0 currentColor;
   }
-  
-  .link-btn{
+
+  .link-btn {
     height: max-content;
     @apply px-1 font-medium rounded-sm hover:!bg-amber-300 dark:hover:!bg-yellow-500 dark:hover:!text-warmGray-800  bg-warmGray-200 dark:bg-warmGray-800;
   }
 
-  .button{
+  .button {
     @apply p-2 border-2 border-warmGray-200 dark:border-warmGray-500;
   }
 
@@ -170,10 +170,17 @@
 
   article :not(pre) > code {
     background: var(--syntax-background);
-    color: var(--color-link-posts);
+    color: var(--syntax-text);
 
     font-family: 'Fira Code', monospace;
     @apply rounded-sm mx-1 py-[2px] px-2 text-sm transition-colors duration-300;
+  }
+  article :not(pre) > code::before {
+    content: '`';
+  }
+
+  article :not(pre) > code::after {
+    content: '`';
   }
 
   article blockquote {
