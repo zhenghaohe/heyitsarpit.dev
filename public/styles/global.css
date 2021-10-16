@@ -112,7 +112,7 @@
   }
 
   *::selection {
-    @apply text-white bg-accent;
+    @apply bg-yellow-500 text-warmGray-800;
   }
 
   .shadow_line{
