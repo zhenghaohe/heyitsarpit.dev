@@ -56,7 +56,7 @@ export function Experience() {
           <section>
             <h3 className="m-0 text-base font-normal">{position}</h3>
             <div>
-              <div className="flex justify-between text-sm text-warmGray-500 ">
+              <div className="flex justify-between text-sm text-warmGray-600 dark:text-warmGray-400 ">
                 <div>{company}</div>
                 <div>
                   <time dateTime={a11yDate(startDate)}>{visibleDate(startDate)}</time>

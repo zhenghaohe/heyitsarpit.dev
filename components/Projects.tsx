@@ -23,6 +23,7 @@ export const projects = [
 
 const SourceIcon = () => (
   <svg
+    aria-label="code icon"
     xmlns="http://www.w3.org/2000/svg"
     className="w-3 h-3"
     fill="none"
@@ -39,6 +40,7 @@ const SourceIcon = () => (
 
 const LiveIcon = () => (
   <svg
+    aria-label="lightning icon"
     xmlns="http://www.w3.org/2000/svg"
     className="w-3 h-3"
     fill="none"

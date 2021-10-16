@@ -20,7 +20,7 @@
     --sc-divider-dark: rgba(140, 140, 140, 1);
 
     --syntax-background: hsl(60, 0%, 96%);
-    --syntax-comment: hsl(60, 0%, 60%);
+    --syntax-comment: hsl(0, 0%, 43.5%);
     --syntax-text: hsl(60, 0%, 20%);
     --syntax-operator: hsl(39, 0%, 17.5%);
     --syntax-string: hsl(60, 0%, 35%);
@@ -47,7 +47,7 @@
     --sc-divider-dark: rgba(200, 200, 200, 0.48);
 
     --syntax-background: hsl(60, 0%, 8.8%);
-    --syntax-comment: hsl(60, 0%, 40%);
+    --syntax-comment: hsl(0, 0%, 50.2%);
     --syntax-text: hsl(60, 0%, 80%);
     --syntax-operator: hsl(39, 0%, 92.5%);
     --syntax-string: hsl(60, 0%, 65%);
@@ -159,7 +159,7 @@
   }
 
   article strong {
-    @apply text-black dark:text-white;
+    @apply text-warmGray-800 dark:text-warmGray-200;
   }
 
   article blockquote code {
@@ -168,10 +168,9 @@
 
   article :not(pre) > code {
     background: var(--syntax-background);
-    color: var(--syntax-text);
 
     font-family: 'Fira Code', monospace;
-    @apply rounded-sm mx-1 py-[2px] px-2 text-sm;
+    @apply rounded-sm mx-1 py-[2px] px-2 text-sm text-warmGray-800 dark:text-warmGray-200;
   }
   article :not(pre) > code::before {
     content: '`';
