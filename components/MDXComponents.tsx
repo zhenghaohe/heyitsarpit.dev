@@ -9,12 +9,12 @@ export const components = {
   a: ({ href = '', ...props }) => {
     if (href.match(/http|https/)) {
       return (
-        <a href={href} className="link" target="_blank" rel="noopener noreferrer" {...props} />
+        <a href={href} className="link-btn" target="_blank" rel="noopener noreferrer" {...props} />
       );
     }
     return (
       <Link href={href} passHref>
-        <a className="link" {...props} />
+        <a className="link-btn" {...props} />
       </Link>
     );
   },
