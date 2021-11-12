@@ -19,7 +19,8 @@
       "@/components/*": ["components/*"],
       "@/utils/*": ["utils/*"],
       "@/public/*": ["public/*"]
-    }
+    },
+    "incremental": true
   },
   "exclude": ["node_modules"],
   "include": ["next-env.d.ts", "mdx.d.ts", "**/*.ts", "**/*.tsx"]
