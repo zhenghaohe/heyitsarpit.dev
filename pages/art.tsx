@@ -110,22 +110,24 @@ const Video = (props: { video: string; poster: string | undefined; index: number
       ref={ref}
       className="relative flex items-center justify-center p-2 mx-4 my-8 bg-gray-100 shadow-2xl md:mx-12 md:my-16 dark:bg-white md:w-8/12 lg:w-6/12 2xl:w-5/12"
       style={{ order: (index % 12) + 1 }}>
-      <button
-        onClick={onPlayPause}
-        className="absolute z-30 flex items-center justify-center w-full h-full text-white group">
-        {playing ? <Pause /> : <Play />}
-      </button>
-      <video ref={videoRef} loop muted playsInline className="z-10 w-full">
-        <source src={video} type="video/mp4" />
-      </video>
-      <video
-        ref={videoShadowRef}
-        loop
-        muted
-        playsInline
-        className="absolute z-0 w-full scale-150 opacity-30 saturate-200 bg-zoom-150 blur-[30px]">
-        <source src={video} type="video/mp4" />
-      </video>
+      <div className="w-full h-full bg-gray-200 dark:bg-black">
+        <button
+          onClick={onPlayPause}
+          className="absolute z-30 flex items-center justify-center w-full h-full text-white group">
+          {playing ? <Pause /> : <Play />}
+        </button>
+        <video ref={videoRef} loop muted playsInline className="z-10 w-full">
+          <source src={video} type="video/mp4" />
+        </video>
+        <video
+          ref={videoShadowRef}
+          loop
+          muted
+          playsInline
+          className="absolute z-0 w-full scale-150 opacity-30 saturate-200 bg-zoom-150 blur-[30px]">
+          <source src={video} type="video/mp4" />
+        </video>
+      </div>
     </div>
   );
 };
