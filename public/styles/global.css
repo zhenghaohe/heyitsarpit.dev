@@ -33,7 +33,7 @@
 
   body.dark {
     --theme: 'dark';
-    --color-text: #b0b0b0;
+    --color-text: hsl(0, 0%, 85%);
     --color-text-secondary: #dbdada;
     --color-background: #0f0d0c;
     --color-nav-background: #00000063;
@@ -75,9 +75,11 @@
 
   @supports (font-variation-settings: normal) {
     html {
-      font: 100%/1.75 'iA Quattro', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+      font: 100%/1.75 Outfit, 'iA Quattro', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
         Liberation Mono, Courier New, monospace;
       font-stretch: 25% 150%;
+      letter-spacing: 0.05rem;
+      font-size: 17px;
     }
   }
 
@@ -107,7 +109,7 @@
     text-rendering: optimizeLegibility;
     color: var(--color-text);
     background: var(--color-background);
-    font-weight: 400;
+    font-weight: 250;
   }
 
   *::selection {
@@ -120,7 +122,7 @@
 
   .link-btn {
     height: max-content;
-    @apply px-1 font-medium transition-colors duration-150 ease-linear rounded-sm hover:bg-amber-300 dark:hover:bg-yellow-500 dark:hover:text-warmGray-800 bg-warmGray-200 dark:bg-warmGray-800;
+    @apply px-1 font-light transition-colors duration-150 ease-linear rounded-sm hover:bg-amber-300 dark:hover:bg-yellow-500 dark:hover:text-warmGray-800 bg-warmGray-200 dark:bg-warmGray-800;
   }
 
   .button {
@@ -137,6 +139,7 @@
 
   article :is(h1, h2, h3, h4, h5, h6) {
     @apply flex mt-8 mb-5 font-semibold text-warmGray-800 dark:text-warmGray-200;
+    font-feature-settings: "salt";
   }
 
   h2 {
