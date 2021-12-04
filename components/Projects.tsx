@@ -3,7 +3,7 @@ export const projects = [
     title: 'React Hooks Library',
     details: `A collection of 30+ react hooks and utilities, also built an accompanying custom documentation website th
   at shows live react demos for all hooks.`,
-    live: 'https://react-hooks-library-rosy.vercel.app',
+    live: 'https://react-hooks-library.vercel.app',
     source: 'https://github.com/heyitsarpit/react-hooks-library'
   },
   {
